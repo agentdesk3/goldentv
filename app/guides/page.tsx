@@ -120,7 +120,7 @@ export default function GuidesPage() {
               Select a route
             </span>
             <h2 className="mt-1 font-heading text-3xl font-bold tracking-tight md:text-4xl">
-              Verified Platform Guides
+              Published Platform Guides
             </h2>
           </div>
           <p className="max-w-lg text-sm leading-6 text-[#cdc2d8]">

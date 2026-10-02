@@ -85,7 +85,9 @@ export default function FAQPage() {
     <main className="relative min-h-screen overflow-hidden bg-[#10131e] text-[#e0e1f2]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
       />
 
       <div className="pointer-events-none absolute -top-36 left-1/3 h-[520px] w-[520px] rounded-full bg-[#8b3dff]/15 blur-[150px]" />

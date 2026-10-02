@@ -39,26 +39,26 @@ export const metadata: Metadata = createPageMetadata({
 
 const VALUE_POINTS = [
   {
-    title: "30,000+ Live Channels",
+    title: "Live channel catalogue",
     description: "Explore the live channel catalogue included with Golden IPTV.",
     icon: Tv,
   },
   {
-    title: "160,000+ Movies",
+    title: "On-demand movies",
     description: "Choose from a broad on-demand movie catalogue.",
     icon: Film,
   },
   {
-    title: "59,000+ Series",
+    title: "On-demand series",
     description: "Browse series across a wide range of genres.",
     icon: Clapperboard,
   },
 ] as const;
 
 const PRICING_BENEFITS = [
-  "No Buffering",
-  "Instant Activation",
-  "24/7 Support",
+  "Buffering troubleshooting guidance",
+  "Request activation via WhatsApp",
+  "WhatsApp customer support",
 ] as const;
 
 const STEPS = [
@@ -346,7 +346,7 @@ export default function IptvSouthAfricaPage() {
                 >
                   {plan.popular ? (
                     <span className="absolute right-5 top-5 rounded-full [background:var(--gradient-cta)] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-white">
-                      Popular
+                      Featured
                     </span>
                   ) : null}
                   <p className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-[#c9a8ff]">
@@ -530,7 +530,7 @@ export default function IptvSouthAfricaPage() {
           <MotionReveal>
             <SectionHeading
               eyebrow="Installation help"
-              heading="Popular setup guides"
+              heading="Featured setup guides"
               supportingCopy="Use the installation and troubleshooting articles when preparing your device."
               align="center"
             />

@@ -73,7 +73,7 @@ export default function DevicesPage() {
               Device guide directory
             </span>
             <h2 className="mt-1 font-heading text-3xl font-bold tracking-tight md:text-4xl">
-              Verified setup route matrix
+              Available setup guide matrix
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[#cdc2d8]">
               Every listed platform links to the corresponding guide already

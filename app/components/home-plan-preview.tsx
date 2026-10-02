@@ -7,9 +7,9 @@ import { useState } from "react";
 import { PLANS } from "@/app/iptv-south-africa/plans-data";
 
 const subscriptionBenefits = [
-  "No Buffering",
-  "Instant Activation",
-  "24/7 Support",
+  "Buffering troubleshooting guidance",
+  "Request activation via WhatsApp",
+  "WhatsApp customer support",
 ] as const;
 
 export default function HomePlanPreview() {

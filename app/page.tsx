@@ -208,7 +208,7 @@ rel="noopener noreferrer"
               >
                 {plan.popular && (
                   <div className="absolute right-4 top-4 rounded-full bg-[#dcb344]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#e5c35b]">
-                    Popular
+                    Featured
                   </div>
                 )}
 

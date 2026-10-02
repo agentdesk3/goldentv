@@ -163,7 +163,7 @@ export default function EditorialGuide({
             <span className="rounded-2xl bg-[#0b0e19]/45 p-4">
               <ShieldCheck className="h-4 w-4 text-[#afc6ff]" />
               <strong className="mt-2 block font-heading text-lg">
-                Verified
+                Published
               </strong>
               <small className="text-[#cdc2d8]">Repository content</small>
             </span>

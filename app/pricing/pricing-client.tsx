@@ -14,10 +14,10 @@ import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { PLANS } from "@/app/iptv-south-africa/plans-data";
 
 const planFeatures = [
-  "Complete shared catalogue",
-  "No Buffering",
-  "Instant Activation",
-  "24/7 Customer Support",
+  "Catalogue details available on request.",
+  "Buffering troubleshooting guidance",
+  "Request activation via WhatsApp",
+  "WhatsApp customer support",
 ] as const;
 
 const benefitGroups = [
@@ -26,9 +26,9 @@ const benefitGroups = [
     eyebrow: "Catalogue value",
     title: "Entertainment included",
     items: [
-      "30,000+ Live Channels",
-      "160,000+ Movies",
-      "59,000+ Series",
+      "Live channel catalogue",
+      "On-demand movies",
+      "On-demand series",
     ],
   },
   {
@@ -36,9 +36,9 @@ const benefitGroups = [
     eyebrow: "Service benefits",
     title: "Ready when you are",
     items: [
-      "No Buffering",
-      "Instant Activation",
-      "24/7 Customer Support",
+      "Buffering troubleshooting guidance",
+      "Request activation via WhatsApp",
+      "WhatsApp customer support",
       "Works on Supported Devices",
       "Setup Guidance Available",
     ],
@@ -142,7 +142,7 @@ export default function PricingClient() {
                       : "bg-[#272936] text-[#d4bbff]"
                   }`}
                 >
-                  {plan.popular ? "Most popular" : "Golden IPTV"}
+                  {plan.popular ? "Featured" : "Golden IPTV"}
                 </span>
                 <Sparkles className="h-5 w-5 text-[#968da1]" />
               </div>

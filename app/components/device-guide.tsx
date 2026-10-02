@@ -75,36 +75,6 @@ const configs = {
       sharedFaq.app,
     ],
   },
-  firestick: {
-    category: "Amazon Fire TV",
-    title: "IPTV on Firestick",
-    summary:
-      "Set up Golden IPTV on a compatible Amazon Fire TV or Firestick using an application supported by the device.",
-    highlights: [
-      { title: "Compatible Fire TV device", description: "Use a Fire TV Stick, Fire TV Stick 4K or another supported Fire TV device." },
-      { title: "HDMI and power", description: "Connect the device to an available television input and its supplied power adapter." },
-      { title: "Reliable connection", description: "Use a stable Wi-Fi connection or supported Ethernet adapter." },
-      { title: "Available storage", description: "Keep enough free space for the compatible application and updates." },
-    ],
-    steps: [
-      { title: "Connect Firestick to the television", detail: "Plug the Fire TV device into an available HDMI port." },
-      { title: "Connect the device to power", detail: "Use the supplied power adapter and a wall outlet for reliable operation." },
-      { title: "Connect to the internet", detail: "Follow the on-screen prompts to join the home network." },
-      { title: "Complete initial Fire TV setup", detail: "If the device is new, finish the normal Amazon Fire TV setup process." },
-      { title: "Open the application store", detail: "Navigate to the area used to search for and install applications." },
-      { title: "Find a compatible IPTV application", detail: "Choose an application supported by the device and available in the relevant region." },
-      { title: "Install and open the application", detail: "Download the application and launch it after installation." },
-      { title: "Follow the application instructions", detail: "Use the on-screen setup flow provided by the selected application." },
-      { title: "Enter the supplied setup information", detail: "Input credentials or configuration details exactly as supplied." },
-      { title: "Save and test playback", detail: "Confirm the setup, then play a channel or video to verify operation." },
-    ],
-    faqs: [
-      { question: "Can I use IPTV on Firestick?", answer: "Many Fire TV and Firestick devices can support IPTV through a compatible application. Availability depends on the device, region and application." },
-      sharedFaq.connection,
-      sharedFaq.buffering,
-      sharedFaq.app,
-    ],
-  },
   android: {
     category: "Android TV",
     title: "IPTV on Android TV",
