@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import DeviceGuide from "@/app/components/device-guide";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "IPTV on Android TV | Android TV IPTV Setup Guide | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV on Android TV: Setup Guide",
   description:
-    "Learn how to set up IPTV on Android TV. Follow a practical IPTV setup guide, check internet requirements and troubleshoot common Android TV streaming problems.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/devices/android-tv/",
-  },
-};
+    "Learn how to set up Golden IPTV on Android TV, check internet requirements and troubleshoot common streaming problems.",
+  url: "https://goldeniptv.co.za/devices/android-tv/",
+  image: "/images/home/device-android-tv.webp",
+  imageAlt: "Golden IPTV setup guide for Android TV",
+});
 
 export default function AndroidTvPage() {
   return <DeviceGuide device="android" />;

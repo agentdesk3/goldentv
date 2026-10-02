@@ -34,6 +34,10 @@ type EditorialGuideProps = {
   highlights: readonly GuideCard[];
   faqs: readonly GuideFaq[];
   metrics?: readonly { label: string; value: string }[];
+  breadcrumbParent?: {
+    label: string;
+    href: string;
+  };
 };
 
 const guideImages = [
@@ -50,6 +54,10 @@ export default function EditorialGuide({
   highlights,
   faqs,
   metrics = [],
+  breadcrumbParent = {
+    label: "Setup Hub",
+    href: "/guides/",
+  },
 }: EditorialGuideProps) {
   const imageIndexes = new Set([
     0,
@@ -57,9 +65,52 @@ export default function EditorialGuide({
     Math.max(0, steps.length - 1),
   ]);
   let imageCursor = 0;
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://goldeniptv.co.za/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: breadcrumbParent.label,
+          item: `https://goldeniptv.co.za${breadcrumbParent.href}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: title,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: title,
+      description: summary,
+      step: steps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: step.title,
+        text: step.detail,
+      })),
+    },
+  ];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#10131e] text-[#e0e1f2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="pointer-events-none absolute -left-32 top-0 h-[520px] w-[520px] rounded-full bg-[#8b3dff]/15 blur-[145px]" />
       <div className="pointer-events-none absolute right-[-7rem] top-48 h-[500px] w-[500px] rounded-full bg-[#046ef1]/12 blur-[150px]" />
 
@@ -73,7 +124,9 @@ export default function EditorialGuide({
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/guides/" className="hover:text-white">Setup Hub</Link>
+            <Link href={breadcrumbParent.href} className="hover:text-white">
+              {breadcrumbParent.label}
+            </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" className="text-white">{title}</li>

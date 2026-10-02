@@ -141,9 +141,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-navigation"
             onClick={() => setOpen((value) => !value)}
-            className={`h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[color:var(--border-elevated)] bg-[var(--surface-elevated)] text-text-primary transition-[background-color,border-color] hover:border-[color:var(--border-focus)] hover:bg-[var(--surface-higher)] xl:hidden ${
-              isHome ? "hidden lg:inline-flex" : "inline-flex"
-            }`}
+            className={`h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[color:var(--border-elevated)] bg-[var(--surface-elevated)] text-text-primary transition-[background-color,border-color] hover:border-[color:var(--border-focus)] hover:bg-[var(--surface-higher)] xl:hidden inline-flex`}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

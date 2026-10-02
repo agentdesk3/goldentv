@@ -22,28 +22,20 @@ import PageContainer from "@/app/components/page-container";
 import SectionHeading from "@/app/components/section-heading";
 import SurfaceCard from "@/app/components/surface-card";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { createPageMetadata } from "@/app/seo-metadata";
 
 import { DEVICES } from "./devices-data";
 import Faq from "./faq";
 import { PLANS } from "./plans-data";
 
-export const metadata: Metadata = {
-  title: "IPTV South Africa | Subscription Plans & Free Trial",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV South Africa: Plans, Devices & Trial",
   description:
-    "Explore Golden IPTV subscription plans in South African Rand, supported devices, setup guides and a 24-hour free trial for viewers in South Africa.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/iptv-south-africa/",
-  },
-  openGraph: {
-    title: "IPTV South Africa | Golden IPTV",
-    description:
-      "Compare Golden IPTV plans, supported devices and setup guides for viewers in South Africa.",
-    url: "https://goldeniptv.co.za/iptv-south-africa/",
-    siteName: "Golden IPTV",
-    locale: "en_ZA",
-    type: "website",
-  },
-};
+    "Compare Golden IPTV plans in South African Rand, supported devices, setup guides and the 24-hour free trial for viewers in South Africa.",
+  url: "https://goldeniptv.co.za/iptv-south-africa/",
+  image: "/images/home/stitch-hero-stage.jpg",
+  imageAlt: "Golden IPTV viewing experience in South Africa",
+});
 
 const VALUE_POINTS = [
   {

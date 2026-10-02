@@ -12,16 +12,17 @@ import {
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { createPageMetadata } from "@/app/seo-metadata";
 import SupportRequestForm from "./support-request-form";
 
-export const metadata: Metadata = {
-  title: "Contact Golden IPTV | IPTV Support South Africa",
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact & IPTV Support",
   description:
-    "Contact Golden IPTV for IPTV support, subscription questions, device compatibility and setup guidance in South Africa.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/contact/",
-  },
-};
+    "Contact Golden IPTV for subscription questions, device compatibility, setup guidance and IPTV support in South Africa.",
+  url: "https://goldeniptv.co.za/contact/",
+  image: "/images/stitch/support-01.webp",
+  imageAlt: "Golden IPTV customer support",
+});
 
 const pathways = [
   {

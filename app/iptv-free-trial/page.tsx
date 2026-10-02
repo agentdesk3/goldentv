@@ -10,16 +10,18 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { createPageMetadata } from "@/app/seo-metadata";
+
 import TrialRequestForm from "./trial-request-form";
 
-export const metadata: Metadata = {
-  title: "IPTV Free Trial South Africa | 24-Hour Trial | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "24-Hour IPTV Free Trial South Africa",
   description:
-    "Try Golden IPTV with a 24-hour free trial in South Africa. Check device compatibility, follow the setup instructions and explore the service before choosing a subscription.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/iptv-free-trial/",
-  },
-};
+    "Request a 24-hour Golden IPTV free trial in South Africa, check device compatibility and test the service before choosing a subscription.",
+  url: "https://goldeniptv.co.za/iptv-free-trial/",
+  image: "/images/stitch/trial-01.webp",
+  imageAlt: "Golden IPTV 24-hour free trial",
+});
 
 const trialBadges = [
   { icon: CheckCircle2, label: "No payment required" },

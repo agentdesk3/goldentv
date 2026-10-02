@@ -1,960 +1,456 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import type { LucideIcon } from "lucide-react";
-import {
-  ArrowRight,
-  BookOpen,
-  Cast,
-  CircleHelp,
-  CirclePlay,
-  CreditCard,
-  Headphones,
-  House,
-  Laptop,
-  ListChecks,
-  MailCheck,
-  MessageCircle,
-  MonitorPlay,
-  Play,
-  ShieldCheck,
-  Smartphone,
-  Sparkles,
-  Tv,
-  Zap,
-} from "lucide-react";
-
-import HomeCatalog from "@/app/components/home-catalog";
-import HomePlanPreview from "@/app/components/home-plan-preview";
-import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { PLANS } from "@/app/iptv-south-africa/plans-data";
+import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "IPTV South Africa | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "Golden IPTV | Plans, Trial & Setup Guides",
   description:
-    "Explore IPTV in South Africa with Golden IPTV. Compare subscription plans, request a 24-hour free trial and find setup guides for supported TVs and streaming devices.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/",
-  },
-};
+    "Explore Golden IPTV plans, request a 24-hour free trial and find setup guides for compatible Smart TVs and streaming devices.",
+  url: "https://goldeniptv.co.za/",
+  image: "/images/home/hero-streaming-cinema.webp",
+  imageAlt: "Golden IPTV streaming service",
+  absoluteTitle: true,
+});
 
-type CatalogStat = {
-  value: string;
-  label: string;
-  description: string;
-  badge: string;
-  image: string;
-  icon: LucideIcon;
-  accent: string;
-  badgeClassName: string;
-};
+const devices = [
+  ["Samsung Smart TV", "/devices/samsung-smart-tv/", "Smart TV"],
+  ["LG Smart TV", "/devices/lg-smart-tv/", "Smart TV"],
+  ["Firestick", "/devices/firestick/", "Streaming"],
+  ["Android TV", "/devices/android-tv/", "Streaming"],
+  ["Apple TV", "/devices/apple-tv/", "Streaming"],
+];
 
-const catalogStats: CatalogStat[] = [
+const guides = [
   {
-    value: "30,000+",
-    label: "Live Channels",
-    description: "Global sports, news, entertainment and local programming.",
-    badge: "Live worldwide",
-    image: "/images/home/stitch-catalog-sports.jpg",
-    icon: Tv,
-    accent: "text-[#d4bbff]",
-    badgeClassName:
-      "border-[rgba(212,187,255,0.28)] bg-[rgba(139,61,255,0.18)] text-[#d4bbff]",
+    title: "How to Install IPTV",
+    description:
+      "Follow our practical IPTV installation guide for compatible TVs and streaming devices.",
+    href: "/guides/how-to-install-iptv/",
+    number: "01",
   },
   {
-    value: "160,000+",
-    label: "Movies",
-    description: "A broad on-demand library spanning new and classic cinema.",
-    badge: "On-demand VOD",
-    image: "/images/home/stitch-catalog-cinema.jpg",
-    icon: MonitorPlay,
-    accent: "text-[#afc6ff]",
-    badgeClassName:
-      "border-[rgba(175,198,255,0.28)] bg-[rgba(40,124,255,0.18)] text-[#afc6ff]",
+    title: "Fix IPTV Buffering",
+    description:
+      "Understand common buffering causes and the steps you can take to improve playback.",
+    href: "/guides/iptv-buffering/",
+    number: "02",
   },
   {
-    value: "59,000+",
-    label: "Series",
-    description: "Complete seasons and episodic entertainment in one place.",
-    badge: "Full boxsets",
-    image: "/images/home/stitch-catalog-global.jpg",
-    icon: CirclePlay,
-    accent: "text-[#c1c1ff]",
-    badgeClassName:
-      "border-[rgba(193,193,255,0.28)] bg-[rgba(93,92,255,0.18)] text-[#c1c1ff]",
+    title: "Internet Speed for IPTV",
+    description:
+      "Learn how internet speed, Wi-Fi and device performance can affect streaming.",
+    href: "/guides/internet-speed-for-iptv/",
+    number: "03",
   },
 ];
 
-const trustItems = [
-  { label: "24-Hour Trial", icon: Sparkles, accent: "text-[#d4bbff]" },
-  { label: "Supported Devices", icon: MonitorPlay, accent: "text-[#afc6ff]" },
-  { label: "No Card Required", icon: CreditCard, accent: "text-[#c1c1ff]" },
-] as const;
-
-const deviceCards = [
-  {
-    title: "Smart TVs",
-    description: "Samsung and LG Smart TV setup routes.",
-    detail: "Samsung · LG",
-    icon: Tv,
-    accent: "text-[#d4bbff]",
-    surface: "bg-[rgba(139,61,255,0.16)]",
-    href: "/devices/",
-  },
-  {
-    title: "Streaming Devices",
-    description: "Fire TV, Android TV and Apple TV guidance.",
-    detail: "Fire TV · Apple TV",
-    icon: Cast,
-    accent: "text-[#afc6ff]",
-    surface: "bg-[rgba(40,124,255,0.16)]",
-    href: "/devices/",
-  },
-  {
-    title: "Mobile & Tablets",
-    description: "Continue on phones and tablets with compatible players.",
-    detail: "iOS · Android",
-    icon: Smartphone,
-    accent: "text-[#c1c1ff]",
-    surface: "bg-[rgba(93,92,255,0.16)]",
-    href: "/guides/",
-  },
-  {
-    title: "PC & Web",
-    description: "Use desktop players and browser-based setup guidance.",
-    detail: "Windows · macOS",
-    icon: Laptop,
-    accent: "text-[#d4bbff]",
-    surface: "bg-[rgba(139,61,255,0.16)]",
-    href: "/guides/",
-  },
-] as const;
-
-const onboardingSteps = [
-  {
-    number: "1",
-    title: "Choose a Plan or Request a Trial",
-    description:
-      "Compare the four published subscription periods or begin with the 24-hour trial request.",
-    action: "Compare your options",
-    href: "/pricing/",
-    icon: ListChecks,
-    accent: "text-[#d4bbff]",
-    numberClassName: "bg-[var(--brand-violet)]",
-  },
-  {
-    number: "2",
-    title: "Send Your Access Request",
-    description:
-      "Complete the trial form and send the prepared request to Golden IPTV through WhatsApp.",
-    action: "Open the trial form",
-    href: "/iptv-free-trial/",
-    icon: MailCheck,
-    accent: "text-[#afc6ff]",
-    numberClassName: "bg-[var(--brand-blue)]",
-  },
-  {
-    number: "3",
-    title: "Follow the Setup Guide",
-    description:
-      "Choose the matching device guide and use its documented steps to get connected.",
-    action: "View setup guides",
-    href: "/guides/",
-    icon: Play,
-    accent: "text-[#c1c1ff]",
-    numberClassName: "bg-[var(--brand-indigo)]",
-  },
-] as const;
-
-const faqs = [
-  {
-    question: "How does the 24-hour free trial work?",
-    answer:
-      "Complete the trial request form, then send the prepared WhatsApp message to Golden IPTV. The trial is separate from the paid subscription plans.",
-  },
-  {
-    question: "Which devices are supported?",
-    answer:
-      "Golden IPTV publishes setup guidance for Samsung and LG Smart TVs, Fire TV, Android TV and Apple TV devices.",
-  },
-  {
-    question: "How quickly can I get started?",
-    answer:
-      "Choose a plan or request the trial, send your details through the available route, then follow the setup guide for your device.",
-  },
-  {
-    question: "Can I get help with setup?",
-    answer:
-      "Yes. Use the documented device guides first, then contact Golden IPTV through the support page or WhatsApp if you need more help.",
-  },
-] as const;
-
-const mobileNavigation = [
-  { label: "Home", href: "/", icon: House },
-  { label: "Plans", href: "/pricing/", icon: ListChecks },
-  { label: "Devices", href: "/devices/", icon: Tv },
-  { label: "Setup", href: "/guides/", icon: BookOpen },
-  { label: "Support", href: "/contact/", icon: CircleHelp },
-] as const;
-
-const subscriptionBenefits = [
-  { label: "No Buffering", icon: Zap, accent: "text-[#d4bbff]" },
-  { label: "Instant Activation", icon: Sparkles, accent: "text-[#afc6ff]" },
-  { label: "24/7 Support", icon: Headphones, accent: "text-[#c1c1ff]" },
-] as const;
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Golden IPTV",
+  url: "https://goldeniptv.co.za/",
+  description:
+    "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
+  inLanguage: "en-ZA",
+};
 
 export default function Home() {
   return (
-    <main className="home-page min-h-screen overflow-hidden bg-[var(--background-primary)] text-text-primary">
-      <div className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="ambient-drift pointer-events-none absolute -right-48 -top-44 h-[560px] w-[560px] rounded-full bg-[rgba(40,124,255,0.12)] blur-[140px]"
-        />
-        <div
-          aria-hidden="true"
-          className="ambient-drift pointer-events-none absolute -left-44 top-60 h-[520px] w-[520px] rounded-full bg-[rgba(139,61,255,0.16)] blur-[150px]"
-        />
+    <main className="min-h-screen bg-[#080808] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(218,170,45,0.15),transparent_38%)]" />
+        <div className="absolute -left-40 top-40 h-80 w-80 rounded-full bg-[#c99a25]/10 blur-3xl" />
+        <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#c99a25]/10 blur-3xl" />
 
-        <MobileHero />
-        <DesktopHero />
-      </div>
+        <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-24 sm:px-8 sm:pb-32 sm:pt-32">
+          <div className="max-w-4xl">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d9ad3d]/25 bg-[#d9ad3d]/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#e7c65f]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#e7c65f] shadow-[0_0_10px_#e7c65f]" />
+              Golden IPTV
+            </div>
 
-      <CatalogShowcase />
-      <HomeCatalog />
-      <DeviceShowcase />
-      <Onboarding />
-      <PricingShowcase />
-      <FaqPreview />
-      <FinalCta />
+            <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
+              Golden IPTV.
+              <br />
+              <span className="bg-gradient-to-r from-[#fff1a8] via-[#e5b83d] to-[#a8780d] bg-clip-text text-transparent">
+                Your entertainment.
+              </span>
+            </h1>
 
-      <nav
-        className="home-mobile-nav fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[rgba(5,7,17,0.92)] px-1 pb-[max(env(safe-area-inset-bottom),0.25rem)] backdrop-blur-xl lg:hidden"
-        aria-label="Home quick navigation"
-      >
-        <div className="mx-auto flex h-16 max-w-md items-center justify-around">
-          {mobileNavigation.map((item) => {
-            const Icon = item.icon;
-            const active = item.href === "/";
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl">
+              Explore Golden IPTV subscription plans, start a 24-hour free
+              trial and discover simple setup guides for Smart TVs and
+              streaming devices in South Africa.
+            </p>
 
-            return (
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={[
-                  "flex min-h-11 min-w-14 flex-col items-center justify-center gap-0.5 text-[10px] font-semibold transition-colors",
-                  active
-                    ? "text-[#d4bbff]"
-                    : "text-text-secondary hover:text-white",
-                ].join(" ")}
+                href="/iptv-free-trial/"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-to-r from-[#f7d774] via-[#dfb43f] to-[#b47e12] px-8 text-base font-bold text-black shadow-[0_12px_40px_rgba(211,166,48,0.18)] transition hover:-translate-y-1"
               >
-                <Icon className="h-5 w-5" aria-hidden="true" />
-                {item.label}
+                Start 24-Hour Free Trial
+                <span className="ml-2">→</span>
               </Link>
-            );
-          })}
-        </div>
-      </nav>
-    </main>
-  );
-}
 
-function MobileHero() {
-  return (
-    <section className="relative z-10 px-5 pb-7 pt-5 text-center lg:hidden">
-      <div className="hero-copy mx-auto flex max-w-md flex-col items-center">
-        <Eyebrow>Premium IPTV Entertainment</Eyebrow>
-        <h1 className="mt-4 max-w-sm font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] text-text-primary">
-          Unlimited Entertainment.
-          <span className="block bg-[linear-gradient(90deg,#d4bbff,#c1c1ff,#afc6ff)] bg-clip-text text-transparent">
-            All in One Place.
-          </span>
-        </h1>
-        <p className="mt-3 max-w-xs text-[15px] leading-6 text-text-secondary">
-          Explore subscription plans, request a 24-hour free trial and follow
-          setup guides for your preferred screen.
-        </p>
+              <Link
+                href="/pricing/"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 text-base font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/[0.08]"
+              >
+                View IPTV Plans
+              </Link>
 
-        <div className="mt-5 grid w-full max-w-xs gap-2">
-          <Link
-            href="/iptv-free-trial/"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--gradient-cta)] px-6 text-sm font-bold text-white shadow-[0_0_24px_rgba(139,61,255,0.45)] transition-transform active:scale-[0.98] motion-reduce:transform-none"
-          >
-            <Play className="h-4 w-4 fill-current" aria-hidden="true" />
-            Start Free Trial
-          </Link>
-          <Link
-            href="/pricing/"
-            className="inline-flex min-h-12 items-center justify-center gap-1 rounded-full border border-white/10 bg-[rgba(18,24,42,0.88)] px-6 text-sm font-semibold text-text-primary"
-          >
-            Explore Plans
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
+              <Link
+                href={WHATSAPP_URL}
+target="_blank"
+rel="noopener noreferrer"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-[#d9ad3d]/30 bg-[#d9ad3d]/5 px-8 text-base font-semibold text-[#f0ce67] transition hover:border-[#d9ad3d]/60 hover:bg-[#d9ad3d]/10"
+              >
+                Chat on WhatsApp
+              </Link>
+            </div>
 
-        <div className="hero-media-composition relative mt-6 w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface-base)] p-2 shadow-[0_18px_48px_rgba(0,0,0,0.72),0_0_28px_rgba(139,61,255,0.2)]">
-          <div className="relative aspect-video overflow-hidden rounded-xl">
-            <Image
-              fill
-              priority
-              src="/images/home/hero-streaming-cinema.webp"
-              alt="Golden IPTV streaming interface displayed on a television"
-              sizes="(max-width: 1023px) 92vw, 0px"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,7,17,0.54)] to-transparent" />
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-zinc-500">
+              <span>✓ 24-hour free trial</span>
+              <span>✓ Multiple subscription periods</span>
+              <span>✓ Smart TV & streaming device guides</span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="mt-4 grid w-full max-w-sm grid-cols-3 gap-1.5">
-          {trustItems.map((item) => {
-            const Icon = item.icon;
-            return (
+      {/* Intro */}
+      <section className="border-y border-white/10 bg-[#0d0d0d]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:py-24">
+          <div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+              Why Golden IPTV
+            </p>
+
+            <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl">
+              Everything you need to get started with IPTV.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+              Golden IPTV brings subscription information, device setup guides
+              and practical troubleshooting resources together in one place.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              ["01", "Flexible Plans"],
+              ["02", "24-Hour Trial"],
+              ["03", "Device Guides"],
+              ["04", "Troubleshooting"],
+            ].map(([number, title]) => (
               <div
-                key={item.label}
-                className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-xl border border-white/[0.07] bg-[rgba(13,18,32,0.74)] px-1.5"
+                key={number}
+                className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"
               >
-                <Icon className={["h-4 w-4", item.accent].join(" ")} aria-hidden="true" />
-                <span className="text-[10px] font-semibold leading-3.5 text-text-primary">
-                  {item.label}
+                <span className="text-xs font-bold text-[#cda435]">
+                  {number}
                 </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function DesktopHero() {
-  return (
-    <section className="relative z-10 mx-auto hidden w-full max-w-[1440px] px-[var(--page-gutter)] pb-24 pt-9 lg:block">
-      <div className="grid grid-cols-12 items-center gap-8">
-        <div className="hero-copy col-span-5 flex flex-col items-start">
-          <Eyebrow>Premium IPTV Entertainment</Eyebrow>
-          <h1 className="mt-4 font-heading text-[64px] font-extrabold leading-[72px] tracking-[-0.02em] text-text-primary">
-            Unlimited Entertainment.
-            <span className="block bg-[linear-gradient(90deg,#d4bbff,#c1c1ff,#afc6ff)] bg-clip-text text-transparent">
-              All in One Place.
-            </span>
-          </h1>
-          <p className="mt-4 max-w-xl text-lg leading-7 text-text-secondary">
-            Explore Golden IPTV subscription options, start with a 24-hour free
-            trial and use the matching setup guide for your screen.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Link
-              href="/iptv-free-trial/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--gradient-cta)] px-10 text-sm font-bold text-white shadow-[0_0_24px_rgba(139,61,255,0.45),0_0_40px_rgba(40,124,255,0.25)] transition-[transform,box-shadow] hover:scale-[1.03] hover:shadow-[0_0_36px_rgba(139,61,255,0.7)] motion-reduce:transform-none motion-reduce:transition-none"
-            >
-              Start Free Trial
-            </Link>
+                <p className="mt-8 font-semibold text-zinc-200">{title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="relative overflow-hidden bg-[#080808]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,164,45,0.08),transparent_35%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+                Subscription Plans
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
+                Choose your plan
+              </h2>
+
+              <p className="mt-4 max-w-xl text-zinc-400">
+                Flexible subscription periods with a separate 24-hour free
+                trial available.
+              </p>
+            </div>
+
             <Link
               href="/pricing/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 bg-[rgba(18,24,42,0.8)] px-7 text-sm font-semibold text-text-primary backdrop-blur transition-colors hover:bg-[var(--surface-higher)]"
+              className="text-sm font-semibold text-[#e3bd50] hover:text-[#f5d77d]"
             >
-              Explore Plans
+              Compare all plans →
             </Link>
           </div>
 
-          <div className="mt-8 grid w-full grid-cols-2 gap-2 xl:grid-cols-4">
-            {[
-              { label: "Free 24h Trial", icon: Sparkles },
-              { label: "All Devices", icon: MonitorPlay },
-              { label: "No Card Required", icon: ShieldCheck },
-              { label: "Quick Delivery", icon: Zap },
-            ].map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.label}
-                  className="flex min-h-14 items-center gap-2 rounded-xl border border-white/[0.07] bg-[rgba(13,18,32,0.72)] px-3"
-                >
-                  <Icon className="h-4 w-4 shrink-0 text-[#d4bbff]" aria-hidden="true" />
-                  <span className="text-[11px] font-semibold leading-4 text-text-primary">
-                    {item.label}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <HeroMediaStage />
-      </div>
-    </section>
-  );
-}
-
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[rgba(18,24,42,0.8)] px-3 py-1 backdrop-blur-md">
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--brand-violet)] opacity-70 motion-reduce:animate-none" />
-        <span className="relative h-2 w-2 rounded-full bg-[var(--brand-violet)]" />
-      </span>
-      <span className="font-heading text-[11px] font-extrabold uppercase leading-4 tracking-[0.14em] text-[#d4bbff]">
-        {children}
-      </span>
-    </div>
-  );
-}
-
-function CatalogShowcase() {
-  return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(5,7,17,0.96),rgba(13,18,32,0.7),rgba(5,7,17,0.96))] py-8 lg:py-10">
-      <div className="mx-auto w-full max-w-[1440px] px-[var(--page-gutter)]">
-        <div className="max-w-3xl lg:mx-auto lg:text-center">
-          <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#afc6ff]">
-            Massive catalogue
-          </p>
-          <h2 className="mt-1 font-heading text-[24px] font-bold leading-8 tracking-[-0.01em] text-text-primary lg:text-[44px] lg:leading-[52px]">
-            Everything You Want to Watch.
-            <span className="text-[#d4bbff]"> One Subscription.</span>
-          </h2>
-          <p className="mt-2 text-[13px] leading-5 text-text-secondary lg:text-lg lg:leading-7">
-            Live television, movies and series brought together in one
-            entertainment experience.
-          </p>
-        </div>
-
-        <div className="mt-5 grid gap-2 lg:hidden">
-          {catalogStats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <article
-                key={stat.label}
-                className="relative min-h-36 overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface-base)]"
-              >
-                <Image
-                  fill
-                  src={stat.image}
-                  alt=""
-                  sizes="(max-width: 1023px) 92vw, 0px"
-                  className="object-cover opacity-35"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(5,7,17,0.98)] via-[rgba(13,18,32,0.84)] to-transparent" />
-                <div className="relative z-10 flex min-h-36 flex-col justify-center p-4">
-                  <span className="bg-[linear-gradient(90deg,#d4bbff,#c1c1ff,#afc6ff)] bg-clip-text font-heading text-[38px] font-extrabold leading-10 text-transparent">
-                    {stat.value}
-                  </span>
-                  <span className="mt-1 font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-white">
-                    {stat.label}
-                  </span>
-                  <span className="mt-1 max-w-[78%] text-xs leading-4 text-text-secondary">
-                    {stat.description}
-                  </span>
-                  <Icon
-                    className={["absolute right-4 top-4 h-5 w-5", stat.accent].join(" ")}
-                    aria-hidden="true"
-                  />
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-10 hidden grid-cols-3 gap-6 lg:grid">
-          {catalogStats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <article
-                key={stat.label}
-                className="group relative flex min-h-[300px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[rgba(18,24,42,0.74)] p-8 shadow-[var(--shadow-card)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[color:var(--border-focus)] hover:shadow-[0_20px_50px_rgba(139,61,255,0.2)] motion-reduce:transform-none motion-reduce:transition-none"
-              >
-                <Image
-                  fill
-                  src={stat.image}
-                  alt=""
-                  sizes="(min-width: 1024px) 30vw, 0px"
-                  className="object-cover opacity-20 transition-[transform,opacity] duration-500 group-hover:scale-105 group-hover:opacity-30 motion-reduce:transform-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-elevated)] via-[rgba(18,24,42,0.76)] to-transparent" />
-                <div className="relative z-10 flex items-center justify-between">
-                  <span
-                    className={[
-                      "rounded-full border px-3 py-1 text-xs font-semibold",
-                      stat.badgeClassName,
-                    ].join(" ")}
-                  >
-                    {stat.badge}
-                  </span>
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-black/20">
-                    <Icon className={["h-5 w-5", stat.accent].join(" ")} aria-hidden="true" />
-                  </span>
-                </div>
-                <div className="relative z-10">
-                  <p className="bg-[linear-gradient(90deg,#d4bbff,#c1c1ff,#afc6ff)] bg-clip-text font-heading text-6xl font-extrabold tracking-[-0.03em] text-transparent">
-                    {stat.value}
-                  </p>
-                  <h3 className="mt-2 font-heading text-xl font-bold uppercase tracking-[0.05em] text-white">
-                    {stat.label}
-                  </h3>
-                  <p className="mt-1.5 text-[13px] leading-5 text-text-secondary">
-                    {stat.description}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function DeviceShowcase() {
-  return (
-    <section className="mx-auto w-full max-w-[1440px] px-[var(--page-gutter)] py-8 lg:py-10">
-      <div className="max-w-3xl lg:mx-auto lg:text-center">
-        <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#c1c1ff]">
-          Device compatibility
-        </p>
-        <h2 className="mt-1 font-heading text-[24px] font-bold leading-8 text-text-primary lg:text-[44px] lg:leading-[52px]">
-          <span className="lg:hidden">Stream Across All Your Screens</span>
-          <span className="hidden lg:inline">
-            Zero Hardware Lock-In. Run on Any Screen.
-          </span>
-        </h2>
-        <p className="mt-2 text-[13px] leading-5 text-text-secondary lg:text-lg lg:leading-7">
-          Choose the closest device family, then open the matching setup
-          guidance.
-        </p>
-      </div>
-
-      <div className="mt-5 grid grid-cols-2 gap-2 lg:mt-10 lg:grid-cols-4 lg:gap-6">
-        {deviceCards.map((device) => {
-          const Icon = device.icon;
-          return (
-            <Link
-              key={device.title}
-              href={device.href}
-              className="group flex min-h-44 flex-col rounded-2xl border border-white/[0.08] bg-[rgba(13,18,32,0.82)] p-4 shadow-md transition-[transform,background-color,border-color] hover:-translate-y-1 hover:border-[color:var(--border-focus)] hover:bg-[var(--surface-elevated)] motion-reduce:transform-none lg:min-h-60 lg:p-6"
-            >
-              <span
-                className={[
-                  "grid h-10 w-10 place-items-center rounded-xl lg:h-12 lg:w-12",
-                  device.surface,
-                  device.accent,
-                ].join(" ")}
-              >
-                <Icon className="h-5 w-5 lg:h-7 lg:w-7" aria-hidden="true" />
-              </span>
-              <h3 className="mt-3 font-heading text-[17px] font-semibold leading-6 text-text-primary lg:text-xl">
-                {device.title}
-              </h3>
-              <p className="mt-1 text-[11px] leading-4 text-text-secondary lg:text-[13px] lg:leading-5">
-                {device.description}
-              </p>
-              <span className="mt-auto pt-4 font-mono text-[10px] text-text-secondary lg:text-[11px]">
-                {device.detail}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function Onboarding() {
-  return (
-    <section className="bg-[rgba(5,7,17,0.7)] py-8 lg:py-10">
-      <div className="mx-auto w-full max-w-[1440px] px-[var(--page-gutter)]">
-        <div className="max-w-2xl lg:mx-auto lg:text-center">
-          <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#d4bbff]">
-            Getting started
-          </p>
-          <h2 className="mt-1 font-heading text-[24px] font-bold leading-8 text-text-primary lg:text-[44px] lg:leading-[52px]">
-            <span className="lg:hidden">How It Works</span>
-            <span className="hidden lg:inline">Three Steps to Live Streaming</span>
-          </h2>
-          <p className="mt-2 text-[13px] leading-5 text-text-secondary lg:text-[15px] lg:leading-6">
-            Choose your option, send the request and follow the documented
-            setup path.
-          </p>
-        </div>
-
-        <div className="mt-5 grid gap-2 lg:mt-10 lg:grid-cols-3 lg:gap-6">
-          {onboardingSteps.map((step) => {
-            const Icon = step.icon;
-            return (
-              <article
-                key={step.number}
-                className="flex gap-4 rounded-2xl border border-white/[0.08] bg-[var(--surface-base)] p-4 shadow-md lg:min-h-56 lg:flex-col lg:p-6"
-              >
-                <div className="flex shrink-0 items-start lg:items-center lg:justify-between">
-                  <span
-                    className={[
-                      "grid h-8 w-8 place-items-center rounded-full font-heading text-base font-bold text-white shadow-sm lg:h-10 lg:w-10 lg:text-xl",
-                      step.numberClassName,
-                    ].join(" ")}
-                  >
-                    {step.number}
-                  </span>
-                  <Icon className="hidden h-6 w-6 text-text-muted lg:block" aria-hidden="true" />
-                </div>
-                <div className="flex min-w-0 flex-1 flex-col">
-                  <h3 className="font-heading text-[16px] font-semibold leading-5 text-text-primary lg:mt-1 lg:text-xl lg:leading-7">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1 text-[12px] leading-4.5 text-text-secondary lg:text-[15px] lg:leading-6">
-                    {step.description}
-                  </p>
-                  <Link
-                    href={step.href}
-                    className={["mt-auto hidden pt-3 text-xs font-semibold lg:inline-flex", step.accent].join(" ")}
-                  >
-                    {step.action} →
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PricingShowcase() {
-  return (
-    <section className="mx-auto w-full max-w-[1440px] px-[var(--page-gutter)] py-8 lg:py-10">
-      <div className="mb-5 flex flex-col justify-between gap-4 lg:mb-10 lg:flex-row lg:items-end">
-        <div>
-          <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#afc6ff]">
-            Transparent value
-          </p>
-          <h2 className="mt-1 font-heading text-[24px] font-bold leading-8 text-text-primary lg:text-[44px] lg:leading-[52px]">
-            <span className="lg:hidden">Flexible Subscription Passes</span>
-            <span className="hidden lg:inline">Simple, Transparent Plans</span>
-          </h2>
-          <p className="mt-1 max-w-2xl text-[13px] leading-5 text-text-secondary lg:text-[15px] lg:leading-6">
-            Choose from the four published Golden IPTV subscription periods.
-          </p>
-        </div>
-        <Link
-          href="/pricing/"
-          className="hidden items-center gap-2 text-sm font-bold text-[#d4bbff] transition-colors hover:text-white lg:inline-flex"
-        >
-          View All Subscription Options
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
-      </div>
-
-      <div className="lg:hidden">
-        <HomePlanPreview />
-      </div>
-
-      <div className="hidden lg:block">
-        <div className="grid grid-cols-4 gap-6">
-          {PLANS.map((plan) => {
-            const featured = Boolean(plan.popular);
-            return (
-              <article
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {PLANS.map((plan) => (
+              <div
                 key={plan.id}
-                className={[
-                  "relative flex min-h-[300px] flex-col rounded-2xl border p-6 transition-[transform,background-color,box-shadow] hover:-translate-y-1 motion-reduce:transform-none",
-                  featured
-                    ? "border-[rgba(212,187,255,0.45)] bg-[var(--surface-elevated)] shadow-[var(--shadow-elevated)]"
-                    : "border-white/[0.08] bg-[var(--surface-base)] shadow-md hover:bg-[var(--surface-elevated)]",
-                ].join(" ")}
+                className={`relative overflow-hidden rounded-3xl border p-6 transition hover:-translate-y-1 ${
+                  plan.popular
+                    ? "border-[#cda435]/60 bg-gradient-to-b from-[#191509] to-[#0d0d0d] shadow-[0_20px_60px_rgba(193,145,29,0.08)]"
+                    : "border-white/10 bg-white/[0.025]"
+                }`}
               >
-                {featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--gradient-cta)] px-3 py-1 font-heading text-[10px] font-extrabold uppercase tracking-[0.14em] text-white">
-                    Popular Choice
-                  </span>
+                {plan.popular && (
+                  <div className="absolute right-4 top-4 rounded-full bg-[#dcb344]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#e5c35b]">
+                    Popular
+                  </div>
                 )}
-                <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-text-secondary">
-                  Golden IPTV plan
-                </p>
-                <h3 className="mt-2 font-heading text-2xl font-bold text-text-primary">
+
+                <p className="text-sm font-medium text-zinc-500">
                   {plan.duration}
-                </h3>
-                <p
-                  className={[
-                    "my-4 rounded-lg bg-[var(--background-secondary)] px-3 py-2 font-mono text-sm",
-                    featured ? "text-[#d4bbff]" : "text-[#afc6ff]",
-                  ].join(" ")}
-                >
-                  {plan.price} · ZAR
                 </p>
-                <p className="text-[13px] leading-5 text-text-secondary">
-                  {plan.description}
+
+                <div className="mt-6 flex items-baseline gap-1">
+                  <span className="text-lg text-[#dcb344]">
+                    {plan.currencyLabel}
+                  </span>
+
+                  <span className="text-4xl font-black">{plan.price}</span>
+                </div>
+
+                <p className="mt-4 min-h-12 text-sm leading-6 text-zinc-500">
+                  Flexible IPTV subscription for South African users.
                 </p>
+
                 <Link
                   href="/pricing/"
-                  className={[
-                    "mt-auto inline-flex min-h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition-[background-color,box-shadow]",
-                    featured
-                      ? "bg-[var(--gradient-cta)] text-white hover:shadow-[0_0_20px_rgba(139,61,255,0.5)]"
-                      : "bg-[var(--surface-higher)] text-text-primary hover:bg-[#363945]",
-                  ].join(" ")}
+                  className="mt-7 flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm font-semibold transition hover:border-[#cda435]/40 hover:bg-[#cda435]/10"
                 >
-                  View {plan.duration} Plan
+                  View Plan
                 </Link>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-6 flex items-center justify-between gap-6 rounded-2xl border border-white/10 bg-[rgba(13,18,32,0.78)] p-6">
-          <div>
-            <h3 className="font-heading text-xl font-bold text-text-primary">
-              Included with every subscription
-            </h3>
-            <p className="mt-1 text-[13px] leading-5 text-text-secondary">
-              These service benefits apply to each duration option.
-            </p>
+              </div>
+            ))}
           </div>
-          <ul className="grid shrink-0 grid-cols-3 gap-5">
-            {subscriptionBenefits.map((benefit) => {
-              const Icon = benefit.icon;
-              return (
-                <li
-                  key={benefit.label}
-                  className="flex items-center gap-2 text-xs font-semibold text-text-primary"
-                >
-                  <Icon className={["h-4 w-4", benefit.accent].join(" ")} aria-hidden="true" />
-                  {benefit.label}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function FaqPreview() {
-  return (
-    <section className="bg-[rgba(5,7,17,0.78)] py-8 lg:py-10">
-      <div className="mx-auto w-full max-w-[960px] px-[var(--page-gutter)]">
-        <div className="lg:text-center">
-          <p className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#d4bbff]">
-            Help &amp; answers
-          </p>
-          <h2 className="mt-1 font-heading text-[24px] font-bold leading-8 text-text-primary lg:text-[44px] lg:leading-[52px]">
-            Questions Before You Start?
-          </h2>
-          <p className="mt-2 text-[13px] leading-5 text-text-secondary lg:text-[15px] lg:leading-6">
-            Quick answers, with the full FAQ available when you need more.
-          </p>
-        </div>
-
-        <div className="mt-5 grid gap-2 lg:mt-8 lg:gap-3">
-          {faqs.map((item) => (
-            <details
-              key={item.question}
-              className="group rounded-2xl border border-white/[0.08] bg-[var(--surface-base)] px-4 py-1 shadow-sm open:bg-[var(--surface-elevated)] lg:px-5"
-            >
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 font-heading text-[14px] font-semibold text-text-primary lg:min-h-16 lg:text-xl">
-                {item.question}
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[var(--surface-higher)] text-[#d4bbff] transition-transform group-open:rotate-45">
-                  +
+          {/* Trial */}
+          <div className="mt-6 flex flex-col gap-6 rounded-3xl border border-[#cda435]/20 bg-gradient-to-r from-[#151207] to-[#0e0e0e] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="rounded-full bg-[#dcb344] px-3 py-1 text-xs font-black uppercase tracking-wider text-black">
+                  Free Trial
                 </span>
-              </summary>
-              <p className="border-t border-white/[0.08] pb-4 pt-3 text-[13px] leading-5 text-text-secondary lg:text-[15px] lg:leading-6">
-                {item.answer}
+
+                <span className="text-sm text-zinc-500">24 hours</span>
+              </div>
+
+              <h3 className="mt-4 text-2xl font-bold">
+                Try before choosing a paid plan.
+              </h3>
+
+              <p className="mt-2 text-zinc-400">
+                Check compatibility and explore the setup process first.
               </p>
-            </details>
-          ))}
-        </div>
+            </div>
 
-        <div className="mt-5 text-center">
-          <Link
-            href="/faq/"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#d4bbff] hover:text-white"
-          >
-            View All FAQs
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FinalCta() {
-  return (
-    <section className="mx-auto w-full max-w-[1440px] px-[var(--page-gutter)] py-8 lg:py-10">
-      <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(120deg,var(--surface-base),var(--surface-elevated),var(--surface-base))] p-6 text-center shadow-[0_20px_50px_rgba(5,7,17,0.9)] lg:p-12 lg:text-left">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[rgba(139,61,255,0.24)] blur-[96px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-[rgba(40,124,255,0.2)] blur-[96px]"
-        />
-        <div className="relative z-10 flex flex-col items-center justify-between gap-6 lg:flex-row">
-          <div className="max-w-2xl">
-            <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[var(--gradient-cta)] text-white shadow-[0_0_22px_rgba(139,61,255,0.5)] lg:hidden">
-              <Tv className="h-6 w-6" aria-hidden="true" />
-            </span>
-            <h2 className="mt-3 font-heading text-[24px] font-extrabold leading-8 text-text-primary lg:mt-0 lg:text-[44px] lg:leading-[52px]">
-              Ready to Start Watching?
-            </h2>
-            <p className="mt-2 text-[13px] leading-5 text-text-secondary lg:text-lg lg:leading-7">
-              Request your 24-hour free trial or compare the available
-              subscription options.
-            </p>
-          </div>
-
-          <div className="grid w-full gap-2 sm:max-w-xs lg:flex lg:max-w-none lg:w-auto">
             <Link
               href="/iptv-free-trial/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--gradient-cta)] px-8 text-sm font-bold text-white shadow-[0_0_24px_rgba(139,61,255,0.45)]"
+              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-[#e2b943] px-7 font-bold text-black transition hover:bg-[#f0cc5c]"
             >
-              Start Free Trial
+              Get Free Trial →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Devices */}
+      <section className="border-y border-white/10 bg-[#0d0d0d]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+              Compatibility
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
+              Watch on your favourite device.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-zinc-400">
+              Explore setup guides for popular Smart TVs and streaming
+              platforms.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {devices.map(([name, href, type]) => (
+              <Link
+                key={href}
+                href={href}
+                className="group rounded-2xl border border-white/10 bg-[#111] p-6 transition hover:-translate-y-1 hover:border-[#cda435]/40"
+              >
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#b9932e]">
+                  {type}
+                </span>
+
+                <h3 className="mt-8 text-lg font-bold text-white">{name}</h3>
+
+                <span className="mt-5 block text-sm text-zinc-500 transition group-hover:text-[#dcb344]">
+                  Setup guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-[#080808]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <div className="text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+              Simple Setup
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
+              Getting started is simple.
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              [
+                "01",
+                "Choose your option",
+                "Start with the 24-hour trial or explore the available subscription plans.",
+              ],
+              [
+                "02",
+                "Check your device",
+                "Choose the setup guide that matches your Smart TV or streaming device.",
+              ],
+              [
+                "03",
+                "Set up IPTV",
+                "Follow the step-by-step instructions and troubleshoot common issues if needed.",
+              ],
+            ].map(([number, title, description]) => (
+              <div
+                key={number}
+                className="relative rounded-3xl border border-white/10 bg-white/[0.025] p-8"
+              >
+                <span className="text-5xl font-black text-[#d0a633]/20">
+                  {number}
+                </span>
+
+                <h3 className="mt-6 text-xl font-bold">{title}</h3>
+
+                <p className="mt-3 leading-7 text-zinc-500">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guides */}
+      <section className="border-y border-white/10 bg-[#0d0d0d]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+                IPTV Guides
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
+                Need help? Start here.
+              </h2>
+            </div>
+
+            <Link
+              href="/guides/"
+              className="text-sm font-semibold text-[#e3bd50]"
+            >
+              Browse guides →
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {guides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="group rounded-3xl border border-white/10 bg-[#111] p-7 transition hover:-translate-y-1 hover:border-[#cda435]/40"
+              >
+                <span className="text-sm font-bold text-[#cda435]">
+                  {guide.number}
+                </span>
+
+                <h3 className="mt-10 text-2xl font-bold">{guide.title}</h3>
+
+                <p className="mt-4 leading-7 text-zinc-500">
+                  {guide.description}
+                </p>
+
+                <span className="mt-7 block text-sm font-semibold text-zinc-300 group-hover:text-[#e3bd50]">
+                  Read guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-[#080808]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(218,170,45,0.14),transparent_42%)]" />
+
+        <div className="relative mx-auto max-w-5xl px-5 py-24 text-center sm:px-8 sm:py-32">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
+            Get Started
+          </p>
+
+          <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
+            Ready to explore IPTV?
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
+            Start with the 24-hour free trial or compare the available Golden
+            IPTV subscription plans.
+          </p>
+
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/iptv-free-trial/"
+              className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-to-r from-[#f7d774] to-[#b98212] px-8 font-bold text-black transition hover:-translate-y-1"
+            >
+              Start Free Trial →
+            </Link>
+
             <Link
               href="/pricing/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 bg-[rgba(5,7,17,0.72)] px-7 text-sm font-semibold text-white"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-white/15 px-8 font-semibold transition hover:bg-white/5"
             >
-              View Plans
+              Compare Plans
             </Link>
-            <a
+
+            <Link
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#25d366]/30 bg-[#25d366]/10 px-6 text-sm font-semibold text-[#57e389]"
+target="_blank"
+rel="noopener noreferrer"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-[#d9ad3d]/30 bg-[#d9ad3d]/5 px-8 font-semibold text-[#f0ce67] transition hover:border-[#d9ad3d]/60 hover:bg-[#d9ad3d]/10"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Chat on WhatsApp
-            </a>
+            </Link>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function HeroMediaStage() {
-  return (
-    <div
-      aria-hidden="true"
-      className="hero-media-composition relative col-span-7 flex items-center justify-center"
-    >
-      <div className="pointer-events-none absolute inset-0 rounded-[48px] bg-gradient-to-tr from-[rgba(139,61,255,0.2)] to-[rgba(40,124,255,0.2)] blur-[90px]" />
-      <div className="relative flex w-full max-w-[700px] flex-col items-center">
-        <div className="flex aspect-[16/9.5] w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[rgba(5,7,17,0.92)] shadow-[0_24px_64px_rgba(5,7,17,0.95),0_0_40px_rgba(139,61,255,0.25)]">
-          <div className="flex h-10 shrink-0 items-center justify-between bg-[rgba(8,11,22,0.84)] px-4 text-[11px] font-semibold text-text-secondary backdrop-blur-md">
-            <div className="flex items-center gap-2">
-              <Tv className="h-4 w-4 text-[#d4bbff]" />
-              <span className="font-bold text-text-primary">Golden IPTV</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-[#d4bbff]">Home</span>
-              <span>Plans</span>
-              <span>Devices</span>
-              <span>Setup</span>
-            </div>
-            <span className="h-2 w-2 rounded-full bg-[var(--brand-blue)] shadow-[0_0_8px_rgba(40,124,255,1)]" />
-          </div>
-
-          <div className="grid flex-1 grid-cols-12 gap-3 bg-gradient-to-b from-[rgba(8,11,22,0.5)] to-[var(--background-primary)] p-4">
-            <div className="col-span-3 flex flex-col gap-2 rounded-xl bg-[rgba(18,24,42,0.46)] p-3">
-              {[
-                { label: "Home", icon: House, active: true },
-                { label: "Plans", icon: ListChecks },
-                { label: "Devices", icon: Tv },
-                { label: "Setup", icon: BookOpen },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.label}
-                    className={[
-                      "flex items-center gap-2 rounded-lg px-2.5 py-2 text-[11px] font-semibold",
-                      item.active
-                        ? "bg-[rgba(139,61,255,0.3)] text-white"
-                        : "text-text-secondary",
-                    ].join(" ")}
-                  >
-                    <Icon className="h-4 w-4" />
-                    {item.label}
-                  </div>
-                );
-              })}
-              <div className="mt-auto rounded-lg bg-[rgba(13,18,32,0.68)] px-2 py-1.5 text-[10px] text-[#afc6ff]">
-                Guides available
-              </div>
-            </div>
-
-            <div className="col-span-9 flex flex-col gap-3">
-              <div className="relative flex-1 overflow-hidden rounded-xl">
-                <Image
-                  fill
-                  priority
-                  src="/images/home/stitch-hero-stage.jpg"
-                  alt=""
-                  sizes="58vw"
-                  className="object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--background-primary)] via-[rgba(5,7,17,0.25)] to-transparent" />
-                <div className="absolute inset-x-4 bottom-4">
-                  <span className="rounded-full bg-[rgba(139,61,255,0.82)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                    Cinematic preview
-                  </span>
-                  <p className="mt-2 font-heading text-xl font-bold text-white">
-                    Entertainment on Your Screen
-                  </p>
-                  <p className="text-[12px] text-text-secondary">
-                    Compare plans, choose a device and follow its setup guide.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { label: "Plan options", value: "4 periods", icon: ListChecks },
-                  { label: "Device guides", value: "5 routes", icon: MonitorPlay },
-                  { label: "Free trial", value: "24 hours", icon: CirclePlay },
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex h-16 items-center gap-2 rounded-lg bg-[rgba(18,24,42,0.68)] p-2"
-                    >
-                      <span className="grid h-9 w-9 place-items-center rounded-lg bg-[rgba(139,61,255,0.16)] text-[#d4bbff]">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <span>
-                        <span className="block text-[10px] font-semibold text-text-primary">
-                          {item.label}
-                        </span>
-                        <span className="block font-mono text-[10px] text-[#afc6ff]">
-                          {item.value}
-                        </span>
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="h-3 w-28 rounded-t-sm bg-[var(--surface-higher)]" />
-        <div className="h-1.5 w-48 rounded-full bg-[#363945]" />
-        <div className="mt-4 flex items-center gap-6">
-          <div className="flex h-8 w-44 items-center justify-between rounded-md bg-[rgba(18,24,42,0.92)] px-3 shadow-[0_8px_24px_rgba(0,0,0,0.9)]">
-            <span className="font-mono text-[10px] tracking-widest text-text-secondary">
-              GOLDEN IPTV
-            </span>
-            <span className="h-2 w-2 rounded-full bg-[var(--brand-blue)] shadow-[0_0_8px_rgba(40,124,255,1)]" />
-          </div>
-          <div className="flex h-6 w-24 items-center justify-between rounded-full bg-[rgba(30,38,61,0.82)] px-2">
-            <span className="h-2 w-2 rounded-full bg-text-muted" />
-            <span className="h-1 w-6 rounded-full bg-[rgba(212,187,255,0.6)]" />
-            <span className="h-2 w-2 rounded-full bg-text-muted" />
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
   );
 }

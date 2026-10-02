@@ -19,7 +19,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://goldeniptv.co.za"),
   title: {
-    default: "Golden IPTV | IPTV South Africa",
+    default: "Golden IPTV | Plans, Trial & Setup Guides",
     template: "%s | Golden IPTV",
   },
   description:
@@ -32,13 +32,31 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Golden IPTV | IPTV South Africa",
+    title: "Golden IPTV | Plans, Trial & Setup Guides",
     description:
       "Explore IPTV subscription plans, device setup guides and a 24-hour free trial with Golden IPTV.",
     url: "https://goldeniptv.co.za/",
     siteName: "Golden IPTV",
     locale: "en_ZA",
     type: "website",
+    images: [
+      {
+        url: "/images/home/hero-streaming-cinema.webp",
+        alt: "Golden IPTV streaming service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Golden IPTV | Plans, Trial & Setup Guides",
+    description:
+      "Explore IPTV subscription plans, device setup guides and a 24-hour free trial with Golden IPTV.",
+    images: [
+      {
+        url: "/images/home/hero-streaming-cinema.webp",
+        alt: "Golden IPTV streaming service",
+      },
+    ],
   },
 };
 

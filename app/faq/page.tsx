@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { createPageMetadata } from "@/app/seo-metadata";
+
 import FaqExplorer from "./faq-explorer";
 
-export const metadata: Metadata = {
-  title: "IPTV FAQ South Africa | Frequently Asked Questions | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV FAQs: Setup, Plans & Devices",
   description:
-    "Find answers to common IPTV questions about subscriptions, free trials, compatible devices, internet speed, setup and troubleshooting in South Africa.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/faq/",
-  },
-};
+    "Find answers about Golden IPTV subscriptions, free trials, compatible devices, internet speed, setup and troubleshooting in South Africa.",
+  url: "https://goldeniptv.co.za/faq/",
+  image: "/images/home/hero-streaming-cinema.webp",
+  imageAlt: "Golden IPTV frequently asked questions",
+});
 
 const faqs = [
   {

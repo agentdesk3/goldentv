@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import EditorialGuide from "@/app/components/editorial-guide";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "Internet Speed for IPTV | How Much Speed Do You Need? | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "Internet Speed for IPTV",
   description:
-    "Find out how much internet speed you need for IPTV. Learn about recommended speeds, Wi-Fi performance, streaming quality, device usage and common connection issues.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/guides/internet-speed-for-iptv/",
-  },
-};
+    "Learn about internet speed for IPTV, recommended speeds by quality, Wi-Fi performance, device usage and common connection issues.",
+  url: "https://goldeniptv.co.za/guides/internet-speed-for-iptv/",
+  image: "/images/home/guide-internet-speed.webp",
+  imageAlt: "Internet speed guidance for IPTV streaming",
+});
 
 const speedRequirements = [
   { label: "Standard Definition (SD)", value: "Around 5 Mbps or more" },

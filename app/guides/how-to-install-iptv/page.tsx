@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import EditorialGuide from "@/app/components/editorial-guide";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "How to Install IPTV | IPTV Setup Guide | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "How to Install IPTV: Setup Guide",
   description:
-    "Learn how to install and set up IPTV on compatible devices. Follow the Golden IPTV setup guide for Smart TVs, Firestick, Android TV and more.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/guides/how-to-install-iptv/",
-  },
-};
+    "Learn how to install and set up IPTV on compatible Smart TVs, Firestick, Android TV, Apple TV and other streaming devices.",
+  url: "https://goldeniptv.co.za/guides/how-to-install-iptv/",
+  image: "/images/home/guide-installation.webp",
+  imageAlt: "Golden IPTV installation guide",
+});
 
 const requirements = [
   {

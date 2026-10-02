@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import EditorialGuide from "@/app/components/editorial-guide";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "IPTV Buffering Problems | How to Fix IPTV Buffering | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "How to Fix IPTV Buffering",
   description:
-    "IPTV buffering can have several causes. Learn how to troubleshoot buffering, check your connection, improve Wi-Fi performance and identify common IPTV issues.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/guides/iptv-buffering/",
-  },
-};
+    "Troubleshoot IPTV buffering, check your connection, improve Wi-Fi performance and identify common device or network issues.",
+  url: "https://goldeniptv.co.za/guides/iptv-buffering/",
+  image: "/images/home/guide-buffering.webp",
+  imageAlt: "IPTV buffering troubleshooting guide",
+});
 
 const causes = [
   {

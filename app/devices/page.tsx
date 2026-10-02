@@ -10,16 +10,17 @@ import {
 } from "lucide-react";
 
 import { DEVICES } from "@/app/iptv-south-africa/devices-data";
+import { createPageMetadata } from "@/app/seo-metadata";
 import DevicesGrid from "./devices-grid";
 
-export const metadata: Metadata = {
-  title: "IPTV Devices South Africa | Supported Devices | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV Devices & Setup Guides",
   description:
-    "Learn which devices are supported for IPTV with Golden IPTV. Explore setup guides for Samsung Smart TV, LG Smart TV, Firestick, Android TV and Apple TV.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/devices/",
-  },
-};
+    "Explore Golden IPTV setup guides for compatible Samsung and LG Smart TVs, Firestick, Android TV and Apple TV devices.",
+  url: "https://goldeniptv.co.za/devices/",
+  image: "/images/stitch/devices-01.webp",
+  imageAlt: "Devices supported by Golden IPTV setup guides",
+});
 
 const platformNotes = [
   {

@@ -11,16 +11,17 @@ import {
 } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { createPageMetadata } from "@/app/seo-metadata";
 import SetupHubGrid from "./setup-hub-grid";
 
-export const metadata: Metadata = {
-  title: "IPTV Guides South Africa | Setup & Troubleshooting | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV Setup & Troubleshooting Guides",
   description:
-    "Explore Golden IPTV guides for IPTV installation, buffering problems and internet speed. Get practical setup and troubleshooting help for compatible devices.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/guides/",
-  },
-};
+    "Explore Golden IPTV guides for installation, buffering problems, internet speed and setup help for compatible streaming devices.",
+  url: "https://goldeniptv.co.za/guides/",
+  image: "/images/stitch/setup-hub-01.webp",
+  imageAlt: "Golden IPTV setup and troubleshooting guides",
+});
 
 const setupFaqs = [
   {

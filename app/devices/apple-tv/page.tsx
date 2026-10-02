@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import DeviceGuide from "@/app/components/device-guide";
+import { createPageMetadata } from "@/app/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "IPTV on Apple TV | Apple TV IPTV Setup Guide | Golden IPTV",
+export const metadata: Metadata = createPageMetadata({
+  title: "IPTV on Apple TV: Setup Guide",
   description:
-    "Learn how to set up IPTV on Apple TV. Follow a practical setup guide, check internet requirements and troubleshoot common IPTV streaming problems.",
-  alternates: {
-    canonical: "https://goldeniptv.co.za/devices/apple-tv/",
-  },
-};
+    "Learn how to set up Golden IPTV on Apple TV, check internet requirements and troubleshoot common IPTV streaming problems.",
+  url: "https://goldeniptv.co.za/devices/apple-tv/",
+  image: "/images/home/device-apple-tv.webp",
+  imageAlt: "Golden IPTV setup guide for Apple TV",
+});
 
 export default function AppleTvPage() {
   return <DeviceGuide device="apple" />;
