@@ -23,24 +23,87 @@ const configs = {
     category: "Samsung Smart TV",
     title: "IPTV on Samsung Smart TV",
     summary:
-      "Set up Golden IPTV on a compatible Samsung Smart TV using an application available for the television model and operating system.",
+      "Set up Golden IPTV on a compatible Samsung Smart TV using an IPTV application available for your specific television model and region.",
     highlights: [
-      { title: "Compatible Samsung Smart TV", description: "Application availability depends on the model and operating system, such as Tizen." },
-      { title: "Active internet connection", description: "Connect the television through reliable Wi-Fi or Ethernet where available." },
-      { title: "Subscription or trial", description: "Use the setup information supplied with an active Golden IPTV subscription or trial." },
-      { title: "Compatible application", description: "Install an application supported by the specific Samsung television." },
+      {
+        title: "Choose an available Samsung app",
+        description:
+          "Depending on your TV and app-store availability, options may include IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters or SamiPlayer.",
+      },
+      {
+        title: "Use the setup method supported by the app",
+        description:
+          "Golden IPTV can provide the appropriate Xtream Codes details, M3U URL or MAC/Device Key setup information depending on the application.",
+      },
+      {
+        title: "Keep your setup details ready",
+        description:
+          "Have the Golden IPTV trial or subscription information available before starting configuration.",
+      },
+      {
+        title: "Ask for setup help when needed",
+        description:
+          "Golden IPTV support can help you choose a suitable available application and guide you through its setup.",
+      },
     ],
     steps: [
-      { title: "Connect the television to the internet", detail: "Open the Samsung network settings and connect through Wi-Fi or Ethernet." },
-      { title: "Open the application store", detail: "Use the television's application or store interface." },
-      { title: "Install a compatible IPTV application", detail: "Choose an application that is available for the specific Samsung TV model." },
-      { title: "Open the application", detail: "Launch it from the television's application list." },
-      { title: "Enter the supplied setup information", detail: "Type the credentials or configuration details exactly as supplied." },
-      { title: "Complete the on-screen setup", detail: "Follow the application's instructions and save the configuration." },
-      { title: "Test playback", detail: "Play a channel or video to confirm the setup and connection are working." },
+      {
+        title: "Connect the Samsung TV to the internet",
+        detail:
+          "Open the television network settings and connect through reliable Wi-Fi or Ethernet where available.",
+      },
+      {
+        title: "Open the Samsung application store",
+        detail:
+          "Use the Apps section on the television and search for a compatible IPTV player.",
+      },
+      {
+        title: "Choose an available IPTV application",
+        detail:
+          "Look for IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters or SamiPlayer. Availability can vary by Samsung model and region.",
+      },
+      {
+        title: "Use another compatible app if necessary",
+        detail:
+          "If your preferred player is not offered on your television, choose another compatible IPTV application available in the Samsung app store.",
+      },
+      {
+        title: "Open the selected application",
+        detail:
+          "Launch the installed player and identify which setup method it supports.",
+      },
+      {
+        title: "Add the Golden IPTV configuration",
+        detail:
+          "Enter the supplied Xtream Codes details, M3U URL, or use the application's MAC/Device Key portal method, depending on the selected player.",
+      },
+      {
+        title: "Save and load the playlist",
+        detail:
+          "Follow the application's prompts to save the configuration and allow the available content to load.",
+      },
+      {
+        title: "Test playback",
+        detail:
+          "Open a channel or on-demand item to confirm that the application, configuration and internet connection are working.",
+      },
     ],
     faqs: [
-      { question: "Can I use IPTV on Samsung Smart TV?", answer: "Many Samsung Smart TV models can support IPTV through a compatible application, depending on the model and operating system." },
+      {
+        question: "Which IPTV apps can I use on Samsung Smart TV?",
+        answer:
+          "Depending on the Samsung model, region and current app-store availability, options may include IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters or SamiPlayer.",
+      },
+      {
+        question: "What if my preferred IPTV app is not available?",
+        answer:
+          "App availability can differ between Samsung televisions and regions. Golden IPTV support can help you choose another compatible application available on your TV.",
+      },
+      {
+        question: "Which setup details will I receive?",
+        answer:
+          "The setup method depends on the application. Golden IPTV can provide Xtream Codes details, an M3U URL, or the information needed for a MAC/Device Key portal setup where applicable.",
+      },
       sharedFaq.connection,
       sharedFaq.buffering,
       sharedFaq.app,
@@ -50,26 +113,92 @@ const configs = {
     category: "LG Smart TV",
     title: "IPTV on LG Smart TV",
     summary:
-      "Set up Golden IPTV on a compatible LG Smart TV using an application available for that webOS model.",
+      "Set up Golden IPTV on a compatible LG Smart TV using an IPTV application available for your specific webOS model and region.",
     highlights: [
-      { title: "Compatible LG Smart TV", description: "Many recent LG televisions running webOS can support compatible IPTV applications." },
-      { title: "Reliable connection", description: "Use stable Wi-Fi or wired Ethernet where available." },
-      { title: "Compatible application", description: "Choose an application offered for the specific television and region." },
-      { title: "Subscription or trial", description: "Keep the supplied Golden IPTV setup information available." },
+      {
+        title: "Choose an available LG app",
+        description:
+          "Depending on your television and app-store availability, options may include IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters, SS IPTV or Smart IPTV.",
+      },
+      {
+        title: "Use the setup method supported by the app",
+        description:
+          "Golden IPTV can provide the appropriate Xtream Codes details, M3U URL or MAC/Device Key setup information depending on the application.",
+      },
+      {
+        title: "Use a reliable connection",
+        description:
+          "Connect the television through stable Wi-Fi or wired Ethernet where available.",
+      },
+      {
+        title: "Get help with app selection and setup",
+        description:
+          "Golden IPTV support can help you choose a suitable available application and guide you through its configuration.",
+      },
     ],
     steps: [
-      { title: "Connect the LG TV to the internet", detail: "Use Wi-Fi or a wired Ethernet connection to join the home network." },
-      { title: "Open the LG application store", detail: "Navigate to the LG Content Store or application section." },
-      { title: "Find a compatible IPTV application", detail: "Search for an application that works with the television and service." },
-      { title: "Install the application", detail: "Download the selected application to the LG Smart TV." },
-      { title: "Open the application", detail: "Launch it and follow the on-screen setup instructions." },
-      { title: "Enter the supplied setup information", detail: "Input the credentials or configuration details exactly as supplied." },
-      { title: "Save the configuration", detail: "Confirm the values and save them within the application." },
-      { title: "Test playback", detail: "Play a channel or video to confirm the setup works." },
-      { title: "Troubleshoot if necessary", detail: "Check the connection, application updates and supplied details if playback fails." },
+      {
+        title: "Connect the LG TV to the internet",
+        detail:
+          "Open the television network settings and connect through reliable Wi-Fi or wired Ethernet where available.",
+      },
+      {
+        title: "Open the LG application store",
+        detail:
+          "Navigate to the LG Content Store or Apps section available on your television.",
+      },
+      {
+        title: "Choose an available IPTV application",
+        detail:
+          "Search for IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters, SS IPTV or Smart IPTV. Availability can vary by LG model, webOS version and region.",
+      },
+      {
+        title: "Use another compatible app if necessary",
+        detail:
+          "If your preferred player is not available on the television, choose another compatible IPTV application offered in its app store.",
+      },
+      {
+        title: "Install and open the selected application",
+        detail:
+          "Install the player, launch it and identify the setup method supported by that application.",
+      },
+      {
+        title: "Add the Golden IPTV configuration",
+        detail:
+          "Enter the supplied Xtream Codes details, M3U URL, or use the application's MAC/Device Key portal method where applicable.",
+      },
+      {
+        title: "Save and load the playlist",
+        detail:
+          "Follow the application's prompts to save the configuration and allow the available content to load.",
+      },
+      {
+        title: "Test playback",
+        detail:
+          "Open a channel or on-demand item to confirm that the application, configuration and internet connection are working.",
+      },
+      {
+        title: "Troubleshoot if necessary",
+        detail:
+          "If playback does not work, verify the internet connection and supplied setup details, restart the application, and contact Golden IPTV support if you need help.",
+      },
     ],
     faqs: [
-      { question: "Can I use IPTV on an LG Smart TV?", answer: "Many LG Smart TVs running webOS can support IPTV through a compatible application, depending on model, region and application availability." },
+      {
+        question: "Which IPTV apps can I use on LG Smart TV?",
+        answer:
+          "Depending on the LG model, webOS version, region and current app-store availability, options may include IBO Player, SmartOne IPTV, Flix IPTV, IPTV Smarters, SS IPTV or Smart IPTV.",
+      },
+      {
+        question: "What if my preferred IPTV app is not available on my LG TV?",
+        answer:
+          "Application availability can vary between LG televisions and regions. Golden IPTV support can help you choose another compatible application available on your TV.",
+      },
+      {
+        question: "Which setup method should I use on LG Smart TV?",
+        answer:
+          "It depends on the selected application. Golden IPTV can provide Xtream Codes details, an M3U URL, or information for a MAC/Device Key portal setup where the application supports it.",
+      },
       sharedFaq.connection,
       sharedFaq.buffering,
       sharedFaq.app,
@@ -79,27 +208,97 @@ const configs = {
     category: "Android TV",
     title: "IPTV on Android TV",
     summary:
-      "Set up Golden IPTV on a compatible television, box or stick running Android TV.",
+      "Set up Golden IPTV on a compatible television, box or stick running Android TV using an IPTV player available for your device.",
     highlights: [
-      { title: "Compatible Android TV device", description: "Use a television with Android TV built in, or a supported Android TV box or stick." },
-      { title: "Reliable connection", description: "Connect through stable Wi-Fi or Ethernet where the device supports it." },
-      { title: "Compatible application", description: "Choose an application available for the device through its supported store." },
-      { title: "Available storage", description: "Keep sufficient free space for applications and system updates." },
+      {
+        title: "Choose an Android TV IPTV app",
+        description:
+          "Depending on your device and store availability, options may include IPTV Smarters, TiviMate, XCIPTV, IBO Player, SmartOne IPTV or Flix IPTV.",
+      },
+      {
+        title: "Use the setup method supported by the app",
+        description:
+          "Golden IPTV can provide Xtream Codes details, an M3U URL or other supported configuration information depending on the selected player.",
+      },
+      {
+        title: "Works across different Android TV devices",
+        description:
+          "The setup can apply to compatible televisions with Android TV built in as well as supported Android TV boxes and sticks.",
+      },
+      {
+        title: "Get help with setup",
+        description:
+          "Golden IPTV support can help you choose a suitable player and guide you through its configuration.",
+      },
     ],
     steps: [
-      { title: "Connect the Android TV device", detail: "Use the television's built-in Android TV system or connect a box through HDMI." },
-      { title: "Connect the device to power", detail: "Power on the television or external Android TV device." },
-      { title: "Connect to the internet", detail: "Use Android TV settings to join Wi-Fi or Ethernet." },
-      { title: "Complete initial setup", detail: "Finish the normal Android TV setup and sign-in prompts if the device is new." },
-      { title: "Open the application store", detail: "Navigate to Google Play or the supported store on the device." },
-      { title: "Find a compatible IPTV application", detail: "Choose an application that works with the device and service." },
-      { title: "Install and open the application", detail: "Download it and launch it after installation." },
-      { title: "Follow the application instructions", detail: "Complete the on-screen configuration process." },
-      { title: "Enter the supplied setup information", detail: "Input credentials or configuration values exactly as supplied." },
-      { title: "Save and test playback", detail: "Confirm the configuration and play a channel or video." },
+      {
+        title: "Prepare the Android TV device",
+        detail:
+          "Use the television's built-in Android TV system or connect your compatible Android TV box or stick to the television.",
+      },
+      {
+        title: "Connect to the internet",
+        detail:
+          "Open the Android TV network settings and connect through reliable Wi-Fi or Ethernet where supported.",
+      },
+      {
+        title: "Complete the device setup",
+        detail:
+          "If the device is new, finish the normal Android TV setup and Google account prompts required to access its applications.",
+      },
+      {
+        title: "Open Google Play",
+        detail:
+          "Open Google Play or the supported application store available on the Android TV device.",
+      },
+      {
+        title: "Choose an IPTV application",
+        detail:
+          "Search for a suitable player such as IPTV Smarters, TiviMate, XCIPTV, IBO Player, SmartOne IPTV or Flix IPTV. Availability can vary by device and region.",
+      },
+      {
+        title: "Install and open the selected player",
+        detail:
+          "Install the available application from the supported store, then launch it and review the setup options it provides.",
+      },
+      {
+        title: "Add the Golden IPTV configuration",
+        detail:
+          "Enter the supplied Xtream Codes details, M3U URL or other configuration information supported by the selected application.",
+      },
+      {
+        title: "Save and load the playlist",
+        detail:
+          "Follow the player's prompts to save the configuration and allow the available content to load.",
+      },
+      {
+        title: "Test playback",
+        detail:
+          "Open a channel or on-demand item to confirm that the application, configuration and internet connection are working.",
+      },
+      {
+        title: "Troubleshoot if necessary",
+        detail:
+          "If playback does not work, verify the network and supplied setup details, restart the application, and contact Golden IPTV support if you need assistance.",
+      },
     ],
     faqs: [
-      { question: "Can I use IPTV on Android TV?", answer: "Many Android TV televisions, boxes and sticks can support IPTV through a compatible application." },
+      {
+        question: "Which IPTV apps can I use on Android TV?",
+        answer:
+          "Depending on the device, region and current store availability, options may include IPTV Smarters, TiviMate, XCIPTV, IBO Player, SmartOne IPTV or Flix IPTV.",
+      },
+      {
+        question: "Does this work with Android TV boxes and sticks?",
+        answer:
+          "The setup can also be used with compatible Android TV boxes and sticks when they support a suitable IPTV application and internet connection.",
+      },
+      {
+        question: "Which setup details will I receive?",
+        answer:
+          "The setup method depends on the selected player. Golden IPTV can provide Xtream Codes details, an M3U URL or other configuration information supported by the application.",
+      },
       sharedFaq.connection,
       sharedFaq.buffering,
       sharedFaq.app,
@@ -109,27 +308,92 @@ const configs = {
     category: "Apple TV",
     title: "IPTV on Apple TV",
     summary:
-      "Set up Golden IPTV on a compatible Apple TV using an application available through the Apple TV App Store.",
+      "Set up Golden IPTV on a compatible Apple TV using an IPTV player available through the Apple TV App Store.",
     highlights: [
-      { title: "Compatible Apple TV", description: "Use an Apple TV model that supports the required application." },
-      { title: "HDMI connection", description: "Connect Apple TV to the television with an appropriate HDMI connection." },
-      { title: "Reliable connection", description: "Use stable Wi-Fi or Ethernet where supported and practical." },
-      { title: "Subscription or trial", description: "Keep the supplied Golden IPTV setup information private and available." },
+      {
+        title: "Choose an Apple TV IPTV app",
+        description:
+          "Depending on your tvOS version, region and App Store availability, options may include IPTVX, Smarters IPTV Player or another compatible Apple TV IPTV player.",
+      },
+      {
+        title: "Use Xtream Codes or M3U",
+        description:
+          "Compatible Apple TV players may support Xtream Codes, M3U playlists or both. Golden IPTV can provide the appropriate setup information for the selected application.",
+      },
+      {
+        title: "Use a reliable connection",
+        description:
+          "Connect Apple TV through stable Wi-Fi or Ethernet where supported by the model.",
+      },
+      {
+        title: "Get help with setup",
+        description:
+          "Golden IPTV support can help you choose a suitable available player and guide you through its configuration.",
+      },
     ],
     steps: [
-      { title: "Connect Apple TV to the television", detail: "Use an HDMI cable and the appropriate television input." },
-      { title: "Connect Apple TV to power", detail: "Connect the device to power and turn it on." },
-      { title: "Complete initial Apple TV setup", detail: "Follow the normal tvOS prompts if the device is new." },
-      { title: "Connect Apple TV to the internet", detail: "Join Wi-Fi or use Ethernet where the model supports it." },
-      { title: "Open the App Store", detail: "Use the Apple TV App Store to browse supported applications." },
-      { title: "Find a compatible IPTV application", detail: "Choose an application available for the device and region." },
-      { title: "Install and open the application", detail: "Download the application and launch it." },
-      { title: "Follow the application instructions", detail: "Complete its on-screen setup process." },
-      { title: "Enter the supplied setup information", detail: "Input credentials or configuration details exactly as supplied." },
-      { title: "Save and test playback", detail: "Confirm the configuration and play a channel or video." },
+      {
+        title: "Connect Apple TV to the television",
+        detail:
+          "Connect Apple TV through HDMI, select the correct television input and power on the device.",
+      },
+      {
+        title: "Complete the Apple TV setup",
+        detail:
+          "If the device is new, follow the normal tvOS setup prompts and connect it to the internet.",
+      },
+      {
+        title: "Open the Apple TV App Store",
+        detail:
+          "Use the App Store on Apple TV to search for a compatible IPTV player.",
+      },
+      {
+        title: "Choose an available IPTV application",
+        detail:
+          "Look for a compatible player such as IPTVX or Smarters IPTV Player. Availability and requirements can vary by tvOS version and region.",
+      },
+      {
+        title: "Install and open the selected player",
+        detail:
+          "Download the application from the App Store, launch it and review the playlist or account setup options it supports.",
+      },
+      {
+        title: "Add the Golden IPTV configuration",
+        detail:
+          "Enter the supplied Xtream Codes details or M3U playlist information using the setup method supported by the selected player.",
+      },
+      {
+        title: "Save and load the playlist",
+        detail:
+          "Follow the application's prompts to save the configuration and allow the available content to load.",
+      },
+      {
+        title: "Test playback",
+        detail:
+          "Open a channel or on-demand item to confirm that the application, configuration and internet connection are working.",
+      },
+      {
+        title: "Troubleshoot if necessary",
+        detail:
+          "If playback does not work, verify the network and supplied setup details, restart the application, and contact Golden IPTV support if you need assistance.",
+      },
     ],
     faqs: [
-      { question: "Can I use IPTV on Apple TV?", answer: "Compatible Apple TV devices can be used for IPTV when a compatible application and service are available." },
+      {
+        question: "Which IPTV apps can I use on Apple TV?",
+        answer:
+          "Depending on your tvOS version, region and current App Store availability, options may include IPTVX, Smarters IPTV Player or another compatible Apple TV IPTV player.",
+      },
+      {
+        question: "Can I use Xtream Codes or an M3U playlist on Apple TV?",
+        answer:
+          "Yes, compatible Apple TV IPTV players are available with Xtream Codes and M3U support. The exact setup method depends on the application you choose.",
+      },
+      {
+        question: "What if an IPTV app is not available on my Apple TV?",
+        answer:
+          "App availability and tvOS requirements can vary. Golden IPTV support can help you choose another compatible player available for your Apple TV.",
+      },
       sharedFaq.connection,
       sharedFaq.buffering,
       sharedFaq.app,
