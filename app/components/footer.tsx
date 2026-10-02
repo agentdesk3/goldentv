@@ -23,6 +23,11 @@ const footerLinks = {
     { label: "Contact", href: "/contact/" },
     { label: "WhatsApp", href: WHATSAPP_URL, external: true },
   ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy/" },
+    { label: "Terms of Service", href: "/terms/" },
+    { label: "Refund & Cancellation", href: "/refund-policy/" },
+  ],
 };
 
 export default function Footer() {

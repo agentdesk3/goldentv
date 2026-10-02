@@ -29,6 +29,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/guides/`,
     },
 
+    // Policy pages
+    {
+      url: `${baseUrl}/privacy/`,
+    },
+    {
+      url: `${baseUrl}/terms/`,
+    },
+    {
+      url: `${baseUrl}/refund-policy/`,
+    },
+
     // Device pages
     {
       url: `${baseUrl}/devices/samsung-smart-tv/`,

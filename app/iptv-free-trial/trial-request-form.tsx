@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, CalendarClock, Mail, MessageCircle, Monitor } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
@@ -168,6 +169,18 @@ export default function TrialRequestForm() {
             className="w-full rounded-2xl border border-white/[0.06] bg-[#0b0e19]/90 px-4 py-3 text-sm text-[#e0e1f2] placeholder:text-[#968da1] shadow-inner transition focus:border-[#8b3dff] focus:ring-2 focus:ring-[#8b3dff]/30"
           />
         </label>
+
+        <p className="mt-4 text-xs leading-5 text-[#cdc2d8]">
+          By continuing, the details you entered will be prepared for sending
+          through WhatsApp so Golden IPTV can handle your trial request. See our{" "}
+          <Link
+            href="/privacy/"
+            className="font-semibold text-[#afc6ff] hover:underline"
+          >
+            Privacy Policy
+          </Link>
+          .
+        </p>
 
         <button
           type="submit"
