@@ -59,9 +59,9 @@ export default function IptvFreeTrialPage() {
             </span>
           </div>
           <h1 className="font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[64px] md:leading-[72px]">
-            Experience Golden IPTV
+            24-Hour IPTV Free Trial
             <span className="block bg-gradient-to-r from-[#d4bbff] to-[#afc6ff] bg-clip-text text-transparent">
-              Request a Test Line
+              in South Africa
             </span>
           </h1>
           <p className="max-w-2xl text-base leading-7 text-[#cdc2d8] md:text-lg">

@@ -88,9 +88,9 @@ export default function PricingClient() {
             </span>
           </div>
           <h1 className="font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[64px] md:leading-[72px]">
-            Choose Your{" "}
+            IPTV Plans & Prices
             <span className="bg-gradient-to-r from-[#d4bbff] via-[#c1c1ff] to-[#afc6ff] bg-clip-text text-transparent">
-              Subscription Pass
+              in South Africa
             </span>
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-7 text-[#cdc2d8] md:text-lg">
