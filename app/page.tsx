@@ -308,6 +308,25 @@ rel="noopener noreferrer"
         </div>
       </section>
 
+      {/* South Africa SEO pathway */}
+      <section className="bg-[#080808]">
+        <div className="mx-auto max-w-7xl px-5 pt-10 sm:px-8 sm:pt-12">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] px-6 py-5 sm:flex sm:items-center sm:justify-between sm:gap-8">
+            <p className="text-sm leading-6 text-zinc-400">
+              Looking for local information? Explore our{" "}
+              <Link
+                href="/iptv-south-africa/"
+                className="font-semibold text-[#e3bd50] hover:text-[#f5d77d]"
+              >
+                IPTV South Africa guide
+              </Link>{" "}
+              for plans in South African Rand, compatible devices, setup guidance
+              and free-trial information.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-[#080808]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
