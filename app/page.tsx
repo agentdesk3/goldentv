@@ -114,9 +114,9 @@ export default function Home() {
                 <b className="text-white">Golden TV</b><span className="hidden gap-4 sm:flex"><b className="text-[#d4bbff]">Live Channels</b><span>Movies</span><span>Series</span></span><span className="text-[#afc6ff]">● Connected</span>
               </div>
               <div className="relative mt-2 aspect-video overflow-hidden rounded-2xl">
-                <Image src="/images/home/stitch-hero-stage.jpg" alt="Golden IPTV cinematic live-streaming interface" fill priority sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
+                <Image src="/images/home/stitch-hero-stage.jpg" alt="Golden IPTV cinematic live-streaming interface" fill priority quality={70} sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050711]/70 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full bg-[#ff3b56] px-3 py-1 text-[10px] font-bold uppercase text-white">● Live broadcast</span>
+                <span className="absolute bottom-4 left-4 rounded-full bg-[#b91c1c] px-3 py-1 text-[10px] font-bold uppercase text-white">● Live broadcast</span>
               </div>
             </div>
             <div className="mx-auto h-3 w-32 rounded-b-lg bg-[#313441]" /><div className="mx-auto h-1.5 w-52 rounded-full bg-[#1e263d]" />

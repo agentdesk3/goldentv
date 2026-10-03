@@ -333,6 +333,10 @@ textarea {
 
 
 @media (max-width: 63.999rem) {
+  .hero-media-composition {
+    animation: media-float 9s 1s ease-in-out infinite;
+  }
+
   body:has(.home-page) footer {
     margin-top: 0;
     padding-bottom: 4.5rem;
