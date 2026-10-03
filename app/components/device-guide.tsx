@@ -414,6 +414,7 @@ export default function DeviceGuide({ device }: { device: DeviceGuideKey }) {
       steps={config.steps}
       highlights={config.highlights}
       faqs={config.faqs}
+      showTrialLink
       breadcrumbParent={{
         label: "Devices",
         href: "/devices/",

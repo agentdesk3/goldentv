@@ -93,7 +93,7 @@ export default function ContactPage() {
               </span>
             </div>
             <h1 className="mt-4 font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[44px] md:leading-[52px]">
-              We are here to help
+              Golden IPTV Support
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[#cdc2d8]">
               Choose the route that best matches your setup, subscription or

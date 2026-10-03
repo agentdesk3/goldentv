@@ -34,6 +34,7 @@ type EditorialGuideProps = {
   highlights: readonly GuideCard[];
   faqs: readonly GuideFaq[];
   metrics?: readonly { label: string; value: string }[];
+  showTrialLink?: boolean;
   breadcrumbParent?: {
     label: string;
     href: string;
@@ -54,6 +55,7 @@ export default function EditorialGuide({
   highlights,
   faqs,
   metrics = [],
+  showTrialLink = false,
   breadcrumbParent = {
     label: "Setup Hub",
     href: "/guides/",
@@ -310,6 +312,15 @@ export default function EditorialGuide({
             >
               Other support options <ArrowRight className="h-4 w-4" />
             </Link>
+            {showTrialLink && (
+              <Link
+                href="/iptv-free-trial/"
+                className="mt-3 inline-flex w-full items-center justify-center gap-2 text-sm font-bold text-[#afc6ff] hover:text-white"
+              >
+                Test this setup with a 24-hour trial
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            )}
           </div>
 
           <div className="rounded-[2rem] bg-[#181b27]/80 p-6">

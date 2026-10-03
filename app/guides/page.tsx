@@ -56,9 +56,9 @@ export default function GuidesPage() {
             </span>
           </div>
           <h1 className="mt-4 font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[44px] md:leading-[52px]">
-            Golden IPTV
+            IPTV Setup &amp;
             <span className="block bg-gradient-to-r from-[#d4bbff] to-[#afc6ff] bg-clip-text text-transparent">
-              Setup Hub
+              Troubleshooting Guides
             </span>
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-[#cdc2d8]">

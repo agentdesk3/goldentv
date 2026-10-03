@@ -281,12 +281,15 @@ export default function PricingClient() {
                 playback clear and practical.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-2xl bg-[#181b27]/80 p-4">
+                <Link
+                  href="/devices/"
+                  className="rounded-2xl bg-[#181b27]/80 p-4"
+                >
                   <strong className="font-heading text-lg">5 device guides</strong>
                   <span className="mt-1 block text-xs text-[#cdc2d8]">
                     Repository-backed setup routes
                   </span>
-                </div>
+                </Link>
                 <div className="rounded-2xl bg-[#181b27]/80 p-4">
                   <strong className="font-heading text-lg">24-hour trial</strong>
                   <span className="mt-1 block text-xs text-[#cdc2d8]">

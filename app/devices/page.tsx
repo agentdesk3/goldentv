@@ -55,7 +55,7 @@ export default function DevicesPage() {
             </span>
           </div>
           <h1 className="mt-4 font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[64px] md:leading-[72px]">
-            Universal{" "}
+            IPTV Device{" "}
             <span className="bg-gradient-to-r from-[#d4bbff] to-[#afc6ff] bg-clip-text text-transparent">
               Compatibility
             </span>

@@ -118,6 +118,7 @@ export default function HowToInstallIptvPage() {
       steps={steps}
       highlights={requirements}
       faqs={faqs}
+      showTrialLink
     />
   );
 }
