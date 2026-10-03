@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { PLANS } from "@/app/iptv-south-africa/plans-data";
+import {
+  ArrowRight, BookOpen, Cast, CheckCircle2, ChevronDown, Clock3,
+  Headphones, MessageCircle, Monitor, Play, Rocket, Smartphone,
+  Sparkles, Tv2, Zap,
+} from "lucide-react";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { PLANS } from "@/app/iptv-south-africa/plans-data";
 import { createPageMetadata } from "@/app/seo-metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -14,36 +20,37 @@ export const metadata: Metadata = createPageMetadata({
   absoluteTitle: true,
 });
 
-const devices = [
-  ["Samsung Smart TV", "/devices/samsung-smart-tv/", "Smart TV"],
-  ["LG Smart TV", "/devices/lg-smart-tv/", "Smart TV"],
-  ["Firestick", "/devices/firestick/", "Streaming"],
-  ["Android TV", "/devices/android-tv/", "Streaming"],
-  ["Apple TV", "/devices/apple-tv/", "Streaming"],
+const catalogue = [
+  ["30,000+", "Live Channels", "Live worldwide", "Live television across sports, entertainment, news and international programming.", "/images/home/stitch-catalog-sports.jpg", "Live sports broadcast", "text-[#d4bbff]"],
+  ["160,000+", "Movies", "On-demand library", "An extensive movie catalogue across genres, languages and viewing styles.", "/images/home/stitch-catalog-cinema.jpg", "Cinematic movie library", "text-[#afc6ff]"],
+  ["59,000+", "Series", "Complete seasons", "Series and complete seasons in a catalogue designed for easy browsing.", "/images/home/stitch-catalog-documentary.jpg", "Series catalogue interface", "text-[#c1c1ff]"],
 ];
 
-const guides = [
-  {
-    title: "How to Install IPTV",
-    description:
-      "Follow our practical IPTV installation guide for compatible TVs and streaming devices.",
-    href: "/guides/how-to-install-iptv/",
-    number: "01",
-  },
-  {
-    title: "Fix IPTV Buffering",
-    description:
-      "Understand common buffering causes and the steps you can take to improve playback.",
-    href: "/guides/iptv-buffering/",
-    number: "02",
-  },
-  {
-    title: "Internet Speed for IPTV",
-    description:
-      "Learn how internet speed, Wi-Fi and device performance can affect streaming.",
-    href: "/guides/internet-speed-for-iptv/",
-    number: "03",
-  },
+const explore = [
+  ["Compatibility", "Supported Devices", "Find setup information for Smart TVs, Firestick, Apple TV and Android TV.", "/devices/", "View device guides", "/images/home/device-samsung-smart-tv.webp", "Golden IPTV on a Samsung Smart TV", "Hardware"],
+  ["Subscriptions", "Flexible Plans", "Compare 1, 3, 6 and 12-month subscription periods in South African Rand.", "/pricing/", "Explore plans", "/images/stitch/pricing-01.webp", "Streaming subscription options", "Pricing"],
+  ["Onboarding", "Setup Hub & Guides", "Follow practical installation and troubleshooting resources for compatible players.", "/guides/", "Browse guides", "/images/stitch/setup-hub-01.webp", "IPTV setup guide interface", "Tutorials"],
+  ["Direct help", "Support & FAQ", "Get answers to common questions or contact the Golden IPTV team for assistance.", "/contact/", "Contact support", "/images/stitch/support-01.webp", "Customer support workspace", "Assistance"],
+];
+
+const devices = [
+  { title: "Smart TVs", copy: "Setup guidance for popular television platforms.", icon: Tv2, links: [["Samsung Smart TV", "/devices/samsung-smart-tv/"], ["LG Smart TV", "/devices/lg-smart-tv/"]] },
+  { title: "Firestick", copy: "A dedicated guide for Amazon Fire TV streaming devices.", icon: Cast, links: [["Firestick guide", "/devices/firestick/"]] },
+  { title: "Android TV", copy: "Installation help for compatible Android TV screens and boxes.", icon: Monitor, links: [["Android TV guide", "/devices/android-tv/"]] },
+  { title: "Apple TV", copy: "Setup information for Apple TV streaming hardware.", icon: Smartphone, links: [["Apple TV guide", "/devices/apple-tv/"]] },
+];
+
+const steps = [
+  ["Choose your option", "Start with the 24-hour trial or compare the available subscription periods.", "/iptv-free-trial/", "Request trial access"],
+  ["Check your device", "Open the setup guide that matches your Smart TV or streaming device.", "/devices/", "Browse devices"],
+  ["Set up IPTV", "Follow the step-by-step instructions and troubleshooting guides if needed.", "/guides/how-to-install-iptv/", "Open installation guide"],
+];
+
+const faqs = [
+  ["How does the 24-hour free trial work?", "Request the trial from the free-trial page, then use the access period to check compatibility and explore the setup process before choosing a paid plan."],
+  ["Which devices are supported?", "Golden IPTV provides setup guides for Samsung and LG Smart TVs, Firestick, Android TV and Apple TV."],
+  ["Where can I compare subscription options?", "The pricing page lists the available 1, 3, 6 and 12-month plans in South African Rand."],
+  ["Can I get help with setup?", "Start with the installation and troubleshooting guides, or contact the team on WhatsApp if you need more help."],
 ];
 
 const websiteJsonLd = {
@@ -51,425 +58,169 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "Golden IPTV",
   url: "https://goldeniptv.co.za/",
-  description:
-    "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
+  description: "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
   inLanguage: "en-ZA",
 };
 
+const primary = "ui-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--gradient-cta)] px-6 text-sm font-bold text-white shadow-[0_0_24px_rgba(139,61,255,.4)] transition hover:brightness-110";
+const secondary = "ui-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-[#12182a]/75 px-6 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-[#5d5cff]/60 hover:bg-[#1e263d]";
+const shell = "mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-16";
+
+function Heading({ eyebrow, title, copy, centered = false }: { eyebrow: string; title: string; copy: string; centered?: boolean }) {
+  return (
+    <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <p className="font-heading text-[11px] font-extrabold uppercase tracking-[.14em] text-[#c1c1ff]">{eyebrow}</p>
+      <h2 className="mt-2 font-heading text-[30px] font-bold leading-tight tracking-[-.015em] sm:text-[38px] lg:text-[44px]">{title}</h2>
+      <p className="mt-3 text-[15px] leading-6 text-text-secondary sm:text-lg">{copy}</p>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#080808] text-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(218,170,45,0.15),transparent_38%)]" />
-        <div className="absolute -left-40 top-40 h-80 w-80 rounded-full bg-[#c99a25]/10 blur-3xl" />
-        <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#c99a25]/10 blur-3xl" />
+    <main className="home-page min-h-screen overflow-hidden bg-[#050711] text-text-primary">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c") }} />
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-24 sm:px-8 sm:pb-32 sm:pt-32">
-          <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d9ad3d]/25 bg-[#d9ad3d]/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#e7c65f]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#e7c65f] shadow-[0_0_10px_#e7c65f]" />
-              Golden IPTV
-            </div>
-
-            <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
-              Golden IPTV.
-              <br />
-              <span className="bg-gradient-to-r from-[#fff1a8] via-[#e5b83d] to-[#a8780d] bg-clip-text text-transparent">
-                Your entertainment.
-              </span>
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden">
+        <div className="ambient-drift pointer-events-none absolute -right-48 -top-52 h-[34rem] w-[34rem] rounded-full bg-[#287cff]/12 blur-[140px]" />
+        <div className="ambient-drift pointer-events-none absolute -left-48 top-48 h-[32rem] w-[32rem] rounded-full bg-[#8b3dff]/16 blur-[150px]" />
+        <div className={shell + " relative grid gap-10 pb-16 pt-10 sm:py-20 lg:grid-cols-12 lg:items-center lg:gap-8 lg:py-24"}>
+          <div className="hero-copy z-10 lg:col-span-5">
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#8b3dff]/20 bg-[#12182a]/80 px-3 py-1 font-heading text-[11px] font-extrabold uppercase tracking-[.14em] text-[#d4bbff]">
+              <span className="h-2 w-2 rounded-full bg-[#d4bbff] shadow-[0_0_12px_#d4bbff]" />Premium IPTV entertainment
+            </p>
+            <h1 id="hero-title" className="mt-5 font-heading text-[38px] font-extrabold leading-[1.1] tracking-[-.02em] sm:text-5xl lg:text-[64px]">
+              Unlimited Entertainment.
+              <span className="block bg-gradient-to-r from-[#d4bbff] via-[#8b3dff] to-[#287cff] bg-clip-text text-transparent">All in One Place.</span>
             </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl">
-              Explore Golden IPTV subscription plans, start a 24-hour free
-              trial and discover simple setup guides for Smart TVs and
-              streaming devices in South Africa.
+            <p className="mt-5 max-w-xl text-[17px] leading-7 text-text-secondary sm:text-lg">
+              Explore Golden IPTV subscription plans, start a 24-hour free trial and discover simple setup guides for Smart TVs and streaming devices in South Africa.
             </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/iptv-free-trial/"
-                className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-to-r from-[#f7d774] via-[#dfb43f] to-[#b47e12] px-8 text-base font-bold text-black shadow-[0_12px_40px_rgba(211,166,48,0.18)] transition hover:-translate-y-1"
-              >
-                Start 24-Hour Free Trial
-                <span className="ml-2">→</span>
-              </Link>
-
-              <Link
-                href="/pricing/"
-                className="inline-flex h-14 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 text-base font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/[0.08]"
-              >
-                View IPTV Plans
-              </Link>
-
-              <Link
-                href={WHATSAPP_URL}
-target="_blank"
-rel="noopener noreferrer"
-                className="inline-flex h-14 items-center justify-center rounded-full border border-[#d9ad3d]/30 bg-[#d9ad3d]/5 px-8 text-base font-semibold text-[#f0ce67] transition hover:border-[#d9ad3d]/60 hover:bg-[#d9ad3d]/10"
-              >
-                Chat on WhatsApp
-              </Link>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href="/iptv-free-trial/" className={primary}><Play aria-hidden="true" className="h-4 w-4 fill-current" />Start 24-Hour Free Trial</Link>
+              <Link href="/pricing/" className={secondary}>Explore Plans <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
             </div>
-
-            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-zinc-500">
-              <span>✓ 24-hour free trial</span>
-              <span>✓ Multiple subscription periods</span>
-              <span>✓ Smart TV & streaming device guides</span>
+            <div className="mt-7 grid gap-2 min-[420px]:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <span className="flex items-center gap-2 rounded-xl border border-white/[.07] bg-[#0d1220]/75 px-3 py-2.5 text-[12px] font-semibold"><Clock3 aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />24-hour free trial</span>
+              <span className="flex items-center gap-2 rounded-xl border border-white/[.07] bg-[#0d1220]/75 px-3 py-2.5 text-[12px] font-semibold"><CheckCircle2 aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />Multiple plan periods</span>
+              <span className="flex items-center gap-2 rounded-xl border border-white/[.07] bg-[#0d1220]/75 px-3 py-2.5 text-[12px] font-semibold"><BookOpen aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />Device setup guides</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="border-y border-white/10 bg-[#0d0d0d]">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:py-24">
-          <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-              Why Golden IPTV
-            </p>
-
-            <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl">
-              Everything you need to get started with IPTV.
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-              Golden IPTV brings subscription information, device setup guides
-              and practical troubleshooting resources together in one place.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              ["01", "Flexible Plans"],
-              ["02", "24-Hour Trial"],
-              ["03", "Device Guides"],
-              ["04", "Troubleshooting"],
-            ].map(([number, title]) => (
-              <div
-                key={number}
-                className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"
-              >
-                <span className="text-xs font-bold text-[#cda435]">
-                  {number}
-                </span>
-
-                <p className="mt-8 font-semibold text-zinc-200">{title}</p>
+          <div className="hero-media-composition relative z-10 lg:col-span-7">
+            <div className="absolute inset-10 rounded-full bg-gradient-to-br from-[#8b3dff]/25 to-[#287cff]/20 blur-[80px]" />
+            <div className="relative mx-auto max-w-[760px] rounded-[1.4rem] border border-white/10 bg-[#0b0e19]/95 p-2 shadow-[0_28px_80px_rgba(0,0,0,.72),0_0_42px_rgba(139,61,255,.2)] sm:p-3">
+              <div className="flex items-center justify-between border-b border-white/[.07] px-2 pb-2 text-[10px] text-text-secondary sm:text-[11px]">
+                <b className="text-white">Golden TV</b><span className="hidden gap-4 sm:flex"><b className="text-[#d4bbff]">Live Channels</b><span>Movies</span><span>Series</span></span><span className="text-[#afc6ff]">● Connected</span>
               </div>
-            ))}
+              <div className="relative mt-2 aspect-video overflow-hidden rounded-2xl">
+                <Image src="/images/home/stitch-hero-stage.jpg" alt="Golden IPTV cinematic live-streaming interface" fill priority sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050711]/70 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full bg-[#ff3b56] px-3 py-1 text-[10px] font-bold uppercase text-white">● Live broadcast</span>
+              </div>
+            </div>
+            <div className="mx-auto h-3 w-32 rounded-b-lg bg-[#313441]" /><div className="mx-auto h-1.5 w-52 rounded-full bg-[#1e263d]" />
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="relative overflow-hidden bg-[#080808]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,164,45,0.08),transparent_35%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-                Subscription Plans
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-                Choose your plan
-              </h2>
-
-              <p className="mt-4 max-w-xl text-zinc-400">
-                Flexible subscription periods with a separate 24-hour free
-                trial available.
-              </p>
-            </div>
-
-            <Link
-              href="/pricing/"
-              className="text-sm font-semibold text-[#e3bd50] hover:text-[#f5d77d]"
-            >
-              Compare all plans →
-            </Link>
-          </div>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {PLANS.map((plan) => (
-              <div
-                key={plan.id}
-                className={`relative overflow-hidden rounded-3xl border p-6 transition hover:-translate-y-1 ${
-                  plan.popular
-                    ? "border-[#cda435]/60 bg-gradient-to-b from-[#191509] to-[#0d0d0d] shadow-[0_20px_60px_rgba(193,145,29,0.08)]"
-                    : "border-white/10 bg-white/[0.025]"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute right-4 top-4 rounded-full bg-[#dcb344]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#e5c35b]">
-                    Featured
-                  </div>
-                )}
-
-                <p className="text-sm font-medium text-zinc-500">
-                  {plan.duration}
-                </p>
-
-                <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-lg text-[#dcb344]">
-                    {plan.currencyLabel}
-                  </span>
-
-                  <span className="text-4xl font-black">{plan.price}</span>
+      <section aria-labelledby="catalogue-title" className="border-y border-white/[.06] bg-gradient-to-b from-[#0b0e19] via-[#10131e] to-[#0b0e19] py-16 sm:py-20">
+        <div className={shell}>
+          <div id="catalogue-title"><Heading eyebrow="Unrivalled catalogue" title="Everything You Want to Watch. One Subscription." copy="Live television, movies and series brought together in one entertainment experience." centered /></div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {catalogue.map(([value, label, badge, copy, image, alt, accent]) => (
+              <article key={label} className="story-card group relative min-h-[300px] overflow-hidden rounded-3xl border border-white/10 bg-[#1c1f2b]/70 p-7 shadow-2xl">
+                <Image src={image} alt={alt} fill sizes="(min-width:768px) 33vw, 100vw" className="story-media object-cover opacity-25" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111522] via-[#111522]/85 to-transparent" />
+                <div className="relative flex min-h-[246px] flex-col justify-between">
+                  <span className="w-fit rounded-full border border-[#8b3dff]/40 bg-[#8b3dff]/15 px-3 py-1 text-[11px] font-semibold text-[#d4bbff]">{badge}</span>
+                  <div><p className={"font-heading text-5xl font-extrabold tracking-[-.03em] lg:text-[56px] " + accent}>{value}</p><h3 className="mt-1 font-heading text-xl font-bold uppercase">{label}</h3><p className="mt-2 text-[13px] leading-5 text-text-secondary">{copy}</p></div>
                 </div>
-
-                <p className="mt-4 min-h-12 text-sm leading-6 text-zinc-500">
-                  Flexible IPTV subscription for South African users.
-                </p>
-
-                <Link
-                  href="/pricing/"
-                  className="mt-7 flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm font-semibold transition hover:border-[#cda435]/40 hover:bg-[#cda435]/10"
-                >
-                  View Plan
-                </Link>
-              </div>
+              </article>
             ))}
-          </div>
-
-          {/* Trial */}
-          <div className="mt-6 flex flex-col gap-6 rounded-3xl border border-[#cda435]/20 bg-gradient-to-r from-[#151207] to-[#0e0e0e] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
-            <div>
-              <div className="flex items-center gap-3">
-                <span className="rounded-full bg-[#dcb344] px-3 py-1 text-xs font-black uppercase tracking-wider text-black">
-                  Free Trial
-                </span>
-
-                <span className="text-sm text-zinc-500">24 hours</span>
-              </div>
-
-              <h3 className="mt-4 text-2xl font-bold">
-                Try before choosing a paid plan.
-              </h3>
-
-              <p className="mt-2 text-zinc-400">
-                Check compatibility and explore the setup process first.
-              </p>
-            </div>
-
-            <Link
-              href="/iptv-free-trial/"
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-[#e2b943] px-7 font-bold text-black transition hover:bg-[#f0cc5c]"
-            >
-              Get Free Trial →
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Devices */}
-      <section className="border-y border-white/10 bg-[#0d0d0d]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-          <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-              Compatibility
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              Watch on your favourite device.
-            </h2>
-
-            <p className="mt-5 text-lg leading-8 text-zinc-400">
-              Explore setup guides for popular Smart TVs and streaming
-              platforms.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {devices.map(([name, href, type]) => (
-              <Link
-                key={href}
-                href={href}
-                className="group rounded-2xl border border-white/10 bg-[#111] p-6 transition hover:-translate-y-1 hover:border-[#cda435]/40"
-              >
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#b9932e]">
-                  {type}
-                </span>
-
-                <h3 className="mt-8 text-lg font-bold text-white">{name}</h3>
-
-                <span className="mt-5 block text-sm text-zinc-500 transition group-hover:text-[#dcb344]">
-                  Setup guide →
-                </span>
+      <section aria-labelledby="explore-title" className="bg-[#080b16] py-16 sm:py-20">
+        <div className={shell}>
+          <div id="explore-title"><Heading eyebrow="Explore the platform" title="Quick Access to Every Destination." copy="Move from device compatibility to plans, setup resources and direct support without losing your place." /></div>
+          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {explore.map(([eyebrow, title, copy, href, action, image, alt, tag]) => (
+              <Link key={title} href={href} className="story-card group overflow-hidden rounded-2xl border border-white/[.08] bg-[#1c1f2b] shadow-xl">
+                <div className="relative aspect-video overflow-hidden bg-[#272936]"><Image src={image} alt={alt} fill sizes="(min-width:1024px) 25vw, 50vw" className="story-media object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#1c1f2b] to-transparent" /><span className="absolute left-3 top-3 rounded-md bg-[#8b3dff]/90 px-2.5 py-1 text-[10px] font-semibold text-white">{tag}</span></div>
+                <div className="flex min-h-52 flex-col p-5"><p className="font-heading text-[11px] font-extrabold uppercase tracking-[.14em] text-[#afc6ff]">{eyebrow}</p><h3 className="story-card-title mt-1 font-heading text-xl font-semibold">{title}</h3><p className="mt-2 text-[13px] leading-5 text-text-secondary">{copy}</p><span className="story-card-action mt-auto flex items-center gap-1.5 pt-5 text-[12px] font-semibold text-[#d4bbff]">{action} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></span></div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* South Africa SEO pathway */}
-      <section className="bg-[#080808]">
-        <div className="mx-auto max-w-7xl px-5 pt-10 sm:px-8 sm:pt-12">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] px-6 py-5 sm:flex sm:items-center sm:justify-between sm:gap-8">
-            <p className="text-sm leading-6 text-zinc-400">
-              Looking for local information? Explore our{" "}
-              <Link
-                href="/iptv-south-africa/"
-                className="font-semibold text-[#e3bd50] hover:text-[#f5d77d]"
-              >
-                IPTV South Africa guide
-              </Link>{" "}
-              for plans in South African Rand, compatible devices, setup guidance
-              and free-trial information.
-            </p>
+      <section aria-labelledby="devices-title" className="border-y border-white/[.06] bg-[#0d101c] py-16 sm:py-20">
+        <div className={shell}>
+          <div id="devices-title"><Heading eyebrow="Universal compatibility" title="Stream Across Your Screens." copy="Explore setup guidance for popular Smart TVs and streaming platforms." centered /></div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {devices.map((device, index) => {
+              const Icon = device.icon;
+              return <article key={device.title} className="rounded-2xl border border-white/[.08] bg-[#181b27]/80 p-6 shadow-lg">
+                <div className={(index % 2 ? "bg-[#287cff]/15 text-[#afc6ff]" : "bg-[#8b3dff]/15 text-[#d4bbff]") + " grid h-11 w-11 place-items-center rounded-xl"}><Icon aria-hidden="true" className="h-5 w-5" /></div>
+                <h3 className="mt-5 font-heading text-xl font-semibold">{device.title}</h3><p className="mt-2 min-h-10 text-[13px] leading-5 text-text-secondary">{device.copy}</p>
+                <div className="mt-5 flex flex-wrap gap-2">{device.links.map(([label, href]) => <Link key={href} href={href} className="rounded-lg bg-[#272936] px-2.5 py-1.5 text-[11px] font-semibold hover:text-[#d4bbff]">{label}</Link>)}</div>
+              </article>;
+            })}
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-[#080808]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-          <div className="text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-              Simple Setup
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              Getting started is simple.
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {[
-              [
-                "01",
-                "Choose your option",
-                "Start with the 24-hour trial or explore the available subscription plans.",
-              ],
-              [
-                "02",
-                "Check your device",
-                "Choose the setup guide that matches your Smart TV or streaming device.",
-              ],
-              [
-                "03",
-                "Set up IPTV",
-                "Follow the step-by-step instructions and troubleshoot common issues if needed.",
-              ],
-            ].map(([number, title, description]) => (
-              <div
-                key={number}
-                className="relative rounded-3xl border border-white/10 bg-white/[0.025] p-8"
-              >
-                <span className="text-5xl font-black text-[#d0a633]/20">
-                  {number}
-                </span>
-
-                <h3 className="mt-6 text-xl font-bold">{title}</h3>
-
-                <p className="mt-3 leading-7 text-zinc-500">
-                  {description}
-                </p>
-              </div>
-            ))}
+      <section aria-labelledby="steps-title" className="bg-[#080b16] py-16 sm:py-20">
+        <div className={shell}>
+          <div id="steps-title"><Heading eyebrow="Getting started" title="Three Steps to Start Streaming." copy="From trial request to device setup, the process stays straightforward." centered /></div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {steps.map(([title, copy, href, action], index) => <article key={title} className="rounded-2xl border border-white/[.08] bg-[#1c1f2b]/80 p-6">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#8b3dff] to-[#287cff] text-sm font-bold text-white">{index + 1}</span><p className="mt-7 text-[11px] font-semibold uppercase tracking-[.12em] text-text-muted">Step 0{index + 1}</p><h3 className="mt-1 font-heading text-xl font-semibold">{title}</h3><p className="mt-2 text-[13px] leading-5 text-text-secondary">{copy}</p><Link href={href} className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#d4bbff]">{action} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></Link>
+            </article>)}
           </div>
         </div>
       </section>
 
-      {/* Guides */}
-      <section className="border-y border-white/10 bg-[#0d0d0d]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-                IPTV Guides
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-                Need help? Start here.
-              </h2>
+      <section aria-labelledby="pricing-title" className="relative border-y border-white/[.06] bg-[#0d101c] py-16 sm:py-20">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-[#8b3dff]/10 blur-[110px]" />
+        <div className={shell + " relative"}>
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div id="pricing-title"><Heading eyebrow="Pricing options" title="Simple, Transparent Plans." copy="Pick the duration that works best for you, with a separate 24-hour free trial available." /></div><Link href="/pricing/" className="flex items-center gap-2 text-sm font-bold text-[#d4bbff]">View all subscription options <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link></div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {PLANS.map((plan) => <article key={plan.id} className={(plan.popular ? "border-[#8b3dff]/70 bg-[#272936] shadow-[0_0_24px_rgba(139,61,255,.25)]" : "border-white/[.08] bg-[#1c1f2b]") + " relative flex flex-col rounded-2xl border p-6"}>
+              {plan.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[var(--gradient-cta)] px-3 py-1 text-[10px] font-bold uppercase text-white">Popular choice</span>}
+              <p className="font-heading text-[11px] font-extrabold uppercase tracking-[.14em] text-[#afc6ff]">Subscription plan</p><h3 className="mt-2 font-heading text-2xl font-bold">{plan.duration}</h3>
+              <div className="mt-5 rounded-xl bg-[#0b0e19] px-4 py-3"><p className="font-heading text-3xl font-bold text-[#d4bbff]">{plan.price}</p><p className="mt-1 text-[10px] uppercase text-text-muted">{plan.currencyLabel}</p></div>
+              <p className="mt-4 flex-1 text-[13px] leading-5 text-text-secondary">{plan.description}</p><Link href="/pricing/" className={(plan.popular ? primary : secondary) + " mt-6 min-h-10 px-4 text-[13px]"}>{plan.ctaLabel}</Link>
+            </article>)}
+          </div>
+          <div className="mt-6 rounded-2xl border border-white/[.08] bg-[#181b27]/80 p-5 sm:p-6">
+            <div className="grid gap-5 md:grid-cols-[1fr_2fr] md:items-center">
+              <div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-[#8b3dff]/15 text-[#d4bbff]"><Sparkles aria-hidden="true" className="h-5 w-5" /></span><div><h3 className="font-heading text-lg font-semibold">Included with every plan</h3><p className="text-[12px] text-text-secondary">Service benefits across subscription periods.</p></div></div>
+              <div className="grid gap-3 sm:grid-cols-3"><span className="flex items-center gap-2 rounded-xl bg-[#0d1220] px-3 py-3 text-[12px] font-semibold"><Zap aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />No Buffering</span><span className="flex items-center gap-2 rounded-xl bg-[#0d1220] px-3 py-3 text-[12px] font-semibold"><Rocket aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />Instant Activation</span><span className="flex items-center gap-2 rounded-xl bg-[#0d1220] px-3 py-3 text-[12px] font-semibold"><Headphones aria-hidden="true" className="h-4 w-4 text-[#afc6ff]" />24/7 Support</span></div>
             </div>
-
-            <Link
-              href="/guides/"
-              className="text-sm font-semibold text-[#e3bd50]"
-            >
-              Browse guides →
-            </Link>
           </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {guides.map((guide) => (
-              <Link
-                key={guide.href}
-                href={guide.href}
-                className="group rounded-3xl border border-white/10 bg-[#111] p-7 transition hover:-translate-y-1 hover:border-[#cda435]/40"
-              >
-                <span className="text-sm font-bold text-[#cda435]">
-                  {guide.number}
-                </span>
-
-                <h3 className="mt-10 text-2xl font-bold">{guide.title}</h3>
-
-                <p className="mt-4 leading-7 text-zinc-500">
-                  {guide.description}
-                </p>
-
-                <span className="mt-7 block text-sm font-semibold text-zinc-300 group-hover:text-[#e3bd50]">
-                  Read guide →
-                </span>
-              </Link>
-            ))}
-          </div>
+          <p className="mt-5 text-[13px] text-text-secondary">Looking for local details? Read the <Link href="/iptv-south-africa/" className="font-semibold text-[#d4bbff] underline underline-offset-4">IPTV South Africa guide</Link> for plan, compatibility, setup and free-trial information.</p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden bg-[#080808]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(218,170,45,0.14),transparent_42%)]" />
-
-        <div className="relative mx-auto max-w-5xl px-5 py-24 text-center sm:px-8 sm:py-32">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#dcb344]">
-            Get Started
-          </p>
-
-          <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
-            Ready to explore IPTV?
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
-            Start with the 24-hour free trial or compare the available Golden
-            IPTV subscription plans.
-          </p>
-
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-            <Link
-              href="/iptv-free-trial/"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-to-r from-[#f7d774] to-[#b98212] px-8 font-bold text-black transition hover:-translate-y-1"
-            >
-              Start Free Trial →
-            </Link>
-
-            <Link
-              href="/pricing/"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-white/15 px-8 font-semibold transition hover:bg-white/5"
-            >
-              Compare Plans
-            </Link>
-
-            <Link
-              href={WHATSAPP_URL}
-target="_blank"
-rel="noopener noreferrer"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-[#d9ad3d]/30 bg-[#d9ad3d]/5 px-8 font-semibold text-[#f0ce67] transition hover:border-[#d9ad3d]/60 hover:bg-[#d9ad3d]/10"
-            >
-              Chat on WhatsApp
-            </Link>
-          </div>
+      <section aria-labelledby="faq-title" className="bg-[#080b16] py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
+          <div id="faq-title"><Heading eyebrow="Help & answers" title="Questions Before You Start?" copy="Quick answers to common questions about trials, devices, plans and setup." centered /></div>
+          <div className="mt-9 space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-2xl border border-white/[.08] bg-[#1c1f2b] px-5 py-4 open:border-[#8b3dff]/35"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading text-base font-semibold sm:text-lg [&::-webkit-details-marker]:hidden">{question}<span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#272936] text-[#d4bbff] group-open:bg-[#8b3dff] group-open:text-white"><ChevronDown aria-hidden="true" className="h-4 w-4 transition group-open:rotate-180" /></span></summary><p className="mt-4 border-t border-white/[.07] pt-4 text-[14px] leading-6 text-text-secondary">{answer}</p></details>)}</div>
+          <div className="mt-7 flex flex-wrap justify-center gap-5"><Link href="/faq/" className="flex items-center gap-2 text-sm font-bold text-[#d4bbff]">View all FAQs <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link><Link href="/guides/iptv-buffering/" className="text-sm font-semibold text-text-secondary">Buffering guide</Link><Link href="/guides/internet-speed-for-iptv/" className="text-sm font-semibold text-text-secondary">Internet speed guide</Link></div>
         </div>
       </section>
 
+      <section aria-labelledby="cta-title" className="bg-[#080b16] px-5 pb-16 sm:px-8 sm:pb-20">
+        <div className="relative mx-auto max-w-[82rem] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-[#1c1f2b] via-[#272936] to-[#17233c] px-6 py-10 shadow-2xl sm:px-10 lg:py-12">
+          <div className="cta-glow absolute -left-20 top-0 h-64 w-64 rounded-full bg-[#8b3dff]/25 blur-[90px]" /><div className="absolute -bottom-28 -right-20 h-72 w-72 rounded-full bg-[#287cff]/20 blur-[90px]" />
+          <div className="relative flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
+            <div className="max-w-2xl"><span className="inline-flex items-center gap-2 rounded-full border border-[#8b3dff]/30 bg-[#0b0e19]/75 px-3 py-1 text-[11px] font-semibold text-[#d4bbff]"><CheckCircle2 aria-hidden="true" className="h-3.5 w-3.5" />24-hour trial available</span><h2 id="cta-title" className="mt-4 font-heading text-[30px] font-extrabold sm:text-[44px]">Ready to Start Watching?</h2><p className="mt-3 text-[15px] text-text-secondary sm:text-lg">Request your 24-hour free trial or compare the available Golden IPTV subscription plans.</p></div>
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap"><Link href="/iptv-free-trial/" className={primary}>Start Free Trial</Link><Link href="/pricing/" className={secondary}>View Plans</Link><Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="ui-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-950/40 px-6 text-sm font-semibold text-emerald-200"><MessageCircle aria-hidden="true" className="h-4 w-4" />Chat on WhatsApp</Link></div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
