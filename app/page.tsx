@@ -6,6 +6,7 @@ import {
   Headphones, MessageCircle, Monitor, Play, Rocket, Smartphone,
   Sparkles, Tv2, Zap,
 } from "lucide-react";
+import ChannelMarquee from "@/app/components/channel-marquee";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { PLANS } from "@/app/iptv-south-africa/plans-data";
 import { createPageMetadata } from "@/app/seo-metadata";
@@ -154,6 +155,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ChannelMarquee />
 
       <section aria-labelledby="devices-title" className="border-y border-white/[.06] bg-[#0d101c] py-16 sm:py-20">
         <div className={shell}>

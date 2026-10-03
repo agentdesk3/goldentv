@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import BrandMark from "@/app/components/brand-mark";
 import PageContainer from "@/app/components/page-container";
+import PaymentMethods from "@/app/components/payment-methods";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { PLANS } from "@/app/iptv-south-africa/plans-data";
 
@@ -55,6 +56,7 @@ export default function Footer() {
                 5 Device Guides
               </span>
             </div>
+            <PaymentMethods />
           </div>
 
           {Object.entries(footerLinks).map(([group, links]) => (
