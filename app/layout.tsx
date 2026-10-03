@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://goldeniptv.co.za"),
+  metadataBase: new URL("https://www.goldeniptv.co.za"),
   title: {
     default: "Golden IPTV | Plans, Trial & Setup Guides",
     template: "%s | Golden IPTV",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Golden IPTV | Plans, Trial & Setup Guides",
     description:
       "Explore IPTV subscription plans, device setup guides and a 24-hour free trial with Golden IPTV.",
-    url: "https://goldeniptv.co.za/",
+    url: "https://www.goldeniptv.co.za/",
     siteName: "Golden IPTV",
     locale: "en_ZA",
     type: "website",

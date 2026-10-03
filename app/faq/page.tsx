@@ -9,7 +9,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV FAQs: Setup, Plans & Devices",
   description:
     "Find answers about Golden IPTV subscriptions, free trials, compatible devices, internet speed, setup and troubleshooting in South Africa.",
-  url: "https://goldeniptv.co.za/faq/",
+  url: "https://www.goldeniptv.co.za/faq/",
   image: "/images/home/hero-streaming-cinema.webp",
   imageAlt: "Golden IPTV frequently asked questions",
 });

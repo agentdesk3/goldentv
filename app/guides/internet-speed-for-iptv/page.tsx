@@ -7,7 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "Internet Speed for IPTV",
   description:
     "Learn about internet speed for IPTV, recommended speeds by quality, Wi-Fi performance, device usage and common connection issues.",
-  url: "https://goldeniptv.co.za/guides/internet-speed-for-iptv/",
+  url: "https://www.goldeniptv.co.za/guides/internet-speed-for-iptv/",
   image: "/images/home/guide-internet-speed.webp",
   imageAlt: "Internet speed guidance for IPTV streaming",
 });

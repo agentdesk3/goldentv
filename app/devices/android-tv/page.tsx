@@ -7,7 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV on Android TV: Setup Guide",
   description:
     "Learn how to set up Golden IPTV on Android TV, check internet requirements and troubleshoot common streaming problems.",
-  url: "https://goldeniptv.co.za/devices/android-tv/",
+  url: "https://www.goldeniptv.co.za/devices/android-tv/",
   image: "/images/home/device-android-tv.webp",
   imageAlt: "Golden IPTV setup guide for Android TV",
 });

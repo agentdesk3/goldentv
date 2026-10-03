@@ -18,7 +18,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV Setup & Troubleshooting Guides",
   description:
     "Explore Golden IPTV guides for installation, buffering problems, internet speed and setup help for compatible streaming devices.",
-  url: "https://goldeniptv.co.za/guides/",
+  url: "https://www.goldeniptv.co.za/guides/",
   image: "/images/stitch/setup-hub-01.webp",
   imageAlt: "Golden IPTV setup and troubleshooting guides",
 });

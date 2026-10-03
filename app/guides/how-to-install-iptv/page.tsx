@@ -7,7 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "How to Install IPTV: Setup Guide",
   description:
     "Learn how to install and set up IPTV on compatible Smart TVs, Firestick, Android TV, Apple TV and other streaming devices.",
-  url: "https://goldeniptv.co.za/guides/how-to-install-iptv/",
+  url: "https://www.goldeniptv.co.za/guides/how-to-install-iptv/",
   image: "/images/home/guide-installation.webp",
   imageAlt: "Golden IPTV installation guide",
 });

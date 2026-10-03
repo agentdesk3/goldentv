@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
     "Learn how Golden IPTV handles information submitted through trial, support and service request forms.",
-  url: "https://goldeniptv.co.za/privacy/",
+  url: "https://www.goldeniptv.co.za/privacy/",
   image: "/images/home/hero-streaming-cinema.webp",
   imageAlt: "Golden IPTV Privacy Policy",
 });

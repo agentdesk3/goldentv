@@ -7,7 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "How to Fix IPTV Buffering",
   description:
     "Troubleshoot IPTV buffering, check your connection, improve Wi-Fi performance and identify common device or network issues.",
-  url: "https://goldeniptv.co.za/guides/iptv-buffering/",
+  url: "https://www.goldeniptv.co.za/guides/iptv-buffering/",
   image: "/images/home/guide-buffering.webp",
   imageAlt: "IPTV buffering troubleshooting guide",
 });

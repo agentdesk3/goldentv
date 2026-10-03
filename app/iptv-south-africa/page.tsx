@@ -32,7 +32,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV South Africa: Plans, Devices & Trial",
   description:
     "Compare Golden IPTV plans in South African Rand, supported devices, setup guides and the 24-hour free trial for viewers in South Africa.",
-  url: "https://goldeniptv.co.za/iptv-south-africa/",
+  url: "https://www.goldeniptv.co.za/iptv-south-africa/",
   image: "/images/home/stitch-hero-stage.jpg",
   imageAlt: "Golden IPTV viewing experience in South Africa",
 });

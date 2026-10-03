@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "Refund & Cancellation Policy",
   description:
     "Read the Golden IPTV refund and cancellation policy, including the 7-day refund request period and processing times.",
-  url: "https://goldeniptv.co.za/refund-policy/",
+  url: "https://www.goldeniptv.co.za/refund-policy/",
   image: "/images/home/hero-streaming-cinema.webp",
   imageAlt: "Golden IPTV Refund and Cancellation Policy",
 });

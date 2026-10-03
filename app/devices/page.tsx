@@ -17,7 +17,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV Devices & Setup Guides",
   description:
     "Explore Golden IPTV setup guides for compatible Samsung and LG Smart TVs, Firestick, Android TV and Apple TV devices.",
-  url: "https://goldeniptv.co.za/devices/",
+  url: "https://www.goldeniptv.co.za/devices/",
   image: "/images/stitch/devices-01.webp",
   imageAlt: "Devices supported by Golden IPTV setup guides",
 });

@@ -7,7 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV on Apple TV: Setup Guide",
   description:
     "Learn how to set up Golden IPTV on Apple TV, check internet requirements and troubleshoot common IPTV streaming problems.",
-  url: "https://goldeniptv.co.za/devices/apple-tv/",
+  url: "https://www.goldeniptv.co.za/devices/apple-tv/",
   image: "/images/home/device-apple-tv.webp",
   imageAlt: "Golden IPTV setup guide for Apple TV",
 });

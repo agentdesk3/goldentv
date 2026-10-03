@@ -76,13 +76,13 @@ export default function EditorialGuide({
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://goldeniptv.co.za/",
+          item: "https://www.goldeniptv.co.za/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: breadcrumbParent.label,
-          item: `https://goldeniptv.co.za${breadcrumbParent.href}`,
+          item: `https://www.goldeniptv.co.za${breadcrumbParent.href}`,
         },
         {
           "@type": "ListItem",

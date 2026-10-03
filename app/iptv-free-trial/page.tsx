@@ -18,7 +18,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "24-Hour IPTV Free Trial South Africa",
   description:
     "Request a 24-hour Golden IPTV free trial in South Africa, check device compatibility and test the service before choosing a subscription.",
-  url: "https://goldeniptv.co.za/iptv-free-trial/",
+  url: "https://www.goldeniptv.co.za/iptv-free-trial/",
   image: "/images/stitch/trial-01.webp",
   imageAlt: "Golden IPTV 24-hour free trial",
 });

@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "Terms of Service",
   description:
     "Read the Golden IPTV terms covering subscriptions, activation, payments, renewals, trials, support and refunds.",
-  url: "https://goldeniptv.co.za/terms/",
+  url: "https://www.goldeniptv.co.za/terms/",
   image: "/images/home/hero-streaming-cinema.webp",
   imageAlt: "Golden IPTV Terms of Service",
 });

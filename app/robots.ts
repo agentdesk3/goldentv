@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://goldeniptv.co.za/sitemap.xml",
+    sitemap: "https://www.goldeniptv.co.za/sitemap.xml",
   };
 }

@@ -15,7 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "Golden IPTV | Plans, Trial & Setup Guides",
   description:
     "Explore Golden IPTV plans, request a 24-hour free trial and find setup guides for compatible Smart TVs and streaming devices.",
-  url: "https://goldeniptv.co.za/",
+  url: "https://www.goldeniptv.co.za/",
   image: "/images/home/hero-streaming-cinema.webp",
   imageAlt: "Golden IPTV streaming service",
   absoluteTitle: true,
@@ -58,7 +58,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Golden IPTV",
-  url: "https://goldeniptv.co.za/",
+  url: "https://www.goldeniptv.co.za/",
   description: "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
   inLanguage: "en-ZA",
 };
