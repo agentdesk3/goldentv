@@ -4,6 +4,7 @@ import { ArrowRight, CalendarClock, Mail, MessageCircle, Monitor } from "lucide-
 import Link from "next/link";
 import { useState } from "react";
 
+import { trackWhatsAppClick } from "@/app/components/google-analytics";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { DEVICES } from "@/app/iptv-south-africa/devices-data";
 
@@ -45,6 +46,10 @@ export default function TrialRequestForm() {
 
     const url = `${WHATSAPP_URL}?text=${encodeURIComponent(whatsappMessage)}`;
 
+    trackWhatsAppClick(
+      "free_trial_request_form",
+      "Continue Trial Request on WhatsApp",
+    );
     window.open(url, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }

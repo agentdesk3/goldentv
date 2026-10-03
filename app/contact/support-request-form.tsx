@@ -4,6 +4,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import { trackWhatsAppClick } from "@/app/components/google-analytics";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { DEVICES } from "@/app/iptv-south-africa/devices-data";
 
@@ -30,6 +31,10 @@ export default function SupportRequestForm() {
       `Details: ${notes}`,
     ].join("\n");
 
+    trackWhatsAppClick(
+      "support_request_form",
+      "Prepare WhatsApp Support Request",
+    );
     window.open(
       `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`,
       "_blank",

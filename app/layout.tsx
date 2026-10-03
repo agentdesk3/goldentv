@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
+import GoogleAnalytics from "@/app/components/google-analytics";
 import SiteChrome from "@/app/components/site-chrome";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <SiteChrome>{children}</SiteChrome>
       </body>
+      <GoogleAnalytics />
     </html>
   );
 }
