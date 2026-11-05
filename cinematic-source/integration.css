@@ -1,0 +1,85 @@
+html{background:#000;color:#EEEBDD;scroll-behavior:auto;color-scheme:dark}body{margin:0}*{box-sizing:border-box}#main{outline:none}.section-root{position:relative;display:flow-root;overflow:visible!important}.global-skip{position:fixed;left:16px;top:-100px;z-index:100;background:#EEEBDD;color:#000;padding:16px}.global-skip:focus{top:12px}a:focus-visible,button:focus-visible{outline:3px solid #EEEBDD!important;outline-offset:5px!important}a,button{touch-action:manipulation}#section-hero .approved-brand{display:block;width:190px;height:auto;max-height:64px;object-fit:contain}#section-final .approved-brand{width:200px;height:auto}#section-final .footer-wordmark img{display:block;width:100%;height:auto;max-height:280px;object-fit:contain}#section-final .preview{position:absolute;bottom:8px;right:12px}#section-final .footer{padding-bottom:65px}#section-final .footer-wordmark{white-space:normal}#section-faq button:focus-visible{outline-offset:8px}#section-how .section,#section-trust,#section-faq,#section-final{overflow:visible}#section-pricing{overflow:clip!important}#section-trust .panel.agent{height:auto}.section-root+.section-root:before{content:'';position:absolute;top:0;left:0;right:0;height:32px;z-index:2;pointer-events:none;background:linear-gradient(#0008,transparent)}
+.section-root:not(.motion-ready) .reveal,.section-root:not(.motion-ready) .fadein,.keyboard-visible{opacity:1!important;transform:none!important;filter:none!important}
+#section-faq:not(.motion-ready) .answer{grid-template-rows:1fr}
+#section-how:not(.motion-ready) .scene,#section-trust:not(.motion-ready) .scene,#section-trust:not(.motion-ready) .panel{position:relative;inset:auto;opacity:1;transform:none;filter:none}
+#section-how:not(.motion-ready) .visual,#section-trust:not(.motion-ready) .visual{height:auto;max-height:none}
+#section-trust:not(.motion-ready) .story,#section-final:not(.motion-ready) .stage{height:auto}
+#section-trust:not(.motion-ready) .sticky,#section-final:not(.motion-ready) .sticky{position:relative;height:auto}
+#section-how:not(.motion-ready) .step{opacity:1}
+@media(max-width:540px){#section-hero .approved-brand{width:155px}#section-final .preview{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.section-root .reveal,.section-root .fadein{opacity:1!important;transform:none!important;filter:none!important}#section-how .step{opacity:1;transform:none}#section-how .scene,#section-trust .scene,#section-trust .panel{position:relative;inset:auto;opacity:1;transform:none;filter:none}#section-how .visual,#section-trust .visual{height:auto;max-height:none}#section-trust .story,#section-final .stage{height:auto}#section-trust .sticky,#section-final .sticky{position:relative;height:auto;min-height:0}#section-trust .copy{min-height:0}#section-trust .scene{padding:20px 0}#section-trust .agent{min-height:300px}#section-trust .sticky{grid-template-rows:auto auto}#section-final .content{padding:100px 24px}.section-root *{scroll-behavior:auto!important}.section-root .spotlight,.section-root .mouse-glow{display:none}}
+
+/* FAQ Compact Premium V1.1 */
+#section-faq .qa {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+  min-height: 0 !important;
+}
+
+/* ENTERTAINMENT COMPACT V2 - APPROVED */
+
+#section-universe .intro {
+  padding-top: 55px !important;
+  padding-bottom: 25px !important;
+}
+
+#section-universe .chapter {
+  padding-top: 20px !important;
+  padding-bottom: 25px !important;
+}
+
+#section-universe .chapter .constellation {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+#section-universe .outro {
+  padding-top: 25px !important;
+  padding-bottom: 45px !important;
+}
+
+/* PRICING COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #section-pricing .pricing {
+    padding-top: 65px !important;
+    padding-bottom: 65px !important;
+  }
+
+  #section-pricing .heading {
+    margin-bottom: 30px !important;
+  }
+
+  #section-pricing .plans {
+    row-gap: 22px !important;
+  }
+
+  #section-pricing .lower {
+    margin-top: 24px !important;
+  }
+}
+/* HOW IT WORKS COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #section-how .step {
+    min-height: 245px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #section-how .steps {
+    row-gap: 12px !important;
+  }
+}
+/* TRUST COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #section-trust .intro {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  #section-trust .cta {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
+/* FOOTER PREVIEW DISCLAIMER CLEANUP V1 */
+#section-final .footer-bottom span:last-child { display: none !important; }

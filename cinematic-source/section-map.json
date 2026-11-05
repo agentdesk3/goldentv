@@ -1,0 +1,87 @@
+[
+  {
+    "key": "hero",
+    "source": "v6-1-hero",
+    "ids": {
+      "main": "hero-main",
+      "home": "hero-home",
+      "hero-title": "hero-hero-title"
+    }
+  },
+  {
+    "key": "sports",
+    "source": "sports-wall-v5-1",
+    "ids": {
+      "main": "sports-main",
+      "sports": "sports-sports",
+      "sports-title": "sports-sports-title",
+      "assembly-title": "sports-assembly-title"
+    }
+  },
+  {
+    "key": "universe",
+    "source": "entertainment-universe-v3",
+    "ids": {
+      "universe": "universe-universe",
+      "spotlight": "universe-spotlight"
+    }
+  },
+  {
+    "key": "devices",
+    "source": "devices-layer-v1",
+    "ids": {
+      "devices": "devices-devices",
+      "devices-title": "devices-devices-title"
+    }
+  },
+  {
+    "key": "pricing",
+    "source": "pricing-v4",
+    "ids": {
+      "pricing-title": "pricing-pricing-title",
+      "plans": "pricing-plans"
+    }
+  },
+  {
+    "key": "how",
+    "source": "how-it-works-v2",
+    "ids": {
+      "steps": "how-steps",
+      "railFill": "how-railFill",
+      "visual": "how-visual"
+    }
+  },
+  {
+    "key": "trust",
+    "source": "trust-support-v1",
+    "ids": {
+      "story": "trust-story",
+      "visual": "trust-visual",
+      "bar": "trust-bar"
+    }
+  },
+  {
+    "key": "faq",
+    "source": "faq-v1",
+    "ids": {
+      "faq": "faq-faq",
+      "bar": "faq-bar",
+      "count": "faq-count",
+      "questions": "faq-questions"
+    }
+  },
+  {
+    "key": "final",
+    "source": "final-footer-v1",
+    "ids": {
+      "finale": "final-finale",
+      "sticky": "final-sticky",
+      "halo": "final-halo",
+      "beam": "final-beam",
+      "mouseGlow": "final-mouseGlow",
+      "footer": "final-footer",
+      "wordmark": "final-wordmark",
+      "year": "final-year"
+    }
+  }
+]

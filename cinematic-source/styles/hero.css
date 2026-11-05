@@ -1,0 +1,111 @@
+:where(#section-hero) *{box-sizing: border-box;}
+:where(#section-hero){background: rgb(0, 0, 0); color: rgb(238, 235, 221); font-family: Arial, Helvetica, sans-serif;}
+:where(#section-hero){margin: 0px;}
+:where(#section-hero) a{color: inherit;}
+:where(#section-hero) a:focus-visible{outline: rgb(238, 235, 221) solid 3px; outline-offset: 5px;}
+:where(#section-hero) .skip{position: absolute; top: -90px; left: 16px; z-index: 10; background: rgb(0, 0, 0); padding: 16px;}
+:where(#section-hero) .skip:focus{top: 8px;}
+:where(#section-hero) header{height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0px 40px; position: relative; z-index: 2; background: rgb(0, 0, 0);}
+:where(#section-hero) .brand{display: flex; gap: 10px; align-items: center; text-decoration: none; font-size: 18px; font-weight: 700;}
+:where(#section-hero) .brand svg{width: 36px; height: 36px;}
+:where(#section-hero) .brand small{display: block; font-size: 10px; letter-spacing: 3px;}
+:where(#section-hero) .brand span{color: inherit;}
+:where(#section-hero) header > a:last-child{font-size: 14px; padding: 14px 0px;}
+:where(#section-hero) main:focus{outline: none;}
+:where(#section-hero) .hero{position: relative; padding-top: 450px; min-height: 850px; overflow: hidden;}
+:where(#section-hero) .art{position: absolute; top: 0px; left: 0px; right: 0px; height: 552px; pointer-events: none;}
+:where(#section-hero) .rows{width: 1428px; margin: auto;}
+:where(#section-hero) .row{display: flex; gap: 12px; margin-bottom: 24px;}
+:where(#section-hero) .row img{display: block; width: 168px; height: 252px; object-fit: contain; border-radius: 6px; flex: 0 0 auto;}
+:where(#section-hero) .row img:nth-child(2n){transform: translateY(12px);}
+:where(#section-hero) .mobile{display: none;}
+:where(#section-hero) .art::after{content: ""; position: absolute; inset: 0px; background: linear-gradient(rgb(0, 0, 0), transparent 80px), linear-gradient(90deg, rgb(0, 0, 0), transparent 48px, transparent calc(100% - 48px), rgb(0, 0, 0)), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 0.35) 28%, transparent 48%), rgba(0, 0, 0, 0.12);}
+:where(#section-hero) .copy{position: relative; text-align: center; max-width: 900px; margin: auto; padding: 0px 24px 32px;}
+:where(#section-hero) .eyebrow{font-size: 14px; letter-spacing: 0.16em; margin: 0px 0px 16px; color: rgb(189, 189, 197);}
+:where(#section-hero) h1{font-size: 72px; line-height: 1.04; letter-spacing: 0.025em; margin: 0px 0px 20px;}
+:where(#section-hero) .hero-description{font-size: 18px; line-height: 1.55; color: rgb(189, 189, 197); margin: 0px 0px 24px;}
+:where(#section-hero) .hero-actions{display: flex; justify-content: center; gap: 12px;}
+:where(#section-hero) .button{display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 52px; padding: 14px 24px; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 8px;}
+:where(#section-hero) .primary{background: rgb(206, 18, 18); color: rgb(238, 235, 221); border: 1px solid rgb(206, 18, 18);}
+:where(#section-hero) .secondary{border: 1px solid rgb(238, 235, 221); background: rgb(0, 0, 0);}
+:where(#section-hero) .trial-note{font-size: 14px; color: rgb(189, 189, 197); margin: 18px 0px;}
+:where(#section-hero) .rights{font-size: 12px; line-height: 1.6; color: rgb(189, 189, 197); margin: 24px auto 0px; max-width: 650px;}
+:where(#section-hero) .rights a{display: inline-block; padding: 8px;}
+:where(#section-hero) .study-links{font-size: 14px; margin: 12px 0px;}
+:where(#section-hero) .study-links a{padding: 10px; display: inline-block;}
+@media (min-width: 768px) and (max-width: 1439px) {:where(#section-hero) .rows{width: calc(100% - 16px);}
+:where(#section-hero) .row{gap: 8px; margin-bottom: 20px;}
+:where(#section-hero) .row img{width: calc(-9px + 12.5vw); height: auto; aspect-ratio: 2 / 3;}
+:where(#section-hero) .art{height: calc(17px + 37.5vw);}
+:where(#section-hero) .hero{padding-top: calc(-57px + 37.5vw); min-height: 780px;}
+:where(#section-hero) h1{font-size: clamp(48px, 5vw, 72px);}}
+@media (max-width: 767px) {:where(#section-hero) header{height: 64px; padding: 0px 16px;}
+:where(#section-hero) .brand{font-size: 15px;}
+:where(#section-hero) header > a:last-child{font-size: 12px;}
+:where(#section-hero) .desktop{display: none;}
+:where(#section-hero) .mobile{display: block; width: 370px; max-width: calc(100% - 20px);}
+:where(#section-hero) .row{gap: 8px; margin-bottom: 16px;}
+:where(#section-hero) .row img{width: calc(33.3333% - 5.33333px); height: auto; aspect-ratio: 2 / 3; border-radius: 4px;}
+:where(#section-hero) .row img:nth-child(2n){transform: translateY(8px);}
+:where(#section-hero) .art{height: 400px;}
+:where(#section-hero) .art::after{background: linear-gradient(rgb(0, 0, 0), transparent 80px), linear-gradient(90deg, rgb(0, 0, 0), transparent 16px, transparent calc(100% - 16px), rgb(0, 0, 0)), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 0.35) 28%, transparent 48%), rgba(0, 0, 0, 0.12);}
+:where(#section-hero) .hero{padding-top: 320px; min-height: 0px;}
+:where(#section-hero) .copy{padding: 0px 20px 24px;}
+:where(#section-hero) h1{font-size: 42px;}
+:where(#section-hero) .eyebrow{font-size: 12px;}
+:where(#section-hero) .hero-description{font-size: 16px;}
+:where(#section-hero) .hero-actions{flex-direction: column;}
+:where(#section-hero) .button{width: 100%; min-height: 48px;}
+:where(#section-hero) .rights{font-size: 12px;}
+@media (max-width: 369px) {:where(#section-hero) h1{font-size: 36px;}
+:where(#section-hero) .hero{padding-top: 280px;}
+:where(#section-hero) .art{height: 350px;}}}
+:where(#section-hero) header{height: 88px; padding: 0px clamp(20px, 3.4vw, 64px); background: linear-gradient(rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0)); align-items: center;}
+:where(#section-hero) .brand{gap: 12px; font-size: 23px; letter-spacing: 0.04em; line-height: 1.05;}
+:where(#section-hero) .brand svg{width: 44px; height: 44px; fill: none; stroke: rgb(206, 18, 18); stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round;}
+:where(#section-hero) .brand small{font-size: 11px; letter-spacing: 0.36em; margin-top: 6px;}
+:where(#section-hero) header > a:last-child{font-size: 15px; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgb(129, 0, 0); padding: 12px 0px;}
+:where(#section-hero) .hero{--tile: calc((100vw - 106px)/8); padding-top: calc(var(--tile)*3 - 70px); min-height: 0px; overflow: hidden;}
+:where(#section-hero) .art{height: calc(var(--tile)*3 + 100px); top: 0px;}
+:where(#section-hero) .rows.desktop{width: calc(100% - 22px); max-width: none;}
+:where(#section-hero) .row{gap: 12px; margin-bottom: 12px;}
+:where(#section-hero) .row img{width: calc(12.5% - 10.5px); height: auto; aspect-ratio: 2 / 3; border-radius: 6px; object-fit: contain; transform: translateY(14px);}
+:where(#section-hero) .row img:nth-child(4n+2){transform: translateY(38px);}
+:where(#section-hero) .row img:nth-child(4n+3){transform: translateY(6px);}
+:where(#section-hero) .row img:nth-child(4n){transform: translateY(26px);}
+:where(#section-hero) .art::after{background: linear-gradient(rgba(0, 0, 0, 0.72), transparent 90px), linear-gradient(90deg, rgba(0, 0, 0, 0.627), transparent 48px, transparent calc(100% - 48px), rgba(0, 0, 0, 0.627)), radial-gradient(46% 40% at 50% 100%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(rgba(0, 0, 0, 0.063) 30%, rgba(0, 0, 0, 0.145) 46%, rgba(0, 0, 0, 0.4) 64%, rgba(0, 0, 0, 0.79) 81%, rgba(0, 0, 0, 0.95) 94%, rgb(0, 0, 0) 100%);}
+:where(#section-hero) .copy{max-width: 940px; padding-bottom: 16px;}
+:where(#section-hero) .eyebrow{font-size: 12px; font-weight: 700; letter-spacing: 0.22em; margin-bottom: 12px;}
+:where(#section-hero) h1{font-size: clamp(48px, 5.15vw, 76px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 18px;}
+:where(#section-hero) .hero-description{margin-bottom: 20px;}
+:where(#section-hero) .hero-actions{gap: 14px;}
+:where(#section-hero) .trial-note{margin: 14px 0px;}
+:where(#section-hero) .rights{margin-top: 16px;}
+:where(#section-hero) .study-links{margin: 0px;}
+:where(#section-hero) .study-links a{padding: 8px 10px;}
+@media (max-width: 767px) {:where(#section-hero) header{height: 72px; padding: 0px 20px;}
+:where(#section-hero) .brand{font-size: 20px; gap: 9px;}
+:where(#section-hero) .brand svg{width: 34px; height: 34px;}
+:where(#section-hero) .brand small{font-size: 9px; margin-top: 5px;}
+:where(#section-hero) header > a:last-child{font-size: 13px;}
+:where(#section-hero) .hero{--tile: calc((min(100vw,390px) - 36px)/3); padding-top: calc(var(--tile)*3 - 52px);}
+:where(#section-hero) .rows.mobile{width: 370px; max-width: calc(100% - 20px);}
+:where(#section-hero) .row{gap: 8px; margin-bottom: 8px;}
+:where(#section-hero) .row img{width: calc(33.3333% - 5.33333px); height: auto; border-radius: 4px; transform: translateY(6px);}
+:where(#section-hero) .row img:nth-child(3n+2){transform: translateY(22px);}
+:where(#section-hero) .row img:nth-child(3n){transform: translateY(12px);}
+:where(#section-hero) .art{height: calc(var(--tile)*3 + 70px);}
+:where(#section-hero) .art::after{background: linear-gradient(rgba(0, 0, 0, 0.69), transparent 65px), linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent 16px, transparent calc(100% - 16px), rgba(0, 0, 0, 0.5)), radial-gradient(70% 35% at 50% 100%, rgb(0, 0, 0), transparent), linear-gradient(rgba(0, 0, 0, 0.063) 30%, rgba(0, 0, 0, 0.145) 46%, rgba(0, 0, 0, 0.4) 64%, rgba(0, 0, 0, 0.79) 81%, rgba(0, 0, 0, 0.95) 94%, rgb(0, 0, 0));}
+:where(#section-hero) .copy{padding: 0px 20px 12px;}
+:where(#section-hero) h1{font-size: 42px; margin-bottom: 16px;}
+:where(#section-hero) .eyebrow{font-size: 11px; letter-spacing: 0.14em; margin-bottom: 10px;}
+:where(#section-hero) .hero-description{font-size: 16px; line-height: 1.45; margin-bottom: 18px;}
+:where(#section-hero) .hero-actions{gap: 10px;}
+:where(#section-hero) .trial-note{font-size: 13px; line-height: 1.5; margin: 12px 0px;}
+:where(#section-hero) .rights{margin-top: 10px; line-height: 1.45;}
+:where(#section-hero) .rights a{padding: 6px;}
+:where(#section-hero) .study-links a{font-size: 12px; padding: 8px;}}
+@media (max-width: 369px) {:where(#section-hero) header{padding: 0px 14px;}
+:where(#section-hero) .brand{font-size: 18px;}
+:where(#section-hero) .brand svg{width: 30px;}
+:where(#section-hero) h1{font-size: 36px;}}

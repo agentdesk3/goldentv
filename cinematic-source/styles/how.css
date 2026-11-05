@@ -1,0 +1,81 @@
+:where(#section-how){--bg: #000; --char: #1b1717; --burg: #810000; --red: #ce1212; --ivory: #eeebdd; --muted: #bdbdc5;}
+:where(#section-how) *{box-sizing: border-box;}
+:where(#section-how){scroll-behavior: smooth;}
+:where(#section-how){margin: 0px; background: var(--bg); color: var(--ivory); font-family: Inter, Arial, Helvetica, sans-serif;}
+:where(#section-how) a{color: inherit;}
+:where(#section-how) button,:where(#section-how) a{touch-action: manipulation;}
+:where(#section-how) .intro,:where(#section-how) .outro{min-height: 52vh; display: grid; place-items: center; text-align: center; padding: 4rem 1rem; background: radial-gradient(rgb(39, 10, 10), transparent 65%);}
+:where(#section-how) .intro span,:where(#section-how) .outro span{letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; color: rgb(217, 141, 141);}
+:where(#section-how) .section{position: relative; background: linear-gradient(150deg, rgb(9, 8, 8) 4%, rgb(25, 11, 12) 49%, rgb(8, 7, 7) 100%); isolation: isolate;}
+:where(#section-how) .section::before{content: ""; position: absolute; inset: 0px; background: radial-gradient(at 76% 45%, rgba(129, 0, 0, 0.25), transparent 52%); pointer-events: none;}
+:where(#section-how) .section-inner{max-width: 1250px; margin: auto; padding: 7rem 4vw 10rem; position: relative;}
+:where(#section-how) .eyebrow{color: rgb(238, 136, 136); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.76rem; font-weight: 750;}
+:where(#section-how) .section .source-h1{font-size: clamp(2.8rem, 5.5vw, 6rem); line-height: 1.02; letter-spacing: -0.06em; margin: 1.2rem 0px; max-width: 870px;}
+:where(#section-how) .section .source-h1 em{font-style: normal; color: rgb(226, 91, 91);}
+:where(#section-how) .lede{color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7; max-width: 620px;}
+:where(#section-how) .story{display: grid; grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.08fr); gap: clamp(2rem, 6vw, 7rem); margin-top: 7rem;}
+:where(#section-how) .steps{position: relative;}
+:where(#section-how) .rail{position: absolute; left: 24px; top: 0px; bottom: 0px; width: 1px; background: rgb(92, 51, 51);}
+:where(#section-how) .rail-fill{height: 0px; background: linear-gradient(rgb(255, 118, 118), rgb(206, 18, 18)); width: 3px; position: absolute; top: 0px; left: -1px; box-shadow: rgb(206, 18, 18) 0px 0px 18px;}
+:where(#section-how) .step{position: relative; min-height: 78vh; display: flex; align-items: center; padding: 3rem 0px 3rem 5rem; opacity: 0.38; transform: translateY(18px); transition: opacity 0.3s, transform 0.3s;}
+:where(#section-how) .step.active{opacity: 1; transform: translateY(0px);}
+:where(#section-how) .step-num{position: absolute; left: 0px; top: 50%; transform: translateY(-50%); width: 49px; height: 49px; border: 1px solid rgb(112, 66, 66); border-radius: 50%; background: rgb(21, 13, 13); display: grid; place-items: center; color: rgb(216, 182, 182); font-size: 0.9rem; transition: 0.3s;}
+:where(#section-how) .step.active .step-num{background: rgb(94, 13, 13); border-color: rgb(240, 75, 75); color: white; box-shadow: rgba(206, 18, 18, 0.25) 0px 0px 30px;}
+:where(#section-how) .step h2{font-size: clamp(2rem, 3.5vw, 3.5rem); line-height: 1.08; letter-spacing: -0.05em; margin: 0.7rem 0px 1rem;}
+:where(#section-how) .step p{font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 410px;}
+:where(#section-how) .step .label{color: rgb(237, 153, 153); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.72rem; font-weight: 700;}
+:where(#section-how) .visual-wrap{position: relative;}
+:where(#section-how) .visual{position: sticky; top: 12vh; height: 76vh; min-height: 470px; max-height: 740px; border-radius: 26px; overflow: hidden; background: radial-gradient(at 65% 20%, rgba(107, 16, 16, 0.5), transparent 50%), linear-gradient(135deg, rgb(29, 17, 17), rgb(9, 8, 8) 65%); border: 1px solid rgb(91, 52, 52); box-shadow: rgba(0, 0, 0, 0.733) 0px 30px 110px, rgba(126, 11, 11, 0.082) 0px 0px 60px inset; perspective: 1000px;}
+:where(#section-how) .visual::before{content: ""; position: absolute; inset: -30%; background: radial-gradient(circle, rgba(206, 18, 18, 0.157), transparent 35%); transform: translate(var(--mx,0px),var(--my,0px)); transition: transform 0.25s; pointer-events: none;}
+:where(#section-how) .visual-top{display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: relative; z-index: 2;}
+:where(#section-how) .brand{font-size: 0.78rem; letter-spacing: 0.2em; font-weight: 800;}
+:where(#section-how) .brand b{color: rgb(255, 91, 91);}
+:where(#section-how) .live{font-size: 0.7rem; color: rgb(216, 184, 184); letter-spacing: 0.14em;}
+:where(#section-how) .scene{position: absolute; inset: 80px 0px 0px; display: grid; place-items: center; padding: 30px; opacity: 0; transform: translateY(30px) scale(0.94); filter: blur(8px); transition: opacity 0.6s, transform 0.65s, filter 0.6s; pointer-events: none;}
+:where(#section-how) .scene.active{opacity: 1; transform: translateY(0px) scale(1); filter: blur(0px);}
+:where(#section-how) .scene-content{width: min(100%, 420px);}
+:where(#section-how) .micro{color: rgb(232, 164, 164); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.7rem; font-weight: 700; margin-bottom: 16px;}
+:where(#section-how) .scene-title{font-size: clamp(1.6rem, 3vw, 2.6rem); letter-spacing: -0.05em; line-height: 1.1; font-weight: 800; margin: 0px 0px 22px;}
+:where(#section-how) .plan-tiles{display: grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+:where(#section-how) .plan{border: 1px solid rgb(119, 80, 80); border-radius: 12px; padding: 20px; background: rgb(27, 17, 17);}
+:where(#section-how) .plan.featured{background: linear-gradient(135deg, rgb(105, 18, 18), rgb(49, 14, 14)); border-color: rgb(237, 91, 91); box-shadow: rgba(206, 18, 18, 0.145) 0px 0px 35px;}
+:where(#section-how) .plan small{color: rgb(207, 179, 179);}
+:where(#section-how) .plan strong{display: block; font-size: 1.8rem; margin: 10px 0px;}
+:where(#section-how) .screen{border: 1px solid rgb(117, 64, 64); background: rgb(17, 11, 11); border-radius: 20px; padding: 20px; box-shadow: rgba(0, 0, 0, 0.533) 0px 24px 60px;}
+:where(#section-how) .screen-bar{display: flex; gap: 6px; margin-bottom: 20px;}
+:where(#section-how) .screen-bar i{display: block; width: 7px; height: 7px; border-radius: 50%; background: rgb(169, 86, 86);}
+:where(#section-how) .device{height: 145px; border: 5px solid rgb(75, 56, 56); border-radius: 11px; background: radial-gradient(circle, rgb(160, 24, 24), rgb(37, 8, 8) 70%); display: grid; place-items: center;}
+:where(#section-how) .device svg{width: 55px; height: 55px;}
+:where(#section-how) .device-stand{height: 28px; width: 90px; margin: auto; border-bottom: 7px solid rgb(110, 75, 75); border-radius: 0px 0px 9px 9px;}
+:where(#section-how) .screen-caption{text-align: center; color: rgb(203, 187, 187); font-size: 0.85rem; margin-top: 20px;}
+:where(#section-how) .poster-grid{display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;}
+:where(#section-how) .poster{aspect-ratio: 3 / 4; border-radius: 9px; display: flex; align-items: end; padding: 10px; font-size: 0.7rem; letter-spacing: 0.08em; font-weight: 700; background: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/live.webp") center center / cover no-repeat; overflow: hidden; transition: background-size 0.35s, filter 0.35s; filter: saturate(0.94);}
+:where(#section-how) .poster:nth-child(2){background-image: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/movies.webp");}
+:where(#section-how) .poster:nth-child(3){background-image: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/series.webp");}
+:where(#section-how) .poster:hover{filter: saturate(1.16) brightness(1.08);}
+:where(#section-how) .actions{display: flex; flex-wrap: wrap; gap: 14px; margin-top: 3rem;}
+:where(#section-how) .btn{display: inline-flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 100px; padding: 0px 24px; text-decoration: none; font-size: 0.9rem; font-weight: 750; transition: transform 0.2s, background 0.2s;}
+:where(#section-how) .btn:hover{transform: translateY(-3px);}
+:where(#section-how) .btn-primary{background: var(--red); color: white;}
+:where(#section-how) .btn-secondary{border: 1px solid rgb(125, 85, 85); color: var(--ivory);}
+:where(#section-how) .disclaimer{font-size: 0.77rem; color: rgb(158, 145, 145); line-height: 1.6; margin-top: 1.5rem;}
+:where(#section-how) .outro h2{font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.04em; margin: 0.5rem 0px;}
+@media (max-width: 800px) {:where(#section-how) .section-inner{padding: 5rem 6vw;}
+:where(#section-how) .story{display: flex; flex-direction: column; gap: 2rem; margin-top: 4rem;}
+:where(#section-how) .visual-wrap{order: -1;}
+:where(#section-how) .visual{position: sticky; top: 10px; height: 380px; min-height: 0px; border-radius: 18px;}
+:where(#section-how) .scene{inset: 65px 0px 0px; padding: 20px;}
+:where(#section-how) .visual-top{padding: 18px;}
+:where(#section-how) .scene-title{font-size: 1.5rem;}
+:where(#section-how) .plan{padding: 12px;}
+:where(#section-how) .plan strong{font-size: 1.4rem;}
+:where(#section-how) .steps{margin-top: 0px;}
+:where(#section-how) .step{min-height: 55vh; padding-left: 4rem;}
+:where(#section-how) .rail{left: 20px;}
+:where(#section-how) .step-num{width: 41px; height: 41px;}
+:where(#section-how) .poster{aspect-ratio: 4 / 3;}
+:where(#section-how) .device{height: 90px;}
+:where(#section-how) .section .source-h1{font-size: clamp(2.7rem, 9vw, 4.5rem);}}
+@media (prefers-reduced-motion: reduce) {:where(#section-how){scroll-behavior: auto;}
+:where(#section-how) .step,:where(#section-how) .scene,:where(#section-how) .btn,:where(#section-how) .step-num{transition: none !important; transform: none !important; filter: none !important;}
+:where(#section-how) .visual::before{display: none;}}

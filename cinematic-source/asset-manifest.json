@@ -1,0 +1,368 @@
+[
+  {
+    "source": "references/hero-mosaic-assets/poster-02.jpg",
+    "destination": "assets/hero/poster-02.jpg",
+    "bytes": 54133,
+    "sha256": "573b9e031736aa92f0fa308df1da1308cc0ce430e084cb2ed147dd613f221313"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-04.jpg",
+    "destination": "assets/hero/poster-04.jpg",
+    "bytes": 57951,
+    "sha256": "4c9ba88d20be5ab6bc861d5dd85dd4590b310d026ee4c0e4f85de5a09bfaa65f"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-05.jpg",
+    "destination": "assets/hero/poster-05.jpg",
+    "bytes": 55504,
+    "sha256": "eb8006aad01ab0ed8c199dab3c4e515a3093a2450d46782b7a1a3d95a15bce40"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-12.jpg",
+    "destination": "assets/hero/poster-12.jpg",
+    "bytes": 50624,
+    "sha256": "90114bfc5baa5cd702caada4a4e4f7111bf1933b8ee500aa6c1aa7380d6db162"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-15.jpg",
+    "destination": "assets/hero/poster-15.jpg",
+    "bytes": 63016,
+    "sha256": "5f7a9939b05e12fc7849a8d0f2234c4dbc6f1ef79e3eddab86c859984242decb"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-06.jpg",
+    "destination": "assets/hero/poster-06.jpg",
+    "bytes": 67835,
+    "sha256": "73606ca3606f80876a95c9c6657ba949b43909bbd9244ddb2a1ce67ddbfb4e0c"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-01.jpg",
+    "destination": "assets/hero/poster-01.jpg",
+    "bytes": 52083,
+    "sha256": "549b0ee39ba9e2e580dc6fa7efb1d49c2603481af719bd5b16fbf853b847c5b1"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-16.jpg",
+    "destination": "assets/hero/poster-16.jpg",
+    "bytes": 68152,
+    "sha256": "8eb16610bc9ff284ad0a02d71cb3f1963e14637d759da22737deb6da83a10b7f"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-11.jpg",
+    "destination": "assets/hero/poster-11.jpg",
+    "bytes": 50357,
+    "sha256": "9cae9be466f54f2640b98b953e41b3bab9817e5c75c01f33831ab58e7dbf6e67"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-03.jpg",
+    "destination": "assets/hero/poster-03.jpg",
+    "bytes": 66241,
+    "sha256": "e918e08df7616cbda1e32015292dc797035c0b60b157ed232b9d42d4232af87c"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-07.jpg",
+    "destination": "assets/hero/poster-07.jpg",
+    "bytes": 43683,
+    "sha256": "bda5e394404e8d86f3000f55739fb0221d98f2c80d44bfb8b13c661037342f25"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-08.jpg",
+    "destination": "assets/hero/poster-08.jpg",
+    "bytes": 58570,
+    "sha256": "e5b8f43de8be4c0fda96cf54d17340bad81b05cd9a0a759ad6c8221489565a45"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-09.jpg",
+    "destination": "assets/hero/poster-09.jpg",
+    "bytes": 50701,
+    "sha256": "a8c95020fa5eb71954f1bec19969603fbf485c80e6cd7cfb2e0fdea0a3343737"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-13.jpg",
+    "destination": "assets/hero/poster-13.jpg",
+    "bytes": 72757,
+    "sha256": "4559cbcb0d60d3575f6575032974dc1f40e4422b8268929978fcd441cb992440"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-14.jpg",
+    "destination": "assets/hero/poster-14.jpg",
+    "bytes": 55714,
+    "sha256": "1e753d46ea39a064c32d3265099b510d3a2597a9732af34c5f6ee48e3103ffa1"
+  },
+  {
+    "source": "references/hero-mosaic-assets/poster-10.jpg",
+    "destination": "assets/hero/poster-10.jpg",
+    "bytes": 44845,
+    "sha256": "4ab04fade9769ffd2ca69fb965c01abd3dc2009f13d5a407f30896070b290fce"
+  },
+  {
+    "source": "sports-wall-v1/assets/assets/football-wallpaper-hd-4k-51.png",
+    "destination": "assets/sports/football-wallpaper-hd-4k-51.png",
+    "bytes": 524839,
+    "sha256": "ce660b6bac3576be06519d5b97a1be738412fcaf30a39feac08779359df5475c"
+  },
+  {
+    "source": "sports-wall-v2/assets/01-premier-league.png",
+    "destination": "assets/sports/01-premier-league.png",
+    "bytes": 142748,
+    "sha256": "f6ff0e85e96ff444748c942d9ecb08213fda900ad91ed75892dbbe4320778b02"
+  },
+  {
+    "source": "sports-wall-v2/assets/02-serie-a.png",
+    "destination": "assets/sports/02-serie-a.png",
+    "bytes": 87305,
+    "sha256": "6ed9d96af48a680cd1f99d5142f17a5d61106456ee97facce6eefe38a5048c2d"
+  },
+  {
+    "source": "sports-wall-v2/assets/03-laliga.png",
+    "destination": "assets/sports/03-laliga.png",
+    "bytes": 109801,
+    "sha256": "3d0faf35d15edbeec8c44c414e4be27d9ae13405251804a7bce8e54f2e34377d"
+  },
+  {
+    "source": "sports-wall-v2/assets/04-bundesliga.png",
+    "destination": "assets/sports/04-bundesliga.png",
+    "bytes": 96006,
+    "sha256": "926413703dfdf12ac0910061ccd0cd8d061c0218675125f7a7e900fc1bab4525"
+  },
+  {
+    "source": "sports-wall-v2/assets/05-ligue-1.png",
+    "destination": "assets/sports/05-ligue-1.png",
+    "bytes": 89246,
+    "sha256": "7304d9ca76901094f445dde7f4762a15f77bd1fd22c0ab525e9d50f939343c8c"
+  },
+  {
+    "source": "sports-wall-v2/assets/06-champions-league.png",
+    "destination": "assets/sports/06-champions-league.png",
+    "bytes": 145624,
+    "sha256": "a9cc7bccdaf73cc869048483386c07241f68e9d8725398a7c5aae32d37ff35f2"
+  },
+  {
+    "source": "sports-wall-v2/assets/07-europa-league.png",
+    "destination": "assets/sports/07-europa-league.png",
+    "bytes": 143432,
+    "sha256": "231cf8f51fec7342e8bde3d97e016eaf90b4d38d69878120b595b6731ebc4c1e"
+  },
+  {
+    "source": "sports-wall-v2/assets/08-conference-league.png",
+    "destination": "assets/sports/08-conference-league.png",
+    "bytes": 152476,
+    "sha256": "6292469b6de88fb6275a76e75c81078b69a608ed7422dcaa7ed731120d8205a4"
+  },
+  {
+    "source": "sports-wall-v2/assets/09-red-light-streak.png",
+    "destination": "assets/sports/09-red-light-streak.png",
+    "bytes": 313000,
+    "sha256": "cbcb4f09aac06c2d50491af8527400c36ac13c35eadddca0bb14aeb90079fcda"
+  },
+  {
+    "source": "sports-wall-v3/assets/f1-night-racing.png",
+    "destination": "assets/sports/f1-night-racing.png",
+    "bytes": 793363,
+    "sha256": "48398bef80573332b18a0aa9272c6905de0406ac9fa7c21b571839b9177da91d"
+  },
+  {
+    "source": "sports-wall-v3/assets/nba-basketball.png",
+    "destination": "assets/sports/nba-basketball.png",
+    "bytes": 782353,
+    "sha256": "72f6999f2a5784035b30304e03bf8e542cb2140777d6e29633484083cd6ad4e7"
+  },
+  {
+    "source": "sports-wall-v3/assets/ufc-mma.png",
+    "destination": "assets/sports/ufc-mma.png",
+    "bytes": 780541,
+    "sha256": "5f867e3ee73adaabd2c3f05dfd2e26e464b58af2ef5fd6870f9717b3d428db91"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\apple-tv-plus-logo-1.png",
+    "destination": "assets/universe/apple-tv-plus-logo-1.png",
+    "bytes": 33765,
+    "sha256": "980ee852f8dbb29fc3ffbaa18daf9269c53a2951905ced595862d029b64ee649"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\cbc-logo.png",
+    "destination": "assets/universe/cbc-logo.png",
+    "bytes": 79086,
+    "sha256": "9004547d91ec3d1841fce1dd966813c9f367c6d6b2f9f94d8ca565e21c918181"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\cbs-logo.png",
+    "destination": "assets/universe/cbs-logo.png",
+    "bytes": 64701,
+    "sha256": "3229d58e6eec95073e08f014b6ec0e78e6d40715454b5a658f02935f76b90542"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\cinimax-logo.png",
+    "destination": "assets/universe/cinimax-logo.png",
+    "bytes": 63423,
+    "sha256": "1d360df259a8ce09fba1f8d7540f46569795c24d9447fad5faba82c06317b386"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\disney-logo-white.png",
+    "destination": "assets/universe/disney-logo-white.png",
+    "bytes": 82301,
+    "sha256": "12a22054b6ac670a3b04b58ddfeb9c12951d7f060f5553097528a8874adb6baa"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\epix-logo.png",
+    "destination": "assets/universe/epix-logo.png",
+    "bytes": 42557,
+    "sha256": "bfca6358b187ffce4f56c802cc264bd933cb03779503b8658c3c9743db788b99"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\hbo-max-logo-white.png",
+    "destination": "assets/universe/hbo-max-logo-white.png",
+    "bytes": 50877,
+    "sha256": "a2680fa71be4f73b97ed60752ba0520fdc5a0472716876792554107969766c0f"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\nat-geo-logo.png",
+    "destination": "assets/universe/nat-geo-logo.png",
+    "bytes": 65485,
+    "sha256": "7235886dd9761cb2498f1b7792683ce378fcc3d9c04d86f4e41e9b1ac2e58d23"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\paramount-logo.png",
+    "destination": "assets/universe/paramount-logo.png",
+    "bytes": 120358,
+    "sha256": "89acd70eb8bba867b37a7e41e62ce8c2ae2be906496e75a7fc229f3c21050917"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\roku-logo.png",
+    "destination": "assets/universe/roku-logo.png",
+    "bytes": 54443,
+    "sha256": "34e539b8bc431335ac5499b3bf874257feb3ab1a5faae88e71c9b8087cf43a3a"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\entertainment\\showtime-logo.png",
+    "destination": "assets/universe/showtime-logo.png",
+    "bytes": 49886,
+    "sha256": "3b0fbefeae88f7296c3b160b132800dc39cf172c53f032173164b8b88709c334"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\bein-sport-logo-white.png",
+    "destination": "assets/universe/bein-sport-logo-white.png",
+    "bytes": 71346,
+    "sha256": "4a392ccdeb9be7c50bfb8d292ead5b07c0ba9f31059409d4a9324690785e5041"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\espn-logo.png",
+    "destination": "assets/universe/espn-logo.png",
+    "bytes": 38935,
+    "sha256": "f44bce056811e8ee2760b9c08fb106eb79d85fbf2985c235ac3d46d2b6050ea9"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\fs1-logo.png",
+    "destination": "assets/universe/fs1-logo.png",
+    "bytes": 19923,
+    "sha256": "e803b61a69d790aa83b19998715acef11916aa31076c2c6b268eea6432d73afa"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\fs2-logo.png",
+    "destination": "assets/universe/fs2-logo.png",
+    "bytes": 21157,
+    "sha256": "c211e0b3b24c67e2af0dc06895936f0e4f49f19302af26d6f93dd544110a473e"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\golf-logo-white.png",
+    "destination": "assets/universe/golf-logo-white.png",
+    "bytes": 74381,
+    "sha256": "fa9f38cc23203a752702786b37df5a93e15e99bf302fd1f7f0d7b73eaf6dd69e"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\nba-logo-white.png",
+    "destination": "assets/universe/nba-logo-white.png",
+    "bytes": 104988,
+    "sha256": "44ff4bf9530c677f52fd8d5f062973f689944e21e1fb01835645a839f6701208"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\nba-tv-canada-logo-white.png",
+    "destination": "assets/universe/nba-tv-canada-logo-white.png",
+    "bytes": 85103,
+    "sha256": "8052af58ee683fe353e1dedccada3ffd3951a6c7a5bcd2433fafc6ec262c5be2"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\nfl-logo-white.png",
+    "destination": "assets/universe/nfl-logo-white.png",
+    "bytes": 93853,
+    "sha256": "a4abd66b0995555d68fa314fc3d50fa916d3faee80adb2adfe14e9a34ef2a400"
+  },
+  {
+    "source": "entertainment-universe-v3\\assets\\sports\\SKY-SPORT-CROPPED.png",
+    "destination": "assets/universe/SKY-SPORT-CROPPED.png",
+    "bytes": 28490,
+    "sha256": "745571bc25459ed737f8855b498a4a2bee75c368f82f0df713a2364f486df238"
+  },
+  {
+    "source": "how-it-works-v2\\assets\\live.webp",
+    "destination": "assets/how/live.webp",
+    "bytes": 29812,
+    "sha256": "1cb503540ae753d89d9be2c72793ba2daeb7e7bbdc61835571389731ace348d3"
+  },
+  {
+    "source": "how-it-works-v2\\assets\\movies.webp",
+    "destination": "assets/how/movies.webp",
+    "bytes": 21026,
+    "sha256": "cbccf680b6116eddafa3e05724c8af7b5f9b8d542db0ab5a5ad2c53f84fba253"
+  },
+  {
+    "source": "how-it-works-v2\\assets\\series.webp",
+    "destination": "assets/how/series.webp",
+    "bytes": 24422,
+    "sha256": "556bd01537c20b4d51a9e3c300e74270cbd3b725cd3c654a2714183957de4a7a"
+  },
+  {
+    "source": "branding-v2/logo-horizontal-transparent.png",
+    "destination": "assets/branding/logo-horizontal-transparent.png",
+    "bytes": 145978,
+    "sha256": "d2408bb9b4108d6fd9a3edbb2ab8657b427cf3fd0379605482ba1bab0479a242"
+  },
+  {
+    "source": "branding-v2/symbol-transparent.png",
+    "destination": "assets/branding/symbol-transparent.png",
+    "bytes": 60021,
+    "sha256": "962572e26f90e34382cab24bdc96381dffe1c1c8120da54a6218559f1f231920"
+  },
+  {
+    "source": "v4/vendor/gsap.min.js",
+    "destination": "vendor/gsap.min.js",
+    "bytes": 72927,
+    "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+  },
+  {
+    "source": "v4/vendor/ScrollTrigger.min.js",
+    "destination": "vendor/ScrollTrigger.min.js",
+    "bytes": 44575,
+    "sha256": "b0b14d67b55b0c43c756ac0b106cfcb09d0879945f6ead64451065b0672916a2"
+  },
+  {
+    "source": "v6-hero-mosaic/qa/hero-1440.png",
+    "destination": "assets/reference/hero-1440.png",
+    "bytes": 1141907,
+    "sha256": "05cbbe5fabb7ecdda43405e3c13814ca9fcee93ff0077ae0995f2ada0ef61553"
+  },
+  {
+    "source": "v6-hero-mosaic/qa/hero-390.png",
+    "destination": "assets/reference/hero-390.png",
+    "bytes": 255297,
+    "sha256": "12358b36bdea38aaf11e6b2b069b4ea5de63224a16d3a825d67aae0ec313e703"
+  },
+  {
+    "source": "references/hero-mosaic-reference.jpg",
+    "destination": "assets/reference/hero-mosaic-reference.jpg",
+    "bytes": 140055,
+    "sha256": "09eb616aec8aa9f99a1af752259ba1c3ffee859b27c4c92666543f8cc72ebd38"
+  },
+  {
+    "source": "v6-1-hero/qa/hero-1440.png",
+    "destination": "assets/reference/v61-hero-1440.png",
+    "bytes": 1189387,
+    "sha256": "9530b8bf59ead1f2fa533e4e07d0522fcb9653f153650705a6b29546655d8574"
+  },
+  {
+    "source": "v6-1-hero/qa/mobile-full.png",
+    "destination": "assets/reference/v61-mobile-full.png",
+    "bytes": 257858,
+    "sha256": "ab5e207e43d73115a455b19c5bd880213f9c17f257158f4c26ef5d37403e7747"
+  }
+]

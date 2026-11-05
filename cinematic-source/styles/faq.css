@@ -1,0 +1,52 @@
+:where(#section-faq){color-scheme: dark; --ivory: #eeeBDD; --muted: #bdbdc5; --red: #ce1212;}
+:where(#section-faq) *{box-sizing: border-box;}
+:where(#section-faq){scroll-behavior: smooth;}
+:where(#section-faq){margin: 0px; background: rgb(5, 4, 4); color: var(--ivory); font-family: Inter, Arial, sans-serif;}
+:where(#section-faq) button,:where(#section-faq) a{font: inherit;}
+:where(#section-faq) a{color: inherit;}
+:where(#section-faq) .intro,:where(#section-faq) .outro{min-height: 45vh; display: grid; place-content: center; text-align: center; padding: 8vw; background: radial-gradient(at 50% 100%, rgb(68, 10, 10), rgb(5, 4, 4) 65%);}
+:where(#section-faq) .eyebrow{font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: rgb(229, 105, 105); font-weight: 700;}
+:where(#section-faq) .intro .source-h1{font-size: clamp(3rem, 8vw, 7rem); line-height: 0.96; letter-spacing: -0.07em; max-width: 850px; margin: 20px auto;}
+:where(#section-faq) .intro p,:where(#section-faq) .outro p{color: var(--muted); line-height: 1.6;}
+:where(#section-faq) .faq{position: relative; background: radial-gradient(at 80% 35%, rgb(58, 8, 9) 0%, rgb(19, 9, 9) 45%, rgb(7, 6, 6) 80%); overflow: clip;}
+:where(#section-faq) .faq::before{content: ""; position: absolute; inset: 0px; pointer-events: none; background: radial-gradient(450px circle at var(--mx,70%) var(--my,35%),#a5121224,transparent 75%);}
+:where(#section-faq) .faq-inner{max-width: 1330px; margin: auto; display: grid; grid-template-columns: minmax(280px, 0.85fr) minmax(400px, 1.15fr); gap: clamp(35px, 7vw, 130px); padding: 120px 6vw;}
+:where(#section-faq) .left{position: sticky; top: 15vh; align-self: start;}
+:where(#section-faq) .left h2{font-size: clamp(3rem, 6vw, 6.4rem); line-height: 0.99; letter-spacing: -0.07em; margin: 20px 0px 25px;}
+:where(#section-faq) .left h2 em{font-style: normal; color: rgb(227, 72, 72);}
+:where(#section-faq) .left > p{color: var(--muted); line-height: 1.75; max-width: 350px;}
+:where(#section-faq) .progress{height: 2px; background: rgba(255, 255, 255, 0.14); margin-top: 50px; max-width: 320px;}
+:where(#section-faq) .progress span{display: block; width: 0%; height: 100%; background: var(--red); transition: width 0.12s linear;}
+:where(#section-faq) .counter{font-size: 12px; letter-spacing: 0.2em; color: rgb(189, 189, 197); margin-top: 16px;}
+:where(#section-faq) .right{padding-top: 12vh;}
+:where(#section-faq) .qa{min-height: 66vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(255, 255, 255, 0.14); position: relative; padding: 55px 0px; opacity: 0.42; transform: translateY(30px); transition: opacity 0.45s, transform 0.6s;}
+:where(#section-faq) .qa.active{opacity: 1; transform: translateY(0px);}
+:where(#section-faq) .number{font-size: 12px; letter-spacing: 0.22em; color: rgb(237, 114, 114); margin-bottom: 24px;}
+:where(#section-faq) .question{display: flex; align-items: start; justify-content: space-between; gap: 20px; border: 0px; background: none; text-align: left; color: var(--ivory); font-size: clamp(1.8rem, 3vw, 3.25rem); letter-spacing: -0.045em; line-height: 1.13; padding: 0px; cursor: pointer;}
+:where(#section-faq) .plus{font-size: 27px; color: rgb(236, 139, 139); flex: 0 0 auto; transition: transform 0.3s;}
+:where(#section-faq) .qa.open .plus{transform: rotate(45deg);}
+:where(#section-faq) .answer{display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s;}
+:where(#section-faq) .qa.open .answer{grid-template-rows: 1fr;}
+:where(#section-faq) .answer > div{overflow: hidden;}
+:where(#section-faq) .answer p{color: rgb(209, 197, 197); line-height: 1.8; max-width: 560px; font-size: 16px; padding-top: 15px;}
+:where(#section-faq) .qa.active .number{color: rgb(255, 133, 133);}
+:where(#section-faq) .cta{display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 24px; background: rgb(206, 18, 18); border-radius: 100px; text-decoration: none; font-weight: 700; transition: transform 0.2s, background 0.2s;}
+:where(#section-faq) .cta:hover{background: rgb(233, 43, 43); transform: translateY(-3px);}
+:where(#section-faq) .outro{min-height: 55vh;}
+:where(#section-faq) .outro h2{font-size: clamp(2.4rem, 6vw, 5rem); letter-spacing: -0.06em; margin: 15px 0px;}
+:where(#section-faq) .outro .actions{display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px;}
+:where(#section-faq) .outline{background: transparent; border: 1px solid rgb(118, 80, 80);}
+:where(#section-faq) .outline:hover{background: rgb(53, 22, 22);}
+:where(#section-faq) .notice{font-size: 12px; color: rgb(168, 156, 156); padding: 25px; text-align: center; background: rgb(8, 7, 7);}
+@media (max-width: 760px) {:where(#section-faq) .faq-inner{display: block; padding: 75px 7vw;}
+:where(#section-faq) .left{position: relative; top: auto;}
+:where(#section-faq) .left h2{font-size: 3.7rem;}
+:where(#section-faq) .left > p{max-width: none;}
+:where(#section-faq) .progress{margin-top: 30px;}
+:where(#section-faq) .right{padding-top: 25px;}
+:where(#section-faq) .qa{min-height: 50vh; opacity: 1; transform: none;}
+:where(#section-faq) .question{font-size: 1.9rem;}
+:where(#section-faq) .intro{min-height: 38vh;}}
+@media (prefers-reduced-motion: reduce) {:where(#section-faq){scroll-behavior: auto;}
+:where(#section-faq) *,:where(#section-faq) ::before,:where(#section-faq) ::after{transition: none !important; animation: auto ease 0s 1 normal none running none !important;}
+:where(#section-faq) .qa{opacity: 1; transform: none;}}

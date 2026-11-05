@@ -1,0 +1,92 @@
+[
+  {
+    "command": "node --check cinematic-v7/browser-tests.mjs",
+    "exitCode": 0,
+    "milliseconds": 310,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/contract.test.cjs",
+    "exitCode": 0,
+    "milliseconds": 214,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/extract-sections.cjs",
+    "exitCode": 0,
+    "milliseconds": 203,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/run-browser-tests.cjs",
+    "exitCode": 0,
+    "milliseconds": 203,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/runtime.mjs",
+    "exitCode": 0,
+    "milliseconds": 198,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/sections.mjs",
+    "exitCode": 0,
+    "milliseconds": 404,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/verify-boundaries.cjs",
+    "exitCode": 0,
+    "milliseconds": 321,
+    "output": ""
+  },
+  {
+    "command": "node --check cinematic-v7/verify.cjs",
+    "exitCode": 0,
+    "milliseconds": 208,
+    "output": ""
+  },
+  {
+    "command": "node --test cinematic-v7/contract.test.cjs",
+    "exitCode": 0,
+    "milliseconds": 496,
+    "output": "✔ factory imports without browser globals and validates its root (15.1809ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 266.7839\n"
+  },
+  {
+    "command": "node cinematic-v7/extract-sections.cjs --check",
+    "exitCode": 0,
+    "milliseconds": 1058,
+    "output": "PASS: nine V6 initializers extracted with only documented lifecycle adaptations\n"
+  },
+  {
+    "command": "node test-cinematic-wrapper.cjs",
+    "exitCode": 0,
+    "milliseconds": 226,
+    "output": "PASS: Event listener cleanup\nPASS: Animation frame cancellation\nPASS: Cleanup runs exactly once\nPASS: Repeated destroy is safe\nPASS: Lifecycle wrapper tests complete\n"
+  },
+  {
+    "command": "node test-cinematic-gsap-lifecycle.cjs",
+    "exitCode": 0,
+    "milliseconds": 422,
+    "output": "PASS: GSAP Context cleanup callback\nPASS: GSAP MatchMedia cleanup callback\nPASS: Cleanup is idempotent\nPASS: GSAP lifecycle mock tests complete\n"
+  },
+  {
+    "command": "npx tsc --noEmit",
+    "exitCode": 0,
+    "milliseconds": 11478,
+    "output": ""
+  },
+  {
+    "command": "npm run build",
+    "exitCode": 0,
+    "milliseconds": 35749,
+    "output": "\n> goldeniptv@0.1.0 build\n> next build\n\n▲ Next.js 16.3.6 (Turbopack)\n✓ Running next.config.ts took 289ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 11.2s\n  Running TypeScript ...\n  Finished TypeScript in 9.5s ...\n  Collecting page data using 3 workers ...\n  Generating static pages using 3 workers (0/24) ...\n  Generating static pages using 3 workers (6/24) \r\n  Generating static pages using 3 workers (12/24) \r\n  Generating static pages using 3 workers (18/24) \r\n✓ Generating static pages using 3 workers (24/24) in 2.8s\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ○ /contact\n├ ○ /devices\n├ ○ /devices/android-tv\n├ ○ /devices/apple-tv\n├ ○ /devices/firestick\n├ ○ /devices/lg-smart-tv\n├ ○ /devices/samsung-smart-tv\n├ ○ /faq\n├ ○ /guides\n├ ○ /guides/how-to-install-iptv\n├ ○ /guides/internet-speed-for-iptv\n├ ○ /guides/iptv-buffering\n├ ○ /icon.svg\n├ ○ /iptv-free-trial\n├ ○ /iptv-south-africa\n├ ○ /pricing\n├ ○ /privacy\n├ ○ /refund-policy\n├ ○ /robots.txt\n├ ○ /sitemap.xml\n└ ○ /terms\n\n\n○  (Static)  prerendered as static content\n\n"
+  },
+  {
+    "command": "node cinematic-v7/verify-boundaries.cjs",
+    "exitCode": 0,
+    "milliseconds": 520,
+    "output": "PASS: 404 existing files unchanged, including routes, SEO, HTML, CSS, and V6\n"
+  }
+]

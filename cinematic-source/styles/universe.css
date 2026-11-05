@@ -1,0 +1,49 @@
+:where(#section-universe){color-scheme: dark; --ivory: #EEEBDD; --red: #CE1212;}
+:where(#section-universe) *{box-sizing: border-box;}
+:where(#section-universe){background: rgb(0, 0, 0); scroll-behavior: smooth;}
+:where(#section-universe){margin: 0px; color: var(--ivory); font-family: Inter, Arial, sans-serif; background: rgb(0, 0, 0); overflow-x: hidden;}
+:where(#section-universe) .top{height: 25vh; min-height: 160px; display: grid; place-items: center; color: rgb(169, 157, 157); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;}
+:where(#section-universe) .universe{position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(at 52% 27%, rgb(93, 11, 18) 0%, rgb(35, 9, 14) 38%, rgb(8, 4, 5) 72%, rgb(0, 0, 0) 100%);}
+:where(#section-universe) .spotlight{pointer-events: none; position: absolute; inset: 0px; z-index: -1; background: radial-gradient(470px circle at var(--mx,50%) var(--my,30%),rgba(206,18,18,.23),transparent 72%); opacity: 0.9;}
+:where(#section-universe) .noise{position: absolute; inset: 0px; pointer-events: none; opacity: 0.15; background: repeating-linear-gradient(0deg, transparent 0px, transparent 4px, rgba(255, 255, 255, 0.02) 5px, rgba(255, 255, 255, 0.02) 6px);}
+:where(#section-universe) .wrap{width: min(1200px, 100% - 44px); margin: auto;}
+:where(#section-universe) .intro{padding: 130px 0px 40px;}
+:where(#section-universe) .eyebrow{font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgb(216, 160, 160);}
+:where(#section-universe) .intro .source-h1{font-size: clamp(42px, 7vw, 102px); line-height: 0.98; letter-spacing: -0.07em; max-width: 1050px; margin: 25px 0px;}
+:where(#section-universe) .intro .source-h1 em{font-style: normal; color: rgb(240, 75, 75);}
+:where(#section-universe) .intro p{max-width: 530px; color: rgb(210, 185, 186); line-height: 1.7;}
+:where(#section-universe) .chapter{padding: 95px 0px 120px; position: relative;}
+:where(#section-universe) .chapter-header{display: flex; align-items: end; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.173); padding-bottom: 18px;}
+:where(#section-universe) .chapter h2{font-size: clamp(29px, 4vw, 56px); letter-spacing: -0.055em; margin: 0px;}
+:where(#section-universe) .chapter small{font-size: 11px; color: rgb(200, 166, 167); letter-spacing: 0.13em; text-transform: uppercase;}
+:where(#section-universe) .constellation{display: grid; grid-template-columns: repeat(5, minmax(0px, 1fr)); align-items: center; gap: 15px 24px; padding: 40px 0px; min-height: 440px;}
+:where(#section-universe) .logo{height: 145px; display: grid; place-items: center; position: relative; opacity: var(--reveal,1); transform: translate3d(calc(var(--dx)*var(--offset,0)),calc(var(--dy)*var(--offset,0)),0) rotate(calc(var(--rot)*var(--offset,0))) scale(calc(.76 + .24*var(--reveal,1))); filter: blur(calc(7px*var(--offset,0))); will-change: transform, opacity, filter;}
+:where(#section-universe) .logo:nth-child(3n+2){margin-top: 55px;}
+:where(#section-universe) .logo:nth-child(4n+1){margin-top: -30px;}
+:where(#section-universe) .float{width: 100%; height: 100%; display: grid; place-items: center; position: relative; transform: translate3d(var(--hx,0px),var(--hy,0px),0) scale(var(--hs,1)); transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: default;}
+:where(#section-universe) .float::before{content: ""; position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(rgba(206, 18, 18, 0.45), transparent 65%); filter: blur(20px); opacity: var(--glow,0); transition: opacity 0.3s;}
+:where(#section-universe) .float img{position: relative; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(rgba(0, 0, 0, 0.533) 0px 9px 14px); pointer-events: none;}
+:where(#section-universe) .sports{background: linear-gradient(transparent, rgb(22, 4, 8) 50%, transparent);}
+:where(#section-universe) .outro{padding: 50px 0px 150px; text-align: center;}
+:where(#section-universe) .outro h2{font-size: clamp(34px, 5vw, 76px); letter-spacing: -0.06em; margin: 0px;}
+:where(#section-universe) .outro p{color: rgb(213, 182, 183);}
+:where(#section-universe) .legal{padding: 20px 0px 36px; border-top: 1px solid rgba(255, 255, 255, 0.125); font-size: 11px; color: rgb(172, 146, 148); line-height: 1.7;}
+:where(#section-universe) .tail{height: 20vh; background: rgb(0, 0, 0);}
+@media (max-width: 850px) {:where(#section-universe) .constellation{grid-template-columns: repeat(3, minmax(0px, 1fr)); min-height: 0px; gap: 10px;}
+:where(#section-universe) .logo{height: 125px;}
+:where(#section-universe) .intro{padding-top: 95px;}}
+@media (max-width: 540px) {:where(#section-universe) .wrap{width: min(100% - 28px, 500px);}
+:where(#section-universe) .intro{padding-top: 75px;}
+:where(#section-universe) .chapter{padding: 65px 0px;}
+:where(#section-universe) .chapter-header{display: block;}
+:where(#section-universe) .chapter small{display: block; margin-top: 12px;}
+:where(#section-universe) .constellation{grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: 4px;}
+:where(#section-universe) .logo{height: 112px;}
+:where(#section-universe) .logo:nth-child(n){margin-top: 0px;}
+:where(#section-universe) .logo:nth-child(4n+2){margin-top: 24px;}
+:where(#section-universe) .top{height: 17vh; min-height: 90px;}
+:where(#section-universe) .outro{padding-bottom: 90px;}}
+@media (prefers-reduced-motion: reduce) {:where(#section-universe){scroll-behavior: auto;}
+:where(#section-universe) .logo{opacity: 1 !important; transform: none !important; filter: none !important;}
+:where(#section-universe) .float{transform: none !important; transition: none !important;}
+:where(#section-universe) .spotlight{display: none;}}
