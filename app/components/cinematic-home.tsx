@@ -41,9 +41,9 @@ export default function CinematicHome() {
     "GOLDEN IPTV · MEMBERSHIPS"
   )
   .replaceAll(
-    "DESIGN PREVIEW · NOT PRODUCTION",
-    ""
-  )
+  '<div class="preview">DESIGN PREVIEW · NOT PRODUCTION</div>',
+  ''
+)
 .replaceAll(
   "Private visual design study only. Third-party marks are references, not evidence of availability, bundled subscriptions, affiliation, broadcast rights or licensing. Commercial usage requires verification and permissions.",
   "Third-party trademarks belong to their respective owners. Displayed brands do not imply affiliation, endorsement, or guaranteed content availability."
@@ -71,13 +71,84 @@ export default function CinematicHome() {
 .replaceAll(
   "Private design preview · Content and policy details require verification before publishing.",
   "Service availability and policies are subject to the published terms."
+)
+.replaceAll(
+  "An entertainment universe, revealed as you explore. Move your cursor over each mark to see the composition respond.",
+  "Explore a world of sports, movies and series with Golden IPTV."
+)
+.replaceAll(
+  'href="https://www.goldeniptv.co.za/">Visit website ↗',
+  'href="/contact/">Contact support ↗'
+)
+.replaceAll(
+  'href="https://www.goldeniptv.co.za/pricing/">Plans &amp; terms',
+  'href="/terms/">Terms of service'
+)
+.replaceAll(
+  'href="https://www.goldeniptv.co.za/">Service information',
+  'href="/iptv-south-africa/">Service information'
+)
+.replaceAll(
+  'alt="AI-generated premier league design-study logo"',
+  'alt="Premier League themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated serie a design-study logo"',
+  'alt="Serie A themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated laliga design-study logo"',
+  'alt="La Liga themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated bundesliga design-study logo"',
+  'alt="Bundesliga themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated ligue 1 design-study logo"',
+  'alt="Ligue 1 themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated champions league design-study logo"',
+  'alt="Champions League themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated europa league design-study logo"',
+  'alt="Europa League themed illustration"'
+)
+.replaceAll(
+  'alt="AI-generated conference league design-study logo"',
+  'alt="Conference League themed illustration"'
+)
+.replaceAll(
+  'alt="User-supplied football player collagewith stadium lighting; private visual reference"',
+  'alt="Football player collage with stadium lighting"'
+)
+.replaceAll(
+  'alt="AI-generated motor racing illustration; private design reference"',
+  'alt="Motor racing illustration"'
+)
+.replaceAll(
+  'alt="AI-generated basketball illustration; private design reference"',
+  'alt="Basketball illustration"'
+)
+.replaceAll(
+  'alt="AI-generated combat sports illustration; private design reference"',
+  'alt="Combat sports illustration"'
 );
   return (
-    <>
-      <link
-        rel="stylesheet"
-        href="/cinematic-scoped.css"
-      />
+  <>
+    <a
+      href="#main"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-md focus:bg-white focus:px-4 focus:py-3 focus:text-black"
+    >
+      Skip to content
+    </a>
+
+    <link
+      rel="stylesheet"
+      href="/cinematic-scoped.css"
+    />
 
       <div
         id="cinematic-home"
