@@ -1,0 +1,869 @@
+#cinematic-home :where(#section-hero) *{box-sizing: border-box;}
+#cinematic-home :where(#section-hero){background: rgb(0, 0, 0); color: rgb(238, 235, 221); font-family: Arial, Helvetica, sans-serif;}
+#cinematic-home :where(#section-hero){margin: 0px;}
+#cinematic-home :where(#section-hero) a{color: inherit;}
+#cinematic-home :where(#section-hero) a:focus-visible{outline: rgb(238, 235, 221) solid 3px; outline-offset: 5px;}
+#cinematic-home :where(#section-hero) .skip{position: absolute; top: -90px; left: 16px; z-index: 10; background: rgb(0, 0, 0); padding: 16px;}
+#cinematic-home :where(#section-hero) .skip:focus{top: 8px;}
+#cinematic-home :where(#section-hero) header{height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0px 40px; position: relative; z-index: 2; background: rgb(0, 0, 0);}
+#cinematic-home :where(#section-hero) .brand{display: flex; gap: 10px; align-items: center; text-decoration: none; font-size: 18px; font-weight: 700;}
+#cinematic-home :where(#section-hero) .brand svg{width: 36px; height: 36px;}
+#cinematic-home :where(#section-hero) .brand small{display: block; font-size: 10px; letter-spacing: 3px;}
+#cinematic-home :where(#section-hero) .brand span{color: inherit;}
+#cinematic-home :where(#section-hero) header > a:last-child{font-size: 14px; padding: 14px 0px;}
+#cinematic-home :where(#section-hero) main:focus{outline: none;}
+#cinematic-home :where(#section-hero) .hero{position: relative; padding-top: 450px; min-height: 850px; overflow: hidden;}
+#cinematic-home :where(#section-hero) .art{position: absolute; top: 0px; left: 0px; right: 0px; height: 552px; pointer-events: none;}
+#cinematic-home :where(#section-hero) .rows{width: 1428px; margin: auto;}
+#cinematic-home :where(#section-hero) .row{display: flex; gap: 12px; margin-bottom: 24px;}
+#cinematic-home :where(#section-hero) .row img{display: block; width: 168px; height: 252px; object-fit: contain; border-radius: 6px; flex: 0 0 auto;}
+#cinematic-home :where(#section-hero) .row img:nth-child(2n){transform: translateY(12px);}
+#cinematic-home :where(#section-hero) .mobile{display: none;}
+#cinematic-home :where(#section-hero) .art::after{content: ""; position: absolute; inset: 0px; background: linear-gradient(rgb(0, 0, 0), transparent 80px), linear-gradient(90deg, rgb(0, 0, 0), transparent 48px, transparent calc(100% - 48px), rgb(0, 0, 0)), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 0.35) 28%, transparent 48%), rgba(0, 0, 0, 0.12);}
+#cinematic-home :where(#section-hero) .copy{position: relative; text-align: center; max-width: 900px; margin: auto; padding: 0px 24px 32px;}
+#cinematic-home :where(#section-hero) .eyebrow{font-size: 14px; letter-spacing: 0.16em; margin: 0px 0px 16px; color: rgb(189, 189, 197);}
+#cinematic-home :where(#section-hero) h1{font-size: 72px; line-height: 1.04; letter-spacing: 0.025em; margin: 0px 0px 20px;}
+#cinematic-home :where(#section-hero) .hero-description{font-size: 18px; line-height: 1.55; color: rgb(189, 189, 197); margin: 0px 0px 24px;}
+#cinematic-home :where(#section-hero) .hero-actions{display: flex; justify-content: center; gap: 12px;}
+#cinematic-home :where(#section-hero) .button{display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 52px; padding: 14px 24px; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 8px;}
+#cinematic-home :where(#section-hero) .primary{background: rgb(206, 18, 18); color: rgb(238, 235, 221); border: 1px solid rgb(206, 18, 18);}
+#cinematic-home :where(#section-hero) .secondary{border: 1px solid rgb(238, 235, 221); background: rgb(0, 0, 0);}
+#cinematic-home :where(#section-hero) .trial-note{font-size: 14px; color: rgb(189, 189, 197); margin: 18px 0px;}
+#cinematic-home :where(#section-hero) .rights{font-size: 12px; line-height: 1.6; color: rgb(189, 189, 197); margin: 24px auto 0px; max-width: 650px;}
+#cinematic-home :where(#section-hero) .rights a{display: inline-block; padding: 8px;}
+#cinematic-home :where(#section-hero) .study-links{font-size: 14px; margin: 12px 0px;}
+#cinematic-home :where(#section-hero) .study-links a{padding: 10px; display: inline-block;}
+@media (min-width: 768px) and (max-width: 1439px) {#cinematic-home :where(#section-hero) .rows{width: calc(100% - 16px);}
+#cinematic-home :where(#section-hero) .row{gap: 8px; margin-bottom: 20px;}
+#cinematic-home :where(#section-hero) .row img{width: calc(-9px + 12.5vw); height: auto; aspect-ratio: 2 / 3;}
+#cinematic-home :where(#section-hero) .art{height: calc(17px + 37.5vw);}
+#cinematic-home :where(#section-hero) .hero{padding-top: calc(-57px + 37.5vw); min-height: 780px;}
+#cinematic-home :where(#section-hero) h1{font-size: clamp(48px, 5vw, 72px);}}
+@media (max-width: 767px) {#cinematic-home :where(#section-hero) header{height: 64px; padding: 0px 16px;}
+#cinematic-home :where(#section-hero) .brand{font-size: 15px;}
+#cinematic-home :where(#section-hero) header > a:last-child{font-size: 12px;}
+#cinematic-home :where(#section-hero) .desktop{display: none;}
+#cinematic-home :where(#section-hero) .mobile{display: block; width: 370px; max-width: calc(100% - 20px);}
+#cinematic-home :where(#section-hero) .row{gap: 8px; margin-bottom: 16px;}
+#cinematic-home :where(#section-hero) .row img{width: calc(33.3333% - 5.33333px); height: auto; aspect-ratio: 2 / 3; border-radius: 4px;}
+#cinematic-home :where(#section-hero) .row img:nth-child(2n){transform: translateY(8px);}
+#cinematic-home :where(#section-hero) .art{height: 400px;}
+#cinematic-home :where(#section-hero) .art::after{background: linear-gradient(rgb(0, 0, 0), transparent 80px), linear-gradient(90deg, rgb(0, 0, 0), transparent 16px, transparent calc(100% - 16px), rgb(0, 0, 0)), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 0.35) 28%, transparent 48%), rgba(0, 0, 0, 0.12);}
+#cinematic-home :where(#section-hero) .hero{padding-top: 320px; min-height: 0px;}
+#cinematic-home :where(#section-hero) .copy{padding: 0px 20px 24px;}
+#cinematic-home :where(#section-hero) h1{font-size: 42px;}
+#cinematic-home :where(#section-hero) .eyebrow{font-size: 12px;}
+#cinematic-home :where(#section-hero) .hero-description{font-size: 16px;}
+#cinematic-home :where(#section-hero) .hero-actions{flex-direction: column;}
+#cinematic-home :where(#section-hero) .button{width: 100%; min-height: 48px;}
+#cinematic-home :where(#section-hero) .rights{font-size: 12px;}
+@media (max-width: 369px) {#cinematic-home :where(#section-hero) h1{font-size: 36px;}
+#cinematic-home :where(#section-hero) .hero{padding-top: 280px;}
+#cinematic-home :where(#section-hero) .art{height: 350px;}}}
+#cinematic-home :where(#section-hero) header{height: 88px; padding: 0px clamp(20px, 3.4vw, 64px); background: linear-gradient(rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0)); align-items: center;}
+#cinematic-home :where(#section-hero) .brand{gap: 12px; font-size: 23px; letter-spacing: 0.04em; line-height: 1.05;}
+#cinematic-home :where(#section-hero) .brand svg{width: 44px; height: 44px; fill: none; stroke: rgb(206, 18, 18); stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round;}
+#cinematic-home :where(#section-hero) .brand small{font-size: 11px; letter-spacing: 0.36em; margin-top: 6px;}
+#cinematic-home :where(#section-hero) header > a:last-child{font-size: 15px; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgb(129, 0, 0); padding: 12px 0px;}
+#cinematic-home :where(#section-hero) .hero{--tile: calc((100vw - 106px)/8); padding-top: calc(var(--tile)*3 - 70px); min-height: 0px; overflow: hidden;}
+#cinematic-home :where(#section-hero) .art{height: calc(var(--tile)*3 + 100px); top: 0px;}
+#cinematic-home :where(#section-hero) .rows.desktop{width: calc(100% - 22px); max-width: none;}
+#cinematic-home :where(#section-hero) .row{gap: 12px; margin-bottom: 12px;}
+#cinematic-home :where(#section-hero) .row img{width: calc(12.5% - 10.5px); height: auto; aspect-ratio: 2 / 3; border-radius: 6px; object-fit: contain; transform: translateY(14px);}
+#cinematic-home :where(#section-hero) .row img:nth-child(4n+2){transform: translateY(38px);}
+#cinematic-home :where(#section-hero) .row img:nth-child(4n+3){transform: translateY(6px);}
+#cinematic-home :where(#section-hero) .row img:nth-child(4n){transform: translateY(26px);}
+#cinematic-home :where(#section-hero) .art::after{background: linear-gradient(rgba(0, 0, 0, 0.72), transparent 90px), linear-gradient(90deg, rgba(0, 0, 0, 0.627), transparent 48px, transparent calc(100% - 48px), rgba(0, 0, 0, 0.627)), radial-gradient(46% 40% at 50% 100%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(rgba(0, 0, 0, 0.063) 30%, rgba(0, 0, 0, 0.145) 46%, rgba(0, 0, 0, 0.4) 64%, rgba(0, 0, 0, 0.79) 81%, rgba(0, 0, 0, 0.95) 94%, rgb(0, 0, 0) 100%);}
+#cinematic-home :where(#section-hero) .copy{max-width: 940px; padding-bottom: 16px;}
+#cinematic-home :where(#section-hero) .eyebrow{font-size: 12px; font-weight: 700; letter-spacing: 0.22em; margin-bottom: 12px;}
+#cinematic-home :where(#section-hero) h1{font-size: clamp(48px, 5.15vw, 76px); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 18px;}
+#cinematic-home :where(#section-hero) .hero-description{margin-bottom: 20px;}
+#cinematic-home :where(#section-hero) .hero-actions{gap: 14px;}
+#cinematic-home :where(#section-hero) .trial-note{margin: 14px 0px;}
+#cinematic-home :where(#section-hero) .rights{margin-top: 16px;}
+#cinematic-home :where(#section-hero) .study-links{margin: 0px;}
+#cinematic-home :where(#section-hero) .study-links a{padding: 8px 10px;}
+@media (max-width: 767px) {#cinematic-home :where(#section-hero) header{height: 72px; padding: 0px 20px;}
+#cinematic-home :where(#section-hero) .brand{font-size: 20px; gap: 9px;}
+#cinematic-home :where(#section-hero) .brand svg{width: 34px; height: 34px;}
+#cinematic-home :where(#section-hero) .brand small{font-size: 9px; margin-top: 5px;}
+#cinematic-home :where(#section-hero) header > a:last-child{font-size: 13px;}
+#cinematic-home :where(#section-hero) .hero{--tile: calc((min(100vw,390px) - 36px)/3); padding-top: calc(var(--tile)*3 - 52px);}
+#cinematic-home :where(#section-hero) .rows.mobile{width: 370px; max-width: calc(100% - 20px);}
+#cinematic-home :where(#section-hero) .row{gap: 8px; margin-bottom: 8px;}
+#cinematic-home :where(#section-hero) .row img{width: calc(33.3333% - 5.33333px); height: auto; border-radius: 4px; transform: translateY(6px);}
+#cinematic-home :where(#section-hero) .row img:nth-child(3n+2){transform: translateY(22px);}
+#cinematic-home :where(#section-hero) .row img:nth-child(3n){transform: translateY(12px);}
+#cinematic-home :where(#section-hero) .art{height: calc(var(--tile)*3 + 70px);}
+#cinematic-home :where(#section-hero) .art::after{background: linear-gradient(rgba(0, 0, 0, 0.69), transparent 65px), linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent 16px, transparent calc(100% - 16px), rgba(0, 0, 0, 0.5)), radial-gradient(70% 35% at 50% 100%, rgb(0, 0, 0), transparent), linear-gradient(rgba(0, 0, 0, 0.063) 30%, rgba(0, 0, 0, 0.145) 46%, rgba(0, 0, 0, 0.4) 64%, rgba(0, 0, 0, 0.79) 81%, rgba(0, 0, 0, 0.95) 94%, rgb(0, 0, 0));}
+#cinematic-home :where(#section-hero) .copy{padding: 0px 20px 12px;}
+#cinematic-home :where(#section-hero) h1{font-size: 42px; margin-bottom: 16px;}
+#cinematic-home :where(#section-hero) .eyebrow{font-size: 11px; letter-spacing: 0.14em; margin-bottom: 10px;}
+#cinematic-home :where(#section-hero) .hero-description{font-size: 16px; line-height: 1.45; margin-bottom: 18px;}
+#cinematic-home :where(#section-hero) .hero-actions{gap: 10px;}
+#cinematic-home :where(#section-hero) .trial-note{font-size: 13px; line-height: 1.5; margin: 12px 0px;}
+#cinematic-home :where(#section-hero) .rights{margin-top: 10px; line-height: 1.45;}
+#cinematic-home :where(#section-hero) .rights a{padding: 6px;}
+#cinematic-home :where(#section-hero) .study-links a{font-size: 12px; padding: 8px;}}
+@media (max-width: 369px) {#cinematic-home :where(#section-hero) header{padding: 0px 14px;}
+#cinematic-home :where(#section-hero) .brand{font-size: 18px;}
+#cinematic-home :where(#section-hero) .brand svg{width: 30px;}
+#cinematic-home :where(#section-hero) h1{font-size: 36px;}}
+#cinematic-home :where(#section-sports){--black: #000; --charcoal: #1B1717; --burgundy: #810000; --red: #CE1212; --ivory: #EEEBDD; --text: #F5F1E9; --muted: #BDBDC5;}
+#cinematic-home :where(#section-sports) *{box-sizing: border-box;}
+#cinematic-home :where(#section-sports){background: var(--black); color: var(--text); font-family: Arial, Helvetica, sans-serif;}
+#cinematic-home :where(#section-sports){margin: 0px;}
+#cinematic-home :where(#section-sports) a{color: inherit;}
+#cinematic-home :where(#section-sports) a:focus-visible{outline: 3px solid var(--ivory); outline-offset: 6px;}
+#cinematic-home :where(#section-sports) .skip{position: absolute; top: -100px; left: 16px; padding: 16px; background: rgb(0, 0, 0); z-index: 10;}
+#cinematic-home :where(#section-sports) .skip:focus{top: 8px;}
+#cinematic-home :where(#section-sports) .shell{max-width: 1320px; margin: auto; padding: 0px 48px;}
+#cinematic-home :where(#section-sports) header{height: 92px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
+#cinematic-home :where(#section-sports) .brand{display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 22px; font-weight: 700; letter-spacing: 0.04em;}
+#cinematic-home :where(#section-sports) .brand svg{width: 40px; height: 40px; fill: none; stroke: var(--red); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;}
+#cinematic-home :where(#section-sports) .brand small{display: block; font-size: 10px; letter-spacing: 0.35em; margin-top: 5px;}
+#cinematic-home :where(#section-sports) .edition{font-size: 12px; color: var(--muted); letter-spacing: 0.12em;}
+#cinematic-home :where(#section-sports) main:focus{outline: none;}
+#cinematic-home :where(#section-sports) .intro{display: flex; justify-content: space-between; gap: 48px; align-items: end; padding: 60px 0px 36px;}
+#cinematic-home :where(#section-sports) .eyebrow{font-size: 12px; letter-spacing: 0.18em; font-weight: 700; color: var(--muted); margin: 0px 0px 18px;}
+#cinematic-home :where(#section-sports) .eyebrow::before{content: ""; display: inline-block; width: 24px; height: 2px; background: var(--red); vertical-align: middle; margin-right: 12px;}
+#cinematic-home :where(#section-sports) .source-h1{font-size: clamp(42px, 5.4vw, 76px); line-height: 0.98; letter-spacing: -0.045em; margin: 0px; font-weight: 700;}
+#cinematic-home :where(#section-sports) .source-h1 em{font-style: normal; color: var(--ivory);}
+#cinematic-home :where(#section-sports) .intro-note{max-width: 310px; font-size: 16px; line-height: 1.6; color: var(--muted); margin: 0px;}
+#cinematic-home :where(#section-sports) .football{display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: start;}
+#cinematic-home :where(#section-sports) .feature{margin: 0px; position: relative;}
+#cinematic-home :where(#section-sports) .feature img{display: block; max-width: 100%; height: auto; margin: auto; object-fit: contain;}
+#cinematic-home :where(#section-sports) .feature-main{background: rgb(0, 0, 0);}
+#cinematic-home :where(#section-sports) .feature-main img{width: 100%; max-width: 650px;}
+#cinematic-home :where(#section-sports) .feature-secondary{padding-top: 64px;}
+#cinematic-home :where(#section-sports) .feature-secondary img{width: 100%; max-width: 410px;}
+#cinematic-home :where(#section-sports) .caption{display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0px 0px; border-top: 1px solid rgba(255, 255, 255, 0.19);}
+#cinematic-home :where(#section-sports) .caption strong{font-size: 22px; letter-spacing: -0.02em;}
+#cinematic-home :where(#section-sports) .caption span{font-size: 12px; color: var(--muted); line-height: 1.5;}
+#cinematic-home :where(#section-sports) .football-note{margin: 28px 0px 48px; font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 760px;}
+#cinematic-home :where(#section-sports) .leagues{background: var(--charcoal); padding: 28px 32px; margin: 0px 0px 64px;}
+#cinematic-home :where(#section-sports) .strip-heading{display: flex; justify-content: space-between; gap: 20px; align-items: baseline; margin-bottom: 24px;}
+#cinematic-home :where(#section-sports) .strip-heading h2{font-size: 22px; margin: 0px;}
+#cinematic-home :where(#section-sports) .strip-heading p{font-size: 12px; color: var(--muted); margin: 0px;}
+#cinematic-home :where(#section-sports) .logo-strip{display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; align-items: center;}
+#cinematic-home :where(#section-sports) .logo-slot{display: flex; justify-content: center; align-items: center; margin: 0px; padding: 0px 12px; border-left: 1px solid rgba(255, 255, 255, 0.125);}
+#cinematic-home :where(#section-sports) .logo-slot:first-child{border-left: 0px; padding-left: 0px;}
+#cinematic-home :where(#section-sports) .logo-slot img{display: block; width: auto; max-width: 100%; height: 148px; object-fit: contain;}
+#cinematic-home :where(#section-sports) .other-heading{display: flex; justify-content: space-between; gap: 32px; align-items: end; margin: 0px 0px 24px;}
+#cinematic-home :where(#section-sports) .other-heading h2{font-size: clamp(30px, 3.5vw, 44px); line-height: 1.05; letter-spacing: -0.03em; margin: 0px;}
+#cinematic-home :where(#section-sports) .other-heading p{color: var(--muted); font-size: 14px; max-width: 300px; line-height: 1.6; margin: 0px;}
+#cinematic-home :where(#section-sports) .disciplines{display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; align-items: start;}
+#cinematic-home :where(#section-sports) .concept{position: relative; overflow: hidden; padding: 28px; min-height: 270px; border-top: 2px solid var(--red); background: var(--charcoal);}
+#cinematic-home :where(#section-sports) .concept p{position: relative; z-index: 1; margin: 0px;}
+#cinematic-home :where(#section-sports) .concept .name{font-size: clamp(44px, 5vw, 72px); font-weight: 700; letter-spacing: -0.06em; line-height: 1.1; margin: 32px 0px 18px;}
+#cinematic-home :where(#section-sports) .concept .descriptor{font-size: 14px; color: var(--ivory); letter-spacing: 0.08em;}
+#cinematic-home :where(#section-sports) .concept .pending{font-size: 12px; line-height: 1.6; color: var(--muted); max-width: 200px;}
+#cinematic-home :where(#section-sports) .racing{min-height: 310px; background: linear-gradient(125deg,var(--burgundy),var(--charcoal) 75%);}
+#cinematic-home :where(#section-sports) .racing::after{content: ""; position: absolute; right: -35px; top: 20px; width: 120px; height: 350px; border-left: 1px solid rgba(255, 255, 255, 0.14); border-right: 8px solid rgba(255, 255, 255, 0.07); transform: skew(-22deg);}
+#cinematic-home :where(#section-sports) .basketball{margin-top: 24px;}
+#cinematic-home :where(#section-sports) .basketball::after{content: ""; width: 210px; height: 210px; border: 1px solid rgba(255, 255, 255, 0.094); border-radius: 50%; position: absolute; right: -130px; top: 40px;}
+#cinematic-home :where(#section-sports) .combat{margin-top: 48px;}
+#cinematic-home :where(#section-sports) .combat::after{content: ""; position: absolute; right: -50px; bottom: -40px; width: 150px; height: 150px; border: 1px solid rgba(255, 255, 255, 0.094); transform: rotate(45deg);}
+#cinematic-home :where(#section-sports) .review{margin: 56px 0px 0px; padding: 24px 0px; border-top: 1px solid rgba(255, 255, 255, 0.14); display: flex; justify-content: space-between; gap: 32px; font-size: 12px; line-height: 1.6; color: var(--muted);}
+#cinematic-home :where(#section-sports) .review p{max-width: 790px; margin: 0px;}
+#cinematic-home :where(#section-sports) .review a{white-space: nowrap; align-self: start; padding: 8px 0px;}
+#cinematic-home :where(#section-sports) footer{padding: 12px 0px 32px; font-size: 12px; color: var(--muted);}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) .shell{padding: 0px 20px;}
+#cinematic-home :where(#section-sports) header{height: 76px;}
+#cinematic-home :where(#section-sports) .brand{font-size: 18px;}
+#cinematic-home :where(#section-sports) .brand svg{width: 32px;}
+#cinematic-home :where(#section-sports) .edition{font-size: 10px; letter-spacing: 0.04em; max-width: 110px; text-align: right;}
+#cinematic-home :where(#section-sports) .intro{display: block; padding: 38px 0px 28px;}
+#cinematic-home :where(#section-sports) .source-h1{font-size: 48px;}
+#cinematic-home :where(#section-sports) .intro-note{font-size: 15px; margin-top: 22px; max-width: 340px;}
+#cinematic-home :where(#section-sports) .football{display: block;}
+#cinematic-home :where(#section-sports) .feature-main img{width: 100%;}
+#cinematic-home :where(#section-sports) .feature-secondary{padding-top: 32px; width: 86%; margin-left: auto;}
+#cinematic-home :where(#section-sports) .caption{display: block; padding-top: 12px;}
+#cinematic-home :where(#section-sports) .caption strong{display: block; font-size: 21px;}
+#cinematic-home :where(#section-sports) .caption span{display: block; margin-top: 6px;}
+#cinematic-home :where(#section-sports) .football-note{margin: 24px 0px 32px; font-size: 12px;}
+#cinematic-home :where(#section-sports) .leagues{padding: 24px 16px; margin-bottom: 40px;}
+#cinematic-home :where(#section-sports) .strip-heading{display: block;}
+#cinematic-home :where(#section-sports) .strip-heading h2{font-size: 21px;}
+#cinematic-home :where(#section-sports) .strip-heading p{margin-top: 8px; line-height: 1.5;}
+#cinematic-home :where(#section-sports) .logo-strip{grid-template-columns: 1fr 1fr; gap: 24px 16px;}
+#cinematic-home :where(#section-sports) .logo-slot{border: 0px; padding: 0px;}
+#cinematic-home :where(#section-sports) .logo-slot img{height: 132px; max-width: 100%;}
+#cinematic-home :where(#section-sports) .other-heading{display: block;}
+#cinematic-home :where(#section-sports) .other-heading h2{font-size: 34px;}
+#cinematic-home :where(#section-sports) .other-heading p{margin-top: 14px;}
+#cinematic-home :where(#section-sports) .disciplines{grid-template-columns: 1fr 1fr; gap: 10px;}
+#cinematic-home :where(#section-sports) .concept{padding: 20px; min-height: 240px;}
+#cinematic-home :where(#section-sports) .racing{grid-column: 1 / -1; min-height: 225px;}
+#cinematic-home :where(#section-sports) .basketball{margin: 0px;}
+#cinematic-home :where(#section-sports) .combat{margin-top: 20px;}
+#cinematic-home :where(#section-sports) .concept .name{font-size: 44px; margin: 24px 0px 16px;}
+#cinematic-home :where(#section-sports) .racing .name{font-size: 66px; margin: 18px 0px 10px;}
+#cinematic-home :where(#section-sports) .concept .descriptor{font-size: 12px; letter-spacing: 0px;}
+#cinematic-home :where(#section-sports) .concept .pending{font-size: 12px;}
+#cinematic-home :where(#section-sports) .review{display: block; margin-top: 36px;}
+#cinematic-home :where(#section-sports) .review a{display: inline-block; margin-top: 12px;}
+#cinematic-home :where(#section-sports) footer{padding-bottom: 20px;}}
+@media (max-width: 359px) {#cinematic-home :where(#section-sports) .source-h1{font-size: 42px;}
+#cinematic-home :where(#section-sports) .concept{padding: 16px;}
+#cinematic-home :where(#section-sports) .logo-slot img{height: 110px;}}
+#cinematic-home :where(#section-sports) .assembly{margin: 0px 0px 64px; padding: 32px 0px 12px; background: rgb(0, 0, 0); border-top: 1px solid rgba(255, 255, 255, 0.14);}
+#cinematic-home :where(#section-sports) .assembly-heading{display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 24px;}
+#cinematic-home :where(#section-sports) .assembly-heading h2{font-size: 26px; margin: 0px;}
+#cinematic-home :where(#section-sports) .assembly-heading p{font-size: 12px; color: rgb(189, 189, 197); margin: 0px;}
+#cinematic-home :where(#section-sports) .assembly-row{display: grid; grid-template-columns: repeat(8, minmax(0px, 1fr)); gap: 12px; align-items: center;}
+#cinematic-home :where(#section-sports) .assembly-item{min-width: 0px; transform-origin: 50% 100%;}
+#cinematic-home :where(#section-sports) .assembly-item img{display: block; width: 100%; height: 180px; object-fit: contain;}
+#cinematic-home :where(#section-sports) .red-light{display: block; width: 100%; height: auto; margin-top: 0px; pointer-events: none;}
+#cinematic-home :where(#section-sports) .assembly-note{font-size: 12px; line-height: 1.6; color: rgb(189, 189, 197); margin: 8px 0px 0px;}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) .assembly{margin-bottom: 40px; padding-top: 24px;}
+#cinematic-home :where(#section-sports) .assembly-heading{display: block; margin-bottom: 16px;}
+#cinematic-home :where(#section-sports) .assembly-heading h2{font-size: 24px;}
+#cinematic-home :where(#section-sports) .assembly-heading p{margin-top: 8px; line-height: 1.6;}
+#cinematic-home :where(#section-sports) .assembly-row{grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 12px 8px;}
+#cinematic-home :where(#section-sports) .assembly-item img{height: 110px;}
+#cinematic-home :where(#section-sports) .red-light{margin-top: 8px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-sports) .assembly-item,#cinematic-home :where(#section-sports) .red-light{opacity: 1 !important; visibility: visible !important; transform: none !important;}}
+#cinematic-home :where(#section-sports) .football{align-items: center;}
+#cinematic-home :where(#section-sports) .cinema-hook{padding: 24px 0px 40px 16px;}
+#cinematic-home :where(#section-sports) .cinema-hook h2{font-size: clamp(36px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em; margin: 0px 0px 24px;}
+#cinematic-home :where(#section-sports) .cinema-hook > p:not(.eyebrow){font-size: 18px; line-height: 1.6; color: var(--muted);}
+#cinematic-home :where(#section-sports) .trial-cta{display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: var(--red); color: var(--ivory); text-decoration: none; padding: 18px 22px; min-height: 52px; font-weight: 700; border-radius: 6px; margin-top: 12px;}
+#cinematic-home :where(#section-sports) .cinema-hook .trial-note{font-size: 14px !important;}
+#cinematic-home :where(#section-sports) .disciplines{grid-template-columns: 1.15fr 1fr 1fr; gap: 20px;}
+#cinematic-home :where(#section-sports) .sport-panel{margin: 0px; min-width: 0px;}
+#cinematic-home :where(#section-sports) .sport-panel img{display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption{padding: 18px 0px; display: flex; align-items: center; justify-content: space-between; gap: 12px;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-size: 12px; letter-spacing: 0.08em; color: var(--muted);}
+#cinematic-home :where(#section-sports) .sport-panel strong{font-size: 28px;}
+#cinematic-home :where(#section-sports) .sport-1{margin-top: 48px;}
+#cinematic-home :where(#section-sports) .sport-2{margin-top: 96px;}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) .cinema-hook{padding: 36px 0px 12px;}
+#cinematic-home :where(#section-sports) .cinema-hook h2{font-size: 42px;}
+#cinematic-home :where(#section-sports) .cinema-hook > p:not(.eyebrow){font-size: 16px;}
+#cinematic-home :where(#section-sports) .trial-cta{width: 100%; gap: 12px; font-size: 16px;}
+#cinematic-home :where(#section-sports) .disciplines{grid-template-columns: 1fr; gap: 24px;}
+#cinematic-home :where(#section-sports) .sport-1,#cinematic-home :where(#section-sports) .sport-2{margin-top: 0px;}}
+#cinematic-home :where(#section-sports) .disciplines{display: flex; gap: 0px; position: relative; isolation: isolate; margin: 0px -32px; padding: 16px 0px 28px; overflow: clip;}
+#cinematic-home :where(#section-sports) .disciplines::before{content: ""; position: absolute; inset: 30% 8% 0px; background: radial-gradient(at 50% 85%, rgba(129, 0, 0, 0.19), transparent 65%); z-index: -1;}
+#cinematic-home :where(#section-sports) .sport-panel{position: relative; flex: 1 1 0px; min-width: 0px; margin: 0px; will-change: transform, opacity;}
+#cinematic-home :where(#section-sports) .sport-panel + .sport-panel{margin-left: -24px;}
+#cinematic-home :where(#section-sports) .sport-panel img{width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, transparent), linear-gradient(0deg, transparent, rgb(0, 0, 0) 22%, rgb(0, 0, 0) 92%, transparent); mask-composite: intersect;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption{position: absolute; bottom: 11%; left: 12%; right: 10%; padding: 12px 0px; color: rgb(238, 235, 221); display: block; text-shadow: rgb(0, 0, 0) 0px 2px 8px;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-size: clamp(14px, 1.25vw, 18px); font-weight: 700; letter-spacing: 0.1em; color: rgb(238, 235, 221); background: rgba(0, 0, 0, 0.667); padding: 8px 10px; border-left: 2px solid rgb(206, 18, 18);}
+#cinematic-home :where(#section-sports) .sport-panel figcaption strong{display: none;}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) .disciplines{display: block; margin: 0px -12px; padding: 0px;}
+#cinematic-home :where(#section-sports) .sport-panel{width: 100%; margin: 0px !important;}
+#cinematic-home :where(#section-sports) .sport-panel + .sport-panel{margin-top: -20px !important;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption{bottom: 12%; left: 12%;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-size: 15px;}
+#cinematic-home :where(#section-sports) .sport-panel img{mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 6%, rgb(0, 0, 0) 94%, transparent), linear-gradient(0deg, transparent, rgb(0, 0, 0) 22%, rgb(0, 0, 0) 90%, transparent);}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-sports) .sport-panel{will-change: auto; opacity: 1 !important; visibility: visible !important; transform: none !important;}}
+#cinematic-home :where(#section-sports){--display-font: 'Manrope',Arial,sans-serif; --body-font: 'Inter',Arial,sans-serif; --sports-font: 'Barlow Condensed','Arial Narrow',Arial,sans-serif;}
+#cinematic-home :where(#section-sports){font-family: var(--body-font); -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;}
+#cinematic-home :where(#section-sports) .shell{max-width: 1440px;}
+#cinematic-home :where(#section-sports) header{height: 96px;}
+#cinematic-home :where(#section-sports) .brand{font-family: var(--display-font); font-weight: 800; font-size: 21px; letter-spacing: -0.035em;}
+#cinematic-home :where(#section-sports) .brand small{font-family: var(--sports-font); font-size: 12px; letter-spacing: 0.3em;}
+#cinematic-home :where(#section-sports) .edition{font-family: var(--sports-font); font-size: 16px; font-weight: 600; letter-spacing: 0.14em; color: var(--ivory);}
+#cinematic-home :where(#section-sports) .intro{padding: 76px 0px 44px; align-items: end;}
+#cinematic-home :where(#section-sports) .eyebrow{font-family: var(--sports-font); font-size: 16px; font-weight: 700; letter-spacing: 0.16em; color: var(--ivory); margin-bottom: 22px;}
+#cinematic-home :where(#section-sports) .eyebrow::before{width: 26px; margin-right: 13px;}
+#cinematic-home :where(#section-sports) .source-h1,#cinematic-home :where(#section-sports) h2,#cinematic-home :where(#section-sports) h3,#cinematic-home :where(#section-sports) .caption strong{font-family: var(--display-font);}
+#cinematic-home :where(#section-sports) .source-h1{font-size: clamp(48px, 5.9vw, 86px); font-weight: 800; line-height: 1.025; letter-spacing: -0.065em;}
+#cinematic-home :where(#section-sports) .intro-note{font-size: 17px; line-height: 1.6; max-width: 250px; color: var(--ivory); padding-bottom: 5px;}
+#cinematic-home :where(#section-sports) .football{gap: 42px;}
+#cinematic-home :where(#section-sports) .cinema-hook{padding: 24px 0px 40px 12px;}
+#cinematic-home :where(#section-sports) .cinema-hook h2{font-size: clamp(38px, 4.2vw, 64px); font-weight: 800; line-height: 1.04; letter-spacing: -0.055em; margin-bottom: 24px;}
+#cinematic-home :where(#section-sports) .cinema-hook > p:not(.eyebrow){font-size: 17px; line-height: 1.55;}
+#cinematic-home :where(#section-sports) .trial-cta{font-family: var(--body-font); font-size: 15px; font-weight: 700; letter-spacing: -0.01em; padding: 18px 26px; border-radius: 5px; transition: background 0.2s, transform 0.2s;}
+#cinematic-home :where(#section-sports) .trial-cta:hover{background: rgb(235, 28, 28); transform: translateY(-2px);}
+#cinematic-home :where(#section-sports) .caption{padding-top: 20px;}
+#cinematic-home :where(#section-sports) .caption strong{font-size: 21px; font-weight: 700; letter-spacing: -0.04em;}
+#cinematic-home :where(#section-sports) .assembly{margin-top: 56px; padding-top: 44px;}
+#cinematic-home :where(#section-sports) .assembly-heading{margin-bottom: 30px;}
+#cinematic-home :where(#section-sports) .assembly-heading h2,#cinematic-home :where(#section-sports) .other-heading h2{font-size: clamp(34px, 3.9vw, 54px); font-weight: 800; line-height: 1.1; letter-spacing: -0.055em;}
+#cinematic-home :where(#section-sports) .other-heading{margin-bottom: 22px;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-family: var(--sports-font); font-size: clamp(18px, 1.7vw, 25px); font-weight: 700; letter-spacing: 0.075em; padding: 8px 12px; background: rgba(0, 0, 0, 0.6); border-left: 3px solid var(--red);}
+#cinematic-home :where(#section-sports) .review{font-size: 13px; line-height: 1.7; margin-top: 64px; color: rgb(170, 166, 172);}
+#cinematic-home :where(#section-sports) .review p{max-width: 920px;}
+#cinematic-home :where(#section-sports) .review a{font-size: 13px; text-underline-offset: 4px;}
+#cinematic-home :where(#section-sports) footer{font-family: var(--sports-font); font-size: 14px; letter-spacing: 0.12em; color: rgb(168, 164, 170);}
+@media (max-width: 1023px) {#cinematic-home :where(#section-sports) .intro{padding-top: 54px;}
+#cinematic-home :where(#section-sports) .football{gap: 26px;}
+#cinematic-home :where(#section-sports) .cinema-hook h2{font-size: clamp(34px, 4.5vw, 52px);}
+#cinematic-home :where(#section-sports) .intro-note{max-width: 210px;}}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) header{height: 76px;}
+#cinematic-home :where(#section-sports) .edition{font-size: 12px; letter-spacing: 0.07em; max-width: 135px;}
+#cinematic-home :where(#section-sports) .intro{padding: 40px 0px 32px;}
+#cinematic-home :where(#section-sports) .eyebrow{font-size: 14px; letter-spacing: 0.12em;}
+#cinematic-home :where(#section-sports) .source-h1{font-size: clamp(38px, 10.4vw, 56px); line-height: 1.06; letter-spacing: -0.055em;}
+#cinematic-home :where(#section-sports) .intro-note{font-size: 16px; margin-top: 22px; max-width: 330px;}
+#cinematic-home :where(#section-sports) .cinema-hook{padding: 36px 0px 20px;}
+#cinematic-home :where(#section-sports) .cinema-hook h2{font-size: clamp(36px, 10vw, 48px);}
+#cinematic-home :where(#section-sports) .cinema-hook > p:not(.eyebrow){font-size: 16px;}
+#cinematic-home :where(#section-sports) .assembly{margin-top: 38px; padding-top: 30px;}
+#cinematic-home :where(#section-sports) .assembly-heading h2,#cinematic-home :where(#section-sports) .other-heading h2{font-size: clamp(30px, 8vw, 40px);}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-size: 20px;}
+#cinematic-home :where(#section-sports) .review{font-size: 12px; margin-top: 38px;}
+#cinematic-home :where(#section-sports) .review a{font-size: 13px;}}
+@media (max-width: 359px) {#cinematic-home :where(#section-sports) .source-h1{font-size: 37px;}
+#cinematic-home :where(#section-sports) .edition{font-size: 11px;}
+#cinematic-home :where(#section-sports) .sport-panel figcaption span{font-size: 18px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-sports) .trial-cta{transition: none;}
+#cinematic-home :where(#section-sports) .trial-cta:hover{transform: none;}}
+#cinematic-home :where(#section-sports) .accent{color: var(--red);}
+#cinematic-home :where(#section-sports) .assembly-heading h2,#cinematic-home :where(#section-sports) .other-heading h2{font-size: clamp(38px, 4.5vw, 64px); line-height: 1.04; letter-spacing: -0.06em; max-width: 820px;}
+#cinematic-home :where(#section-sports) .assembly-heading{margin-bottom: 34px;}
+#cinematic-home :where(#section-sports) .other-heading{margin-bottom: 32px;}
+#cinematic-home :where(#section-sports) .review{border-top: 1px solid rgba(255, 255, 255, 0.125); font-size: 12px; color: rgb(170, 166, 172); gap: 24px;}
+#cinematic-home :where(#section-sports) .review p{max-width: 700px;}
+@media (max-width: 767px) {#cinematic-home :where(#section-sports) .assembly-heading h2,#cinematic-home :where(#section-sports) .other-heading h2{font-size: clamp(34px, 9vw, 46px);}
+#cinematic-home :where(#section-sports) .assembly-heading{margin-bottom: 22px;}
+#cinematic-home :where(#section-sports) .other-heading{margin-bottom: 22px;}}
+#cinematic-home :where(#section-universe){color-scheme: dark; --ivory: #EEEBDD; --red: #CE1212;}
+#cinematic-home :where(#section-universe) *{box-sizing: border-box;}
+#cinematic-home :where(#section-universe){background: rgb(0, 0, 0); scroll-behavior: smooth;}
+#cinematic-home :where(#section-universe){margin: 0px; color: var(--ivory); font-family: Inter, Arial, sans-serif; background: rgb(0, 0, 0); overflow-x: hidden;}
+#cinematic-home :where(#section-universe) .top{height: 25vh; min-height: 160px; display: grid; place-items: center; color: rgb(169, 157, 157); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;}
+#cinematic-home :where(#section-universe) .universe{position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(at 52% 27%, rgb(93, 11, 18) 0%, rgb(35, 9, 14) 38%, rgb(8, 4, 5) 72%, rgb(0, 0, 0) 100%);}
+#cinematic-home :where(#section-universe) .spotlight{pointer-events: none; position: absolute; inset: 0px; z-index: -1; background: radial-gradient(470px circle at var(--mx,50%) var(--my,30%),rgba(206,18,18,.23),transparent 72%); opacity: 0.9;}
+#cinematic-home :where(#section-universe) .noise{position: absolute; inset: 0px; pointer-events: none; opacity: 0.15; background: repeating-linear-gradient(0deg, transparent 0px, transparent 4px, rgba(255, 255, 255, 0.02) 5px, rgba(255, 255, 255, 0.02) 6px);}
+#cinematic-home :where(#section-universe) .wrap{width: min(1200px, 100% - 44px); margin: auto;}
+#cinematic-home :where(#section-universe) .intro{padding: 130px 0px 40px;}
+#cinematic-home :where(#section-universe) .eyebrow{font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgb(216, 160, 160);}
+#cinematic-home :where(#section-universe) .intro .source-h1{font-size: clamp(42px, 7vw, 102px); line-height: 0.98; letter-spacing: -0.07em; max-width: 1050px; margin: 25px 0px;}
+#cinematic-home :where(#section-universe) .intro .source-h1 em{font-style: normal; color: rgb(240, 75, 75);}
+#cinematic-home :where(#section-universe) .intro p{max-width: 530px; color: rgb(210, 185, 186); line-height: 1.7;}
+#cinematic-home :where(#section-universe) .chapter{padding: 95px 0px 120px; position: relative;}
+#cinematic-home :where(#section-universe) .chapter-header{display: flex; align-items: end; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.173); padding-bottom: 18px;}
+#cinematic-home :where(#section-universe) .chapter h2{font-size: clamp(29px, 4vw, 56px); letter-spacing: -0.055em; margin: 0px;}
+#cinematic-home :where(#section-universe) .chapter small{font-size: 11px; color: rgb(200, 166, 167); letter-spacing: 0.13em; text-transform: uppercase;}
+#cinematic-home :where(#section-universe) .constellation{display: grid; grid-template-columns: repeat(5, minmax(0px, 1fr)); align-items: center; gap: 15px 24px; padding: 40px 0px; min-height: 440px;}
+#cinematic-home :where(#section-universe) .logo{height: 145px; display: grid; place-items: center; position: relative; opacity: var(--reveal,1); transform: translate3d(calc(var(--dx)*var(--offset,0)),calc(var(--dy)*var(--offset,0)),0) rotate(calc(var(--rot)*var(--offset,0))) scale(calc(.76 + .24*var(--reveal,1))); filter: blur(calc(7px*var(--offset,0))); will-change: transform, opacity, filter;}
+#cinematic-home :where(#section-universe) .logo:nth-child(3n+2){margin-top: 55px;}
+#cinematic-home :where(#section-universe) .logo:nth-child(4n+1){margin-top: -30px;}
+#cinematic-home :where(#section-universe) .float{width: 100%; height: 100%; display: grid; place-items: center; position: relative; transform: translate3d(var(--hx,0px),var(--hy,0px),0) scale(var(--hs,1)); transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: default;}
+#cinematic-home :where(#section-universe) .float::before{content: ""; position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(rgba(206, 18, 18, 0.45), transparent 65%); filter: blur(20px); opacity: var(--glow,0); transition: opacity 0.3s;}
+#cinematic-home :where(#section-universe) .float img{position: relative; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(rgba(0, 0, 0, 0.533) 0px 9px 14px); pointer-events: none;}
+#cinematic-home :where(#section-universe) .sports{background: linear-gradient(transparent, rgb(22, 4, 8) 50%, transparent);}
+#cinematic-home :where(#section-universe) .outro{padding: 50px 0px 150px; text-align: center;}
+#cinematic-home :where(#section-universe) .outro h2{font-size: clamp(34px, 5vw, 76px); letter-spacing: -0.06em; margin: 0px;}
+#cinematic-home :where(#section-universe) .outro p{color: rgb(213, 182, 183);}
+#cinematic-home :where(#section-universe) .legal{padding: 20px 0px 36px; border-top: 1px solid rgba(255, 255, 255, 0.125); font-size: 11px; color: rgb(172, 146, 148); line-height: 1.7;}
+#cinematic-home :where(#section-universe) .tail{height: 20vh; background: rgb(0, 0, 0);}
+@media (max-width: 850px) {#cinematic-home :where(#section-universe) .constellation{grid-template-columns: repeat(3, minmax(0px, 1fr)); min-height: 0px; gap: 10px;}
+#cinematic-home :where(#section-universe) .logo{height: 125px;}
+#cinematic-home :where(#section-universe) .intro{padding-top: 95px;}}
+@media (max-width: 540px) {#cinematic-home :where(#section-universe) .wrap{width: min(100% - 28px, 500px);}
+#cinematic-home :where(#section-universe) .intro{padding-top: 75px;}
+#cinematic-home :where(#section-universe) .chapter{padding: 65px 0px;}
+#cinematic-home :where(#section-universe) .chapter-header{display: block;}
+#cinematic-home :where(#section-universe) .chapter small{display: block; margin-top: 12px;}
+#cinematic-home :where(#section-universe) .constellation{grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: 4px;}
+#cinematic-home :where(#section-universe) .logo{height: 112px;}
+#cinematic-home :where(#section-universe) .logo:nth-child(n){margin-top: 0px;}
+#cinematic-home :where(#section-universe) .logo:nth-child(4n+2){margin-top: 24px;}
+#cinematic-home :where(#section-universe) .top{height: 17vh; min-height: 90px;}
+#cinematic-home :where(#section-universe) .outro{padding-bottom: 90px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-universe){scroll-behavior: auto;}
+#cinematic-home :where(#section-universe) .logo{opacity: 1 !important; transform: none !important; filter: none !important;}
+#cinematic-home :where(#section-universe) .float{transform: none !important; transition: none !important;}
+#cinematic-home :where(#section-universe) .spotlight{display: none;}}
+#cinematic-home :where(#section-devices){--red: #CE1212; --ivory: #EEEBDD; --text: #F5F1E9; --muted: #BDBDC5;}
+#cinematic-home :where(#section-devices) *{box-sizing: border-box;}
+#cinematic-home :where(#section-devices){background: rgb(0, 0, 0); color: var(--text); font-family: Inter, Arial, sans-serif;}
+#cinematic-home :where(#section-devices){margin: 0px;}
+#cinematic-home :where(#section-devices) a{color: inherit;}
+#cinematic-home :where(#section-devices) a:focus-visible{outline: 3px solid var(--red); outline-offset: 5px;}
+#cinematic-home :where(#section-devices) .wrap{max-width: 1320px; margin: auto; padding: 0px clamp(20px, 4vw, 52px);}
+#cinematic-home :where(#section-devices) header{height: 78px; display: flex; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.145); font-weight: 800; letter-spacing: 0.12em;}
+#cinematic-home :where(#section-devices) header b{color: var(--red); margin-right: 9px;}
+#cinematic-home :where(#section-devices) .intro{padding: clamp(72px, 10vw, 136px) 0px 36px;}
+#cinematic-home :where(#section-devices) .eyebrow{color: var(--red); font-size: 13px; font-weight: 800; letter-spacing: 0.2em; margin: 0px 0px 20px;}
+#cinematic-home :where(#section-devices) .intro .source-h1{font-family: Manrope, Inter, Arial, sans-serif; font-size: clamp(43px, 6vw, 88px); line-height: 1.03; letter-spacing: -0.065em; margin: 0px; max-width: 1000px;}
+#cinematic-home :where(#section-devices) .intro .source-h1 span{color: var(--red);}
+#cinematic-home :where(#section-devices) .subtitle{font-size: clamp(16px, 1.6vw, 20px); line-height: 1.6; color: var(--muted); margin: 24px 0px 0px; max-width: 670px;}
+#cinematic-home :where(#section-devices) .device-section{padding: 35px 0px 100px;}
+#cinematic-home :where(#section-devices) .section-heading{font-size: clamp(24px, 3vw, 36px); font-weight: 800; letter-spacing: -0.04em; margin: 0px 0px 25px;}
+#cinematic-home :where(#section-devices) .device-band{background: rgb(27, 23, 23); border-radius: 26px; padding: clamp(26px, 4vw, 52px) clamp(16px, 3vw, 42px); position: relative; overflow: hidden;}
+#cinematic-home :where(#section-devices) .device-band::after{content: ""; position: absolute; left: 4%; right: 4%; bottom: 0px; height: 2px; background: linear-gradient(90deg,transparent,var(--red),transparent); opacity: 0.75;}
+#cinematic-home :where(#section-devices) .devices{display: grid; grid-template-columns: repeat(8, minmax(0px, 1fr)); gap: clamp(8px, 1.5vw, 22px);}
+#cinematic-home :where(#section-devices) .device{text-align: center; min-width: 0px; opacity: 1; transform: none; will-change: opacity, transform;}
+#cinematic-home :where(#section-devices) .symbol{height: 84px; display: grid; place-items: center; color: var(--ivory);}
+#cinematic-home :where(#section-devices) .symbol svg{width: clamp(36px, 4vw, 58px); height: clamp(36px, 4vw, 58px); fill: none; stroke: currentcolor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;}
+#cinematic-home :where(#section-devices) .device-name{display: block; font-size: clamp(12px, 1.04vw, 16px); font-weight: 700; line-height: 1.4; margin-top: 12px;}
+#cinematic-home :where(#section-devices) .cta-line{display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 40px;}
+#cinematic-home :where(#section-devices) .cta-line p{font-size: 17px; line-height: 1.5; color: var(--muted); margin: 0px;}
+#cinematic-home :where(#section-devices) .cta{display: inline-flex; align-items: center; justify-content: center; background: var(--red); border-radius: 6px; padding: 16px 22px; text-decoration: none; font-weight: 800; min-height: 52px; text-align: center;}
+#cinematic-home :where(#section-devices) .preview-note{font-size: 13px; color: rgb(168, 164, 164); border-top: 1px solid rgba(255, 255, 255, 0.14); padding: 20px 0px 50px;}
+#cinematic-home :where(#section-devices) .spacer{height: 32vh; min-height: 180px; display: grid; place-items: center; color: rgb(119, 119, 119); font-size: 12px; letter-spacing: 0.16em;}
+#cinematic-home :where(#section-devices) .device-section{scroll-margin-top: 15vh;}
+@media (max-width: 1000px) {#cinematic-home :where(#section-devices) .devices{grid-template-columns: repeat(4, minmax(0px, 1fr)); row-gap: 36px;}
+#cinematic-home :where(#section-devices) .symbol svg{width: 52px; height: 52px;}
+#cinematic-home :where(#section-devices) .device-name{font-size: 15px;}}
+@media (max-width: 540px) {#cinematic-home :where(#section-devices) .intro{padding-top: 65px;}
+#cinematic-home :where(#section-devices) .devices{grid-template-columns: repeat(2, minmax(0px, 1fr)); row-gap: 32px;}
+#cinematic-home :where(#section-devices) .device-band{padding: 32px 18px;}
+#cinematic-home :where(#section-devices) .cta-line{display: block;}
+#cinematic-home :where(#section-devices) .cta-line .cta{margin-top: 22px; width: 100%;}
+#cinematic-home :where(#section-devices) .symbol{height: 62px;}
+#cinematic-home :where(#section-devices) .symbol svg{width: 44px; height: 44px;}
+#cinematic-home :where(#section-devices) .device-name{font-size: 15px;}
+#cinematic-home :where(#section-devices) .spacer{height: 20vh; min-height: 100px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-devices) .device{will-change: auto; opacity: 1 !important; transform: none !important;}}
+#cinematic-home :where(#section-pricing){--black: #000; --charcoal: #1B1717; --burgundy: #810000; --red: #CE1212; --ivory: #EEEBDD; --white: #F5F1E9; --muted: #BDBDC5;}
+#cinematic-home :where(#section-pricing) *{box-sizing: border-box;}
+#cinematic-home :where(#section-pricing){scroll-behavior: smooth;}
+#cinematic-home :where(#section-pricing){margin: 0px; background: rgb(5, 4, 4); color: var(--white); font-family: "DM Sans", Arial, sans-serif; overflow-x: hidden;}
+#cinematic-home :where(#section-pricing) a{color: inherit; text-decoration: none;}
+#cinematic-home :where(#section-pricing) button,#cinematic-home :where(#section-pricing) a{-webkit-tap-highlight-color: transparent;}
+#cinematic-home :where(#section-pricing) a:focus-visible{outline: rgb(255, 156, 156) solid 2px; outline-offset: 5px;}
+#cinematic-home :where(#section-pricing) main{overflow: hidden;}
+#cinematic-home :where(#section-pricing) .intro-space,#cinematic-home :where(#section-pricing) .outro-space{height: 30vh; display: grid; place-items: center; color: rgb(130, 116, 119); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;}
+#cinematic-home :where(#section-pricing) .pricing{position: relative; isolation: isolate; padding: 105px 24px 112px; background: radial-gradient(at 52% 18%, rgb(62, 9, 10) 0%, rgb(25, 8, 9) 32%, rgb(9, 6, 7) 65%, rgb(5, 4, 4) 100%);}
+#cinematic-home :where(#section-pricing) .pricing::before{content: ""; position: absolute; inset: 0px; z-index: -1; pointer-events: none; background: linear-gradient(90deg, transparent 49.95%, rgba(255, 255, 255, 0.03) 50%, transparent 50.05%); opacity: 0.35;}
+#cinematic-home :where(#section-pricing) .pricing::after{content: ""; position: absolute; left: -15%; right: -15%; top: 35%; height: 530px; background: radial-gradient(rgba(150, 11, 16, 0.125), transparent 70%); pointer-events: none;}
+#cinematic-home :where(#section-pricing) .shell{width: min(1250px, 100%); margin: auto; position: relative;}
+#cinematic-home :where(#section-pricing) .eyebrow{font-size: 11px; font-weight: 800; letter-spacing: 0.27em; text-transform: uppercase; color: rgb(255, 126, 126); display: flex; gap: 12px; align-items: center; justify-content: center;}
+#cinematic-home :where(#section-pricing) .eyebrow::before,#cinematic-home :where(#section-pricing) .eyebrow::after{content: ""; width: 27px; height: 1px; background: rgb(178, 74, 74);}
+#cinematic-home :where(#section-pricing) .heading{text-align: center; max-width: 850px; margin: 0px auto 52px;}
+#cinematic-home :where(#section-pricing) .heading .source-h1{font: 800 clamp(38px, 5.3vw, 75px) / 1.07 Manrope, Arial, sans-serif; letter-spacing: -0.065em; margin: 22px 0px;}
+#cinematic-home :where(#section-pricing) .heading .source-h1 em{font-style: normal; background: linear-gradient(100deg, rgb(255, 240, 233), rgb(246, 123, 123)) text; color: transparent;}
+#cinematic-home :where(#section-pricing) .heading p{font-size: 15px; line-height: 1.8; color: rgb(197, 185, 185); max-width: 570px; margin: auto;}
+#cinematic-home :where(#section-pricing) .promise{margin: 28px auto 0px; display: inline-flex; gap: 9px; align-items: center; border: 1px solid rgba(255, 255, 255, 0.125); border-radius: 100px; background: rgba(255, 255, 255, 0.03); padding: 10px 16px; color: rgb(232, 220, 220); font-size: 12px;}
+#cinematic-home :where(#section-pricing) .promise b{color: rgb(255, 255, 255);}
+#cinematic-home :where(#section-pricing) .plans{display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 14px; align-items: stretch; padding-top: 25px;}
+#cinematic-home :where(#section-pricing) .plan{--mx: 50%; --my: 50%; position: relative; isolation: isolate; display: flex; flex-direction: column; min-width: 0px; border-radius: 19px; border: 1px solid rgba(255, 255, 255, 0.125); background: linear-gradient(160deg, rgb(41, 32, 32), rgb(17, 13, 14) 68%, rgb(12, 9, 10)); padding: 27px 22px 23px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; overflow: visible;}
+#cinematic-home :where(#section-pricing) .plan::before{content: ""; position: absolute; inset: 0px; border-radius: inherit; pointer-events: none; background: radial-gradient(300px circle at var(--mx) var(--my),#d13b3b25,transparent 65%); opacity: 0; transition: opacity 0.25s; z-index: -1;}
+#cinematic-home :where(#section-pricing) .plan:hover{border-color: rgba(209, 125, 125, 0.44); transform: translateY(-8px); box-shadow: rgba(0, 0, 0, 0.533) 0px 25px 65px;}
+#cinematic-home :where(#section-pricing) .plan:hover::before{opacity: 1;}
+#cinematic-home :where(#section-pricing) .plan.featured{border-color: rgb(240, 93, 93); background: linear-gradient(145deg, rgb(101, 19, 23) 0%, rgb(42, 11, 13) 43%, rgb(18, 9, 10) 100%); box-shadow: rgba(206, 18, 18, 0.25) 0px 0px 0px 1px, rgba(160, 0, 0, 0.19) 0px 15px 70px; transform: translateY(-12px);}
+#cinematic-home :where(#section-pricing) .plan.featured:hover{transform: translateY(-19px); box-shadow: rgba(206, 18, 20, 0.376) 0px 0px 0px 1px, rgba(160, 0, 0, 0.25) 0px 30px 80px;}
+#cinematic-home :where(#section-pricing) .plan.featured::after{content: ""; position: absolute; inset: 0px; overflow: hidden; border-radius: inherit; pointer-events: none; background: linear-gradient(110deg, transparent 38%, rgba(255, 255, 255, 0.043) 48%, transparent 59%) 150% 0px / 250% 100%; transition: background-position 1s;}
+#cinematic-home :where(#section-pricing) .plan.featured:hover::after{background-position: -100% 0px;}
+#cinematic-home :where(#section-pricing) .ribbon{position: absolute; top: -18px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: rgb(206, 18, 18); color: rgb(255, 255, 255); padding: 9px 16px; border-radius: 99px; font-size: 10px; font-weight: 800; letter-spacing: 0.12em; box-shadow: rgba(206, 18, 18, 0.314) 0px 7px 20px;}
+#cinematic-home :where(#section-pricing) .plan-top{display: flex; justify-content: space-between; align-items: center; gap: 10px;}
+#cinematic-home :where(#section-pricing) .plan-kicker{font-size: 10px; letter-spacing: 0.16em; font-weight: 800; color: rgb(232, 167, 167);}
+#cinematic-home :where(#section-pricing) .plan-index{font-size: 11px; color: rgb(143, 119, 121);}
+#cinematic-home :where(#section-pricing) .plan h2{font: 800 27px / 1.1 Manrope, sans-serif; letter-spacing: -0.045em; margin: 24px 0px 6px;}
+#cinematic-home :where(#section-pricing) .subline{font-size: 12px; color: rgb(191, 176, 177); min-height: 35px; line-height: 1.45;}
+#cinematic-home :where(#section-pricing) .price{font: 800 clamp(35px, 3.3vw, 48px) / 1.1 Manrope, sans-serif; letter-spacing: -0.06em; margin: 24px 0px 4px; color: rgb(255, 255, 255);}
+#cinematic-home :where(#section-pricing) .period{font-size: 12px; color: rgb(203, 191, 192);}
+#cinematic-home :where(#section-pricing) .saving{min-height: 51px; margin-top: 17px; font-size: 11px; color: rgb(229, 178, 169); line-height: 1.5;}
+#cinematic-home :where(#section-pricing) .saving strong{display: inline-block; border: 1px solid rgba(228, 155, 155, 0.294); border-radius: 7px; background: rgba(124, 23, 30, 0.27); padding: 6px 8px; color: rgb(255, 210, 197); font-size: 11px;}
+#cinematic-home :where(#section-pricing) .divider{height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.208), transparent); margin: 16px 0px 20px;}
+#cinematic-home :where(#section-pricing) .included{font-size: 10px; font-weight: 800; letter-spacing: 0.16em; color: rgb(223, 191, 192); text-transform: uppercase; margin-bottom: 15px;}
+#cinematic-home :where(#section-pricing) .features{list-style: none; margin: 0px; padding: 0px; display: grid; gap: 13px; flex: 1 1 0%;}
+#cinematic-home :where(#section-pricing) .features li{display: flex; align-items: flex-start; gap: 10px; font-size: 12px; line-height: 1.45; color: rgb(232, 223, 224);}
+#cinematic-home :where(#section-pricing) .tick{flex: 0 0 17px; height: 17px; display: grid; place-items: center; border: 1px solid rgba(228, 119, 119, 0.565); border-radius: 50%; color: rgb(255, 176, 170); font-size: 11px;}
+#cinematic-home :where(#section-pricing) .feature-strong{color: rgb(255, 255, 255); font-weight: 700;}
+#cinematic-home :where(#section-pricing) .cta{display: flex; justify-content: center; align-items: center; gap: 9px; width: 100%; margin-top: 29px; min-height: 49px; padding: 12px; border-radius: 9px; border: 1px solid rgba(255, 255, 255, 0.21); background: rgb(240, 232, 226); color: rgb(32, 16, 17); font-weight: 800; font-size: 12px; transition: background 0.2s, transform 0.2s;}
+#cinematic-home :where(#section-pricing) .cta:hover{background: rgb(255, 255, 255); transform: translateY(-2px);}
+#cinematic-home :where(#section-pricing) .featured .cta{background: rgb(206, 18, 18); color: white; border-color: rgb(238, 69, 69);}
+#cinematic-home :where(#section-pricing) .featured .cta:hover{background: rgb(240, 31, 37);}
+#cinematic-home :where(#section-pricing) .lower{display: flex; justify-content: space-between; align-items: center; gap: 22px; margin-top: 32px; padding: 24px 28px; border: 1px solid rgba(255, 255, 255, 0.13); border-radius: 16px; background: linear-gradient(100deg, rgb(38, 21, 23), rgb(16, 12, 13));}
+#cinematic-home :where(#section-pricing) .lower strong{font: 700 19px Manrope, sans-serif; letter-spacing: -0.03em;}
+#cinematic-home :where(#section-pricing) .lower p{margin: 7px 0px 0px; color: rgb(188, 176, 178); font-size: 12px; line-height: 1.6;}
+#cinematic-home :where(#section-pricing) .trial{display: inline-flex; justify-content: center; align-items: center; gap: 12px; white-space: nowrap; border: 1px solid rgb(188, 107, 107); padding: 14px 18px; border-radius: 9px; font-size: 12px; font-weight: 800; transition: background 0.2s;}
+#cinematic-home :where(#section-pricing) .trial:hover{background: rgba(206, 18, 18, 0.19);}
+#cinematic-home :where(#section-pricing) .disclaimer{text-align: center; color: rgb(151, 137, 140); font-size: 11px; line-height: 1.7; max-width: 850px; margin: 23px auto 0px;}
+#cinematic-home :where(#section-pricing) .footnote{text-align: center; margin-top: 35px; font-size: 10px; color: rgb(119, 108, 110); letter-spacing: 0.12em;}
+#cinematic-home :where(#section-pricing) .reveal{opacity: 0; transform: translateY(38px); transition: opacity 0.8s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);}
+#cinematic-home :where(#section-pricing) .reveal.visible{opacity: 1; transform: translateY(0px);}
+#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible{transform: translateY(-12px);}
+#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible:hover{transform: translateY(-19px);}
+@media (max-width: 1050px) {#cinematic-home :where(#section-pricing) .plans{grid-template-columns: repeat(2, minmax(0px, 1fr)); row-gap: 40px;}
+#cinematic-home :where(#section-pricing) .plan.featured{transform: none;}
+#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible{transform: none;}
+#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible:hover{transform: translateY(-8px);}
+#cinematic-home :where(#section-pricing) .plan{padding: 26px;}
+#cinematic-home :where(#section-pricing) .price{font-size: 45px;}}
+@media (max-width: 620px) {#cinematic-home :where(#section-pricing) .pricing{padding: 75px 16px 70px;}
+#cinematic-home :where(#section-pricing) .heading{margin-bottom: 35px;}
+#cinematic-home :where(#section-pricing) .heading .source-h1{font-size: clamp(34px, 9vw, 52px);}
+#cinematic-home :where(#section-pricing) .heading p{font-size: 13px;}
+#cinematic-home :where(#section-pricing) .plans{grid-template-columns: 1fr; gap: 29px; padding-top: 10px;}
+#cinematic-home :where(#section-pricing) .plan{padding: 25px 23px;}
+#cinematic-home :where(#section-pricing) .plan h2{font-size: 28px;}
+#cinematic-home :where(#section-pricing) .subline{min-height: 0px;}
+#cinematic-home :where(#section-pricing) .price{font-size: 45px;}
+#cinematic-home :where(#section-pricing) .saving{min-height: 0px;}
+#cinematic-home :where(#section-pricing) .lower{flex-direction: column; align-items: stretch; padding: 22px;}
+#cinematic-home :where(#section-pricing) .trial{width: 100%;}
+#cinematic-home :where(#section-pricing) .promise{font-size: 11px; line-height: 1.5;}
+#cinematic-home :where(#section-pricing) .intro-space,#cinematic-home :where(#section-pricing) .outro-space{height: 17vh;}
+#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible{transform: none;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-pricing){scroll-behavior: auto;}
+#cinematic-home :where(#section-pricing) *,#cinematic-home :where(#section-pricing) ::before,#cinematic-home :where(#section-pricing) ::after{transition: none !important; animation: auto ease 0s 1 normal none running none !important;}
+#cinematic-home :where(#section-pricing) .reveal,#cinematic-home :where(#section-pricing) .reveal.visible,#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible{opacity: 1; transform: none;}
+#cinematic-home :where(#section-pricing) .plan:hover,#cinematic-home :where(#section-pricing) .plan.featured:hover,#cinematic-home :where(#section-pricing) .plan.featured.reveal.visible:hover{transform: none;}}
+@media (prefers-reduced-motion: no-preference) {#cinematic-home :where(#section-pricing).scroll-driven .reveal{opacity: var(--scroll-progress,0); filter: blur(var(--scroll-blur,5px)); transform: translate3d(0,var(--scroll-y,66px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg)); transition: box-shadow 0.3s, border-color 0.3s; will-change: opacity, transform, filter;}
+#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal{transform: translate3d(0,calc(var(--scroll-y,66px) - 12px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg));}
+#cinematic-home :where(#section-pricing).scroll-driven .plan.reveal:hover{transform: translate3d(0,calc(var(--scroll-y,66px) - 8px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg));}
+#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal:hover{transform: translate3d(0,calc(var(--scroll-y,66px) - 19px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg));}
+#cinematic-home :where(#section-pricing) .pricing{--journey: 0; background: radial-gradient(ellipse at calc(32% + var(--journey)*40%) 18%,#3e090a 0%,#190809 32%,#090607 65%,#050404 100%);}
+#cinematic-home :where(#section-pricing) .pricing::after{transform: translateY(calc(var(--journey,0)*-95px)); opacity: calc(.45 + var(--journey,0)*.55);}
+@media (max-width: 1050px) {#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal{transform: translate3d(0,var(--scroll-y,66px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg));}
+#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal:hover{transform: translate3d(0,calc(var(--scroll-y,66px) - 8px),0) scale(var(--scroll-scale,.94)) rotate(var(--scroll-rotate,2deg));}}
+@media (max-width: 620px) {#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal,#cinematic-home :where(#section-pricing).scroll-driven .plan.featured.reveal:hover{transform: translate3d(0,var(--scroll-y,66px),0) scale(var(--scroll-scale,.94));}}}
+#cinematic-home :where(#section-how){--bg: #000; --char: #1b1717; --burg: #810000; --red: #ce1212; --ivory: #eeebdd; --muted: #bdbdc5;}
+#cinematic-home :where(#section-how) *{box-sizing: border-box;}
+#cinematic-home :where(#section-how){scroll-behavior: smooth;}
+#cinematic-home :where(#section-how){margin: 0px; background: var(--bg); color: var(--ivory); font-family: Inter, Arial, Helvetica, sans-serif;}
+#cinematic-home :where(#section-how) a{color: inherit;}
+#cinematic-home :where(#section-how) button,#cinematic-home :where(#section-how) a{touch-action: manipulation;}
+#cinematic-home :where(#section-how) .intro,#cinematic-home :where(#section-how) .outro{min-height: 52vh; display: grid; place-items: center; text-align: center; padding: 4rem 1rem; background: radial-gradient(rgb(39, 10, 10), transparent 65%);}
+#cinematic-home :where(#section-how) .intro span,#cinematic-home :where(#section-how) .outro span{letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; color: rgb(217, 141, 141);}
+#cinematic-home :where(#section-how) .section{position: relative; background: linear-gradient(150deg, rgb(9, 8, 8) 4%, rgb(25, 11, 12) 49%, rgb(8, 7, 7) 100%); isolation: isolate;}
+#cinematic-home :where(#section-how) .section::before{content: ""; position: absolute; inset: 0px; background: radial-gradient(at 76% 45%, rgba(129, 0, 0, 0.25), transparent 52%); pointer-events: none;}
+#cinematic-home :where(#section-how) .section-inner{max-width: 1250px; margin: auto; padding: 7rem 4vw 10rem; position: relative;}
+#cinematic-home :where(#section-how) .eyebrow{color: rgb(238, 136, 136); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.76rem; font-weight: 750;}
+#cinematic-home :where(#section-how) .section .source-h1{font-size: clamp(2.8rem, 5.5vw, 6rem); line-height: 1.02; letter-spacing: -0.06em; margin: 1.2rem 0px; max-width: 870px;}
+#cinematic-home :where(#section-how) .section .source-h1 em{font-style: normal; color: rgb(226, 91, 91);}
+#cinematic-home :where(#section-how) .lede{color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7; max-width: 620px;}
+#cinematic-home :where(#section-how) .story{display: grid; grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.08fr); gap: clamp(2rem, 6vw, 7rem); margin-top: 7rem;}
+#cinematic-home :where(#section-how) .steps{position: relative;}
+#cinematic-home :where(#section-how) .rail{position: absolute; left: 24px; top: 0px; bottom: 0px; width: 1px; background: rgb(92, 51, 51);}
+#cinematic-home :where(#section-how) .rail-fill{height: 0px; background: linear-gradient(rgb(255, 118, 118), rgb(206, 18, 18)); width: 3px; position: absolute; top: 0px; left: -1px; box-shadow: rgb(206, 18, 18) 0px 0px 18px;}
+#cinematic-home :where(#section-how) .step{position: relative; min-height: 78vh; display: flex; align-items: center; padding: 3rem 0px 3rem 5rem; opacity: 0.38; transform: translateY(18px); transition: opacity 0.3s, transform 0.3s;}
+#cinematic-home :where(#section-how) .step.active{opacity: 1; transform: translateY(0px);}
+#cinematic-home :where(#section-how) .step-num{position: absolute; left: 0px; top: 50%; transform: translateY(-50%); width: 49px; height: 49px; border: 1px solid rgb(112, 66, 66); border-radius: 50%; background: rgb(21, 13, 13); display: grid; place-items: center; color: rgb(216, 182, 182); font-size: 0.9rem; transition: 0.3s;}
+#cinematic-home :where(#section-how) .step.active .step-num{background: rgb(94, 13, 13); border-color: rgb(240, 75, 75); color: white; box-shadow: rgba(206, 18, 18, 0.25) 0px 0px 30px;}
+#cinematic-home :where(#section-how) .step h2{font-size: clamp(2rem, 3.5vw, 3.5rem); line-height: 1.08; letter-spacing: -0.05em; margin: 0.7rem 0px 1rem;}
+#cinematic-home :where(#section-how) .step p{font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 410px;}
+#cinematic-home :where(#section-how) .step .label{color: rgb(237, 153, 153); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.72rem; font-weight: 700;}
+#cinematic-home :where(#section-how) .visual-wrap{position: relative;}
+#cinematic-home :where(#section-how) .visual{position: sticky; top: 12vh; height: 76vh; min-height: 470px; max-height: 740px; border-radius: 26px; overflow: hidden; background: radial-gradient(at 65% 20%, rgba(107, 16, 16, 0.5), transparent 50%), linear-gradient(135deg, rgb(29, 17, 17), rgb(9, 8, 8) 65%); border: 1px solid rgb(91, 52, 52); box-shadow: rgba(0, 0, 0, 0.733) 0px 30px 110px, rgba(126, 11, 11, 0.082) 0px 0px 60px inset; perspective: 1000px;}
+#cinematic-home :where(#section-how) .visual::before{content: ""; position: absolute; inset: -30%; background: radial-gradient(circle, rgba(206, 18, 18, 0.157), transparent 35%); transform: translate(var(--mx,0px),var(--my,0px)); transition: transform 0.25s; pointer-events: none;}
+#cinematic-home :where(#section-how) .visual-top{display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: relative; z-index: 2;}
+#cinematic-home :where(#section-how) .brand{font-size: 0.78rem; letter-spacing: 0.2em; font-weight: 800;}
+#cinematic-home :where(#section-how) .brand b{color: rgb(255, 91, 91);}
+#cinematic-home :where(#section-how) .live{font-size: 0.7rem; color: rgb(216, 184, 184); letter-spacing: 0.14em;}
+#cinematic-home :where(#section-how) .scene{position: absolute; inset: 80px 0px 0px; display: grid; place-items: center; padding: 30px; opacity: 0; transform: translateY(30px) scale(0.94); filter: blur(8px); transition: opacity 0.6s, transform 0.65s, filter 0.6s; pointer-events: none;}
+#cinematic-home :where(#section-how) .scene.active{opacity: 1; transform: translateY(0px) scale(1); filter: blur(0px);}
+#cinematic-home :where(#section-how) .scene-content{width: min(100%, 420px);}
+#cinematic-home :where(#section-how) .micro{color: rgb(232, 164, 164); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.7rem; font-weight: 700; margin-bottom: 16px;}
+#cinematic-home :where(#section-how) .scene-title{font-size: clamp(1.6rem, 3vw, 2.6rem); letter-spacing: -0.05em; line-height: 1.1; font-weight: 800; margin: 0px 0px 22px;}
+#cinematic-home :where(#section-how) .plan-tiles{display: grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+#cinematic-home :where(#section-how) .plan{border: 1px solid rgb(119, 80, 80); border-radius: 12px; padding: 20px; background: rgb(27, 17, 17);}
+#cinematic-home :where(#section-how) .plan.featured{background: linear-gradient(135deg, rgb(105, 18, 18), rgb(49, 14, 14)); border-color: rgb(237, 91, 91); box-shadow: rgba(206, 18, 18, 0.145) 0px 0px 35px;}
+#cinematic-home :where(#section-how) .plan small{color: rgb(207, 179, 179);}
+#cinematic-home :where(#section-how) .plan strong{display: block; font-size: 1.8rem; margin: 10px 0px;}
+#cinematic-home :where(#section-how) .screen{border: 1px solid rgb(117, 64, 64); background: rgb(17, 11, 11); border-radius: 20px; padding: 20px; box-shadow: rgba(0, 0, 0, 0.533) 0px 24px 60px;}
+#cinematic-home :where(#section-how) .screen-bar{display: flex; gap: 6px; margin-bottom: 20px;}
+#cinematic-home :where(#section-how) .screen-bar i{display: block; width: 7px; height: 7px; border-radius: 50%; background: rgb(169, 86, 86);}
+#cinematic-home :where(#section-how) .device{height: 145px; border: 5px solid rgb(75, 56, 56); border-radius: 11px; background: radial-gradient(circle, rgb(160, 24, 24), rgb(37, 8, 8) 70%); display: grid; place-items: center;}
+#cinematic-home :where(#section-how) .device svg{width: 55px; height: 55px;}
+#cinematic-home :where(#section-how) .device-stand{height: 28px; width: 90px; margin: auto; border-bottom: 7px solid rgb(110, 75, 75); border-radius: 0px 0px 9px 9px;}
+#cinematic-home :where(#section-how) .screen-caption{text-align: center; color: rgb(203, 187, 187); font-size: 0.85rem; margin-top: 20px;}
+#cinematic-home :where(#section-how) .poster-grid{display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;}
+#cinematic-home :where(#section-how) .poster{aspect-ratio: 3 / 4; border-radius: 9px; display: flex; align-items: end; padding: 10px; font-size: 0.7rem; letter-spacing: 0.08em; font-weight: 700; background: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/live.webp") center center / cover no-repeat; overflow: hidden; transition: background-size 0.35s, filter 0.35s; filter: saturate(0.94);}
+#cinematic-home :where(#section-how) .poster:nth-child(2){background-image: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/movies.webp");}
+#cinematic-home :where(#section-how) .poster:nth-child(3){background-image: linear-gradient(0deg, rgb(9, 9, 9) 2%, transparent 65%), url("/assets/how/series.webp");}
+#cinematic-home :where(#section-how) .poster:hover{filter: saturate(1.16) brightness(1.08);}
+#cinematic-home :where(#section-how) .actions{display: flex; flex-wrap: wrap; gap: 14px; margin-top: 3rem;}
+#cinematic-home :where(#section-how) .btn{display: inline-flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 100px; padding: 0px 24px; text-decoration: none; font-size: 0.9rem; font-weight: 750; transition: transform 0.2s, background 0.2s;}
+#cinematic-home :where(#section-how) .btn:hover{transform: translateY(-3px);}
+#cinematic-home :where(#section-how) .btn-primary{background: var(--red); color: white;}
+#cinematic-home :where(#section-how) .btn-secondary{border: 1px solid rgb(125, 85, 85); color: var(--ivory);}
+#cinematic-home :where(#section-how) .disclaimer{font-size: 0.77rem; color: rgb(158, 145, 145); line-height: 1.6; margin-top: 1.5rem;}
+#cinematic-home :where(#section-how) .outro h2{font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.04em; margin: 0.5rem 0px;}
+@media (max-width: 800px) {#cinematic-home :where(#section-how) .section-inner{padding: 5rem 6vw;}
+#cinematic-home :where(#section-how) .story{display: flex; flex-direction: column; gap: 2rem; margin-top: 4rem;}
+#cinematic-home :where(#section-how) .visual-wrap{order: -1;}
+#cinematic-home :where(#section-how) .visual{position: sticky; top: 10px; height: 380px; min-height: 0px; border-radius: 18px;}
+#cinematic-home :where(#section-how) .scene{inset: 65px 0px 0px; padding: 20px;}
+#cinematic-home :where(#section-how) .visual-top{padding: 18px;}
+#cinematic-home :where(#section-how) .scene-title{font-size: 1.5rem;}
+#cinematic-home :where(#section-how) .plan{padding: 12px;}
+#cinematic-home :where(#section-how) .plan strong{font-size: 1.4rem;}
+#cinematic-home :where(#section-how) .steps{margin-top: 0px;}
+#cinematic-home :where(#section-how) .step{min-height: 55vh; padding-left: 4rem;}
+#cinematic-home :where(#section-how) .rail{left: 20px;}
+#cinematic-home :where(#section-how) .step-num{width: 41px; height: 41px;}
+#cinematic-home :where(#section-how) .poster{aspect-ratio: 4 / 3;}
+#cinematic-home :where(#section-how) .device{height: 90px;}
+#cinematic-home :where(#section-how) .section .source-h1{font-size: clamp(2.7rem, 9vw, 4.5rem);}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-how){scroll-behavior: auto;}
+#cinematic-home :where(#section-how) .step,#cinematic-home :where(#section-how) .scene,#cinematic-home :where(#section-how) .btn,#cinematic-home :where(#section-how) .step-num{transition: none !important; transform: none !important; filter: none !important;}
+#cinematic-home :where(#section-how) .visual::before{display: none;}}
+#cinematic-home :where(#section-trust){color-scheme: dark; --red: #ce1212; --ivory: #eeeBDD; --muted: #bdbdc5;}
+#cinematic-home :where(#section-trust) *{box-sizing: border-box;}
+#cinematic-home :where(#section-trust){scroll-behavior: smooth;}
+#cinematic-home :where(#section-trust){margin: 0px; background: rgb(8, 6, 6); color: var(--ivory); font-family: Inter, Arial, sans-serif; overflow-x: hidden;}
+#cinematic-home :where(#section-trust) a{color: inherit; text-decoration: none;}
+#cinematic-home :where(#section-trust) header{height: 78px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto; padding: 0px 26px; font-size: 12px; letter-spacing: 0.2em; font-weight: 800;}
+#cinematic-home :where(#section-trust) header span{color: rgb(255, 72, 72);}
+#cinematic-home :where(#section-trust) .eyebrow{font-size: 11px; font-weight: 800; letter-spacing: 0.24em; color: rgb(230, 139, 139);}
+#cinematic-home :where(#section-trust) .intro{min-height: 75vh; display: flex; flex-direction: column; justify-content: center; max-width: 1200px; margin: auto; padding: 70px 26px;}
+#cinematic-home :where(#section-trust) .intro .source-h1{font-size: clamp(48px, 8vw, 116px); letter-spacing: -0.075em; line-height: 0.98; margin: 22px 0px 28px; max-width: 1000px;}
+#cinematic-home :where(#section-trust) .intro .source-h1 em{font-style: normal; color: rgb(211, 59, 59);}
+#cinematic-home :where(#section-trust) .intro p{color: var(--muted); font-size: clamp(16px, 2vw, 22px); max-width: 560px; line-height: 1.65;}
+#cinematic-home :where(#section-trust) .story{position: relative; height: 310vh; background: radial-gradient(at 75% 40%, rgb(61, 9, 9) 0%, rgb(22, 9, 9) 40%, rgb(8, 6, 6) 75%);}
+#cinematic-home :where(#section-trust) .sticky{height: 100vh; position: sticky; top: 0px; display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 7vw; max-width: 1200px; margin: auto; padding: 35px 26px;}
+#cinematic-home :where(#section-trust) .copy{position: relative; min-height: 360px;}
+#cinematic-home :where(#section-trust) .scene{position: absolute; inset: 0px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(40px); transition: opacity 0.22s, transform 0.22s; pointer-events: none;}
+#cinematic-home :where(#section-trust) .scene.active{opacity: 1; transform: translateY(0px); pointer-events: auto;}
+#cinematic-home :where(#section-trust) .scene h2{font-size: clamp(40px, 5.5vw, 75px); line-height: 1.04; letter-spacing: -0.065em; margin: 16px 0px;}
+#cinematic-home :where(#section-trust) .scene p{color: rgb(200, 188, 188); font-size: 17px; line-height: 1.75; max-width: 440px;}
+#cinematic-home :where(#section-trust) .visual{position: relative; height: min(68vh, 580px); min-height: 390px; border: 1px solid rgb(116, 51, 51); border-radius: 28px; background: linear-gradient(145deg, rgb(51, 16, 16), rgb(12, 8, 9) 75%); box-shadow: rgba(0, 0, 0, 0.6) 0px 50px 120px; overflow: hidden; transform: perspective(1200px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg)); transition: transform 0.3s;}
+#cinematic-home :where(#section-trust) .visual::before{content: ""; position: absolute; inset: 0px; background: radial-gradient(400px circle at var(--mx,60%) var(--my,30%),#c81d1d35,transparent 70%); pointer-events: none; z-index: 5;}
+#cinematic-home :where(#section-trust) .visual-head{position: absolute; z-index: 6; top: 0px; left: 0px; right: 0px; padding: 25px 28px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.106); font-size: 11px; letter-spacing: 0.2em; font-weight: 800;}
+#cinematic-home :where(#section-trust) .visual-head b{color: rgb(229, 66, 66);}
+#cinematic-home :where(#section-trust) .panel{position: absolute; inset: 75px 0px 0px; opacity: 0; transform: scale(1.06); transition: opacity 0.45s, transform 0.8s; pointer-events: none;}
+#cinematic-home :where(#section-trust) .panel.active{opacity: 1; transform: scale(1); pointer-events: auto;}
+#cinematic-home :where(#section-trust) .agent{height: 100%; position: relative; background: linear-gradient(0deg, rgb(18, 8, 9) 2%, transparent 60%), linear-gradient(115deg, rgb(27, 14, 15), rgb(85, 35, 31) 55%, rgb(12, 16, 24)); display: flex; align-items: end; padding: 40px;}
+#cinematic-home :where(#section-trust) .agent::before{content: ""; position: absolute; inset: 10% 8% 22%; border-radius: 18px; background: radial-gradient(circle at 52% 22%, rgb(216, 162, 124) 0px, rgb(216, 162, 124) 9%, transparent 10%), radial-gradient(at 52% 60%, rgb(36, 40, 50) 0px, rgb(36, 40, 50) 27%, transparent 28%), radial-gradient(at 52% 35%, rgb(68, 52, 44) 0px, rgb(68, 52, 44) 20%, transparent 21%), linear-gradient(120deg, rgb(57, 35, 33), rgb(23, 25, 29)); filter: blur(1px); opacity: 0.9;}
+#cinematic-home :where(#section-trust) .agent .tag{z-index: 1; position: relative; font-size: clamp(24px, 3vw, 42px); font-weight: 800; letter-spacing: -0.05em; max-width: 340px;}
+#cinematic-home :where(#section-trust) .chat{padding: 48px 25px 24px; display: flex; flex-direction: column; gap: 18px;}
+#cinematic-home :where(#section-trust) .bubble{max-width: 86%; padding: 17px 20px; border-radius: 18px; background: rgb(41, 32, 33); color: rgb(238, 238, 238); font-size: 15px; line-height: 1.5; box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;}
+#cinematic-home :where(#section-trust) .bubble.right{align-self: end; background: rgb(59, 21, 24); border: 1px solid rgb(115, 49, 53);}
+#cinematic-home :where(#section-trust) .chat .meta{font-size: 11px; color: rgb(227, 161, 161); letter-spacing: 0.13em;}
+#cinematic-home :where(#section-trust) .assurance{padding: 42px 32px; display: flex; flex-direction: column; gap: 20px;}
+#cinematic-home :where(#section-trust) .benefit{display: flex; gap: 18px; align-items: center; padding: 17px 0px; border-bottom: 1px solid rgba(255, 255, 255, 0.125); font-size: 18px; font-weight: 700;}
+#cinematic-home :where(#section-trust) .benefit i{font-style: normal; color: rgb(255, 85, 85); font-size: 28px;}
+#cinematic-home :where(#section-trust) .progress{position: absolute; bottom: 26px; left: 28px; right: 28px; height: 3px; background: rgba(255, 255, 255, 0.19); z-index: 7;}
+#cinematic-home :where(#section-trust) .progress div{height: 100%; width: 0px; background: rgb(206, 18, 18);}
+#cinematic-home :where(#section-trust) .cta{min-height: 78vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 25px; background: radial-gradient(at 50% 80%, rgb(70, 12, 12), rgb(8, 6, 6) 65%);}
+#cinematic-home :where(#section-trust) .cta h2{font-size: clamp(48px, 7vw, 96px); letter-spacing: -0.07em; line-height: 1.02; margin: 20px 0px; max-width: 900px;}
+#cinematic-home :where(#section-trust) .cta p{color: rgb(189, 189, 197); font-size: 18px;}
+#cinematic-home :where(#section-trust) .actions{display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 24px;}
+#cinematic-home :where(#section-trust) .btn{padding: 18px 28px; border-radius: 999px; background: rgb(206, 18, 18); font-weight: 800; font-size: 14px;}
+#cinematic-home :where(#section-trust) .btn.secondary{background: transparent; border: 1px solid rgb(128, 84, 84);}
+#cinematic-home :where(#section-trust) .disclaimer{color: rgb(164, 154, 154); font-size: 12px; max-width: 900px; margin: 45px auto; padding: 0px 25px; text-align: center; line-height: 1.6;}
+@media (max-width: 760px) {#cinematic-home :where(#section-trust) .story{height: 280vh;}
+#cinematic-home :where(#section-trust) .sticky{grid-template-columns: 1fr; grid-template-rows: 36% 64%; gap: 0px; padding: 15px;}
+#cinematic-home :where(#section-trust) .copy{min-height: 0px; height: 100%;}
+#cinematic-home :where(#section-trust) .scene{justify-content: end; padding-bottom: 8px;}
+#cinematic-home :where(#section-trust) .scene h2{font-size: 36px; margin: 8px 0px;}
+#cinematic-home :where(#section-trust) .scene p{font-size: 13px; line-height: 1.45;}
+#cinematic-home :where(#section-trust) .visual{height: 100%; min-height: 0px; border-radius: 20px;}
+#cinematic-home :where(#section-trust) .panel{inset: 64px 0px 0px;}
+#cinematic-home :where(#section-trust) .agent{padding: 24px;}
+#cinematic-home :where(#section-trust) .chat{padding: 26px 16px; gap: 12px;}
+#cinematic-home :where(#section-trust) .bubble{font-size: 12px; padding: 12px;}
+#cinematic-home :where(#section-trust) .assurance{padding: 20px;}
+#cinematic-home :where(#section-trust) .benefit{font-size: 14px; padding: 10px 0px;}
+#cinematic-home :where(#section-trust) .intro{min-height: 70vh;}
+#cinematic-home :where(#section-trust) .visual-head{padding: 20px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-trust){scroll-behavior: auto;}
+#cinematic-home :where(#section-trust) .scene,#cinematic-home :where(#section-trust) .panel,#cinematic-home :where(#section-trust) .visual{transition: none !important; transform: none !important;}}
+#cinematic-home :where(#section-faq){color-scheme: dark; --ivory: #eeeBDD; --muted: #bdbdc5; --red: #ce1212;}
+#cinematic-home :where(#section-faq) *{box-sizing: border-box;}
+#cinematic-home :where(#section-faq){scroll-behavior: smooth;}
+#cinematic-home :where(#section-faq){margin: 0px; background: rgb(5, 4, 4); color: var(--ivory); font-family: Inter, Arial, sans-serif;}
+#cinematic-home :where(#section-faq) button,#cinematic-home :where(#section-faq) a{font: inherit;}
+#cinematic-home :where(#section-faq) a{color: inherit;}
+#cinematic-home :where(#section-faq) .intro,#cinematic-home :where(#section-faq) .outro{min-height: 45vh; display: grid; place-content: center; text-align: center; padding: 8vw; background: radial-gradient(at 50% 100%, rgb(68, 10, 10), rgb(5, 4, 4) 65%);}
+#cinematic-home :where(#section-faq) .eyebrow{font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: rgb(229, 105, 105); font-weight: 700;}
+#cinematic-home :where(#section-faq) .intro .source-h1{font-size: clamp(3rem, 8vw, 7rem); line-height: 0.96; letter-spacing: -0.07em; max-width: 850px; margin: 20px auto;}
+#cinematic-home :where(#section-faq) .intro p,#cinematic-home :where(#section-faq) .outro p{color: var(--muted); line-height: 1.6;}
+#cinematic-home :where(#section-faq) .faq{position: relative; background: radial-gradient(at 80% 35%, rgb(58, 8, 9) 0%, rgb(19, 9, 9) 45%, rgb(7, 6, 6) 80%); overflow: clip;}
+#cinematic-home :where(#section-faq) .faq::before{content: ""; position: absolute; inset: 0px; pointer-events: none; background: radial-gradient(450px circle at var(--mx,70%) var(--my,35%),#a5121224,transparent 75%);}
+#cinematic-home :where(#section-faq) .faq-inner{max-width: 1330px; margin: auto; display: grid; grid-template-columns: minmax(280px, 0.85fr) minmax(400px, 1.15fr); gap: clamp(35px, 7vw, 130px); padding: 120px 6vw;}
+#cinematic-home :where(#section-faq) .left{position: sticky; top: 15vh; align-self: start;}
+#cinematic-home :where(#section-faq) .left h2{font-size: clamp(3rem, 6vw, 6.4rem); line-height: 0.99; letter-spacing: -0.07em; margin: 20px 0px 25px;}
+#cinematic-home :where(#section-faq) .left h2 em{font-style: normal; color: rgb(227, 72, 72);}
+#cinematic-home :where(#section-faq) .left > p{color: var(--muted); line-height: 1.75; max-width: 350px;}
+#cinematic-home :where(#section-faq) .progress{height: 2px; background: rgba(255, 255, 255, 0.14); margin-top: 50px; max-width: 320px;}
+#cinematic-home :where(#section-faq) .progress span{display: block; width: 0%; height: 100%; background: var(--red); transition: width 0.12s linear;}
+#cinematic-home :where(#section-faq) .counter{font-size: 12px; letter-spacing: 0.2em; color: rgb(189, 189, 197); margin-top: 16px;}
+#cinematic-home :where(#section-faq) .right{padding-top: 12vh;}
+#cinematic-home :where(#section-faq) .qa{min-height: 66vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(255, 255, 255, 0.14); position: relative; padding: 55px 0px; opacity: 0.42; transform: translateY(30px); transition: opacity 0.45s, transform 0.6s;}
+#cinematic-home :where(#section-faq) .qa.active{opacity: 1; transform: translateY(0px);}
+#cinematic-home :where(#section-faq) .number{font-size: 12px; letter-spacing: 0.22em; color: rgb(237, 114, 114); margin-bottom: 24px;}
+#cinematic-home :where(#section-faq) .question{display: flex; align-items: start; justify-content: space-between; gap: 20px; border: 0px; background: none; text-align: left; color: var(--ivory); font-size: clamp(1.8rem, 3vw, 3.25rem); letter-spacing: -0.045em; line-height: 1.13; padding: 0px; cursor: pointer;}
+#cinematic-home :where(#section-faq) .plus{font-size: 27px; color: rgb(236, 139, 139); flex: 0 0 auto; transition: transform 0.3s;}
+#cinematic-home :where(#section-faq) .qa.open .plus{transform: rotate(45deg);}
+#cinematic-home :where(#section-faq) .answer{display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s;}
+#cinematic-home :where(#section-faq) .qa.open .answer{grid-template-rows: 1fr;}
+#cinematic-home :where(#section-faq) .answer > div{overflow: hidden;}
+#cinematic-home :where(#section-faq) .answer p{color: rgb(209, 197, 197); line-height: 1.8; max-width: 560px; font-size: 16px; padding-top: 15px;}
+#cinematic-home :where(#section-faq) .qa.active .number{color: rgb(255, 133, 133);}
+#cinematic-home :where(#section-faq) .cta{display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 24px; background: rgb(206, 18, 18); border-radius: 100px; text-decoration: none; font-weight: 700; transition: transform 0.2s, background 0.2s;}
+#cinematic-home :where(#section-faq) .cta:hover{background: rgb(233, 43, 43); transform: translateY(-3px);}
+#cinematic-home :where(#section-faq) .outro{min-height: 55vh;}
+#cinematic-home :where(#section-faq) .outro h2{font-size: clamp(2.4rem, 6vw, 5rem); letter-spacing: -0.06em; margin: 15px 0px;}
+#cinematic-home :where(#section-faq) .outro .actions{display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 25px;}
+#cinematic-home :where(#section-faq) .outline{background: transparent; border: 1px solid rgb(118, 80, 80);}
+#cinematic-home :where(#section-faq) .outline:hover{background: rgb(53, 22, 22);}
+#cinematic-home :where(#section-faq) .notice{font-size: 12px; color: rgb(168, 156, 156); padding: 25px; text-align: center; background: rgb(8, 7, 7);}
+@media (max-width: 760px) {#cinematic-home :where(#section-faq) .faq-inner{display: block; padding: 75px 7vw;}
+#cinematic-home :where(#section-faq) .left{position: relative; top: auto;}
+#cinematic-home :where(#section-faq) .left h2{font-size: 3.7rem;}
+#cinematic-home :where(#section-faq) .left > p{max-width: none;}
+#cinematic-home :where(#section-faq) .progress{margin-top: 30px;}
+#cinematic-home :where(#section-faq) .right{padding-top: 25px;}
+#cinematic-home :where(#section-faq) .qa{min-height: 50vh; opacity: 1; transform: none;}
+#cinematic-home :where(#section-faq) .question{font-size: 1.9rem;}
+#cinematic-home :where(#section-faq) .intro{min-height: 38vh;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-faq){scroll-behavior: auto;}
+#cinematic-home :where(#section-faq) *,#cinematic-home :where(#section-faq) ::before,#cinematic-home :where(#section-faq) ::after{transition: none !important; animation: auto ease 0s 1 normal none running none !important;}
+#cinematic-home :where(#section-faq) .qa{opacity: 1; transform: none;}}
+#cinematic-home :where(#section-final){color-scheme: dark; --ivory: #eeeBDD; --muted: #bdbdc5; --red: #ce1212; --burgundy: #810000;}
+#cinematic-home :where(#section-final) *{box-sizing: border-box;}
+#cinematic-home :where(#section-final){scroll-behavior: smooth;}
+#cinematic-home :where(#section-final){margin: 0px; background: rgb(5, 5, 5); color: var(--ivory); font-family: "DM Sans", sans-serif; overflow-x: hidden;}
+#cinematic-home :where(#section-final) a{color: inherit; text-decoration: none;}
+#cinematic-home :where(#section-final) button,#cinematic-home :where(#section-final) a{touch-action: manipulation;}
+#cinematic-home :where(#section-final) a:focus-visible{outline: rgb(245, 184, 184) solid 2px; outline-offset: 5px;}
+#cinematic-home :where(#section-final) .intro{height: 68vh; min-height: 420px; display: grid; place-items: center; text-align: center; padding: 30px; background: linear-gradient(rgb(5, 5, 5), rgb(16, 7, 7));}
+#cinematic-home :where(#section-final) .intro p{font-size: 11px; letter-spacing: 0.27em; color: rgb(169, 144, 144); text-transform: uppercase;}
+#cinematic-home :where(#section-final) .intro h2{font-family: Manrope, sans-serif; font-size: clamp(25px, 4vw, 54px); font-weight: 600; max-width: 680px; line-height: 1.2;}
+#cinematic-home :where(#section-final) .intro span{display: block; color: rgb(166, 154, 154); font-size: 13px; margin-top: 30px;}
+#cinematic-home :where(#section-final) .stage{height: 215vh; position: relative;}
+#cinematic-home :where(#section-final) .sticky{position: sticky; top: 0px; height: 100svh; min-height: 620px; overflow: hidden; isolation: isolate; background: radial-gradient(at 50% 90%, rgb(49, 7, 7) 0%, rgb(16, 6, 7) 43%, rgb(5, 5, 5) 78%);}
+#cinematic-home :where(#section-final) .noise{position: absolute; inset: 0px; pointer-events: none; opacity: 0.11; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");}
+#cinematic-home :where(#section-final) .halo{position: absolute; left: 50%; top: 58%; width: min(115vw, 1500px); aspect-ratio: 1 / 1; transform: translate(-50%, -50%) scale(0.78); border-radius: 50%; background: radial-gradient(circle, rgba(140, 12, 17, 0.64) 0%, rgba(85, 8, 10, 0.486) 22%, rgba(29, 7, 9, 0.204) 49%, transparent 70%); filter: blur(32px); opacity: 0.38; will-change: transform, opacity; pointer-events: none;}
+#cinematic-home :where(#section-final) .beam{position: absolute; inset: 0px; pointer-events: none; background: linear-gradient(110deg, transparent 35%, rgba(228, 26, 26, 0.07) 50%, transparent 66%); transform: translateX(-120%);}
+#cinematic-home :where(#section-final) .mouse-glow{position: absolute; width: 480px; height: 480px; left: var(--mx,50%); top: var(--my,50%); transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(206, 18, 18, 0.118), transparent 66%); pointer-events: none;}
+#cinematic-home :where(#section-final) .topline{position: absolute; left: 6vw; right: 6vw; top: 35px; display: flex; justify-content: space-between; gap: 20px; font-size: 10px; letter-spacing: 0.24em; color: rgb(213, 178, 178); text-transform: uppercase;}
+#cinematic-home :where(#section-final) .topline .line{width: 38px; height: 1px; background: rgb(206, 18, 18); display: inline-block; vertical-align: middle; margin-right: 12px;}
+#cinematic-home :where(#section-final) .content{position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 90px 24px 120px; max-width: 1100px; margin: auto;}
+#cinematic-home :where(#section-final) .eyebrow{font-size: 11px; letter-spacing: 0.29em; color: rgb(239, 146, 146); font-weight: 700; margin: 0px 0px 30px; text-transform: uppercase;}
+#cinematic-home :where(#section-final) .content .source-h1{font-family: Manrope, sans-serif; font-size: clamp(44px, 8.5vw, 126px); font-weight: 600; line-height: 0.99; letter-spacing: -0.075em; margin: 0px; max-width: 1050px;}
+#cinematic-home :where(#section-final) .content .source-h1 em{font-style: normal; color: rgb(239, 195, 185);}
+#cinematic-home :where(#section-final) .sub{font-size: clamp(14px, 1.6vw, 18px); line-height: 1.8; color: rgb(196, 181, 182); max-width: 530px; margin: 30px auto 35px;}
+#cinematic-home :where(#section-final) .actions{display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;}
+#cinematic-home :where(#section-final) .btn{min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 18px; padding: 0px 25px; border: 1px solid rgb(165, 72, 72); font-size: 12px; font-weight: 700; letter-spacing: 0.025em; transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.2s;}
+#cinematic-home :where(#section-final) .btn-primary{background: rgb(206, 18, 18); border-color: rgb(206, 18, 18); color: rgb(255, 255, 255);}
+#cinematic-home :where(#section-final) .btn-primary:hover{background: rgb(231, 43, 43); box-shadow: rgba(206, 18, 18, 0.333) 0px 12px 45px;}
+#cinematic-home :where(#section-final) .btn-secondary{background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.27);}
+#cinematic-home :where(#section-final) .btn-secondary:hover{background: rgba(255, 255, 255, 0.086); border-color: rgb(255, 255, 255);}
+#cinematic-home :where(#section-final) .micro{font-size: 11px; color: rgb(170, 153, 153); margin-top: 23px;}
+#cinematic-home :where(#section-final) .scrollhint{position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; align-items: center; color: rgb(185, 164, 164); font-size: 10px; letter-spacing: 0.16em; white-space: nowrap;}
+#cinematic-home :where(#section-final) .scrollhint::before{content: ""; display: block; width: 38px; height: 1px; background: rgb(195, 106, 106);}
+#cinematic-home :where(#section-final) .footer{position: relative; background: rgb(8, 7, 7); overflow: hidden; border-top: 1px solid rgb(66, 32, 32); padding: 78px max(6vw, 24px) 25px;}
+#cinematic-home :where(#section-final) .footer::before{content: ""; position: absolute; inset: 0px; background: radial-gradient(at 65% 0%, rgba(78, 9, 9, 0.137), transparent 55%); pointer-events: none;}
+#cinematic-home :where(#section-final) .footer-inner{position: relative; max-width: 1400px; margin: auto;}
+#cinematic-home :where(#section-final) .footer-top{display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 45px; padding-bottom: 65px;}
+#cinematic-home :where(#section-final) .brand-mini{font-size: 16px; font-weight: 800; letter-spacing: 0.05em;}
+#cinematic-home :where(#section-final) .brand-mini i{font-style: normal; color: rgb(206, 18, 18);}
+#cinematic-home :where(#section-final) .footer-desc{font-size: 13px; line-height: 1.9; color: rgb(169, 156, 156); max-width: 290px; margin-top: 18px;}
+#cinematic-home :where(#section-final) .footer h3{font-size: 11px; letter-spacing: 0.16em; color: rgb(197, 160, 160); margin: 4px 0px 24px; text-transform: uppercase;}
+#cinematic-home :where(#section-final) .footer-nav{display: flex; flex-direction: column; gap: 16px; font-size: 13px; color: rgb(216, 202, 202);}
+#cinematic-home :where(#section-final) .footer-nav a:hover{color: rgb(255, 255, 255);}
+#cinematic-home :where(#section-final) .footer-wordmark{font-family: Manrope, sans-serif; font-weight: 800; line-height: 0.8; letter-spacing: -0.088em; white-space: nowrap; font-size: clamp(60px, 14.6vw, 245px); text-align: center; color: rgb(232, 223, 215); transform: translateY(50px); opacity: 0.25; will-change: transform, opacity; margin: 0px 0px 32px -1.1vw;}
+#cinematic-home :where(#section-final) .footer-bottom{border-top: 1px solid rgb(57, 38, 38); padding-top: 22px; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; color: rgb(168, 154, 154); font-size: 11px;}
+#cinematic-home :where(#section-final) .preview{position: fixed; z-index: 20; bottom: 12px; right: 12px; background: rgba(11, 11, 11, 0.85); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 3px; padding: 9px 13px; color: rgb(184, 173, 173); font-size: 10px; letter-spacing: 0.04em;}
+#cinematic-home :where(#section-final) .fadein{opacity: 0; transform: translateY(32px);}
+@media (max-width: 850px) {#cinematic-home :where(#section-final) .footer-top{grid-template-columns: repeat(2, 1fr); gap: 40px;}
+#cinematic-home :where(#section-final) .content .source-h1{font-size: clamp(46px, 11vw, 82px);}
+#cinematic-home :where(#section-final) .topline{top: 24px;}}
+@media (max-width: 540px) {#cinematic-home :where(#section-final) .intro{height: 50vh; min-height: 340px;}
+#cinematic-home :where(#section-final) .sticky{min-height: 600px;}
+#cinematic-home :where(#section-final) .content{padding: 90px 20px;}
+#cinematic-home :where(#section-final) .content .source-h1{font-size: clamp(46px, 12vw, 67px);}
+#cinematic-home :where(#section-final) .sub{margin: 24px auto 28px;}
+#cinematic-home :where(#section-final) .actions{flex-direction: column; width: 100%; max-width: 320px;}
+#cinematic-home :where(#section-final) .btn{width: 100%;}
+#cinematic-home :where(#section-final) .footer{padding-top: 55px;}
+#cinematic-home :where(#section-final) .footer-top{gap: 30px;}
+#cinematic-home :where(#section-final) .footer-wordmark{font-size: 15.2vw; letter-spacing: -0.085em;}
+#cinematic-home :where(#section-final) .topline{font-size: 9px;}
+#cinematic-home :where(#section-final) .preview{font-size: 9px;}}
+@media (prefers-reduced-motion: reduce) {#cinematic-home :where(#section-final){scroll-behavior: auto;}
+#cinematic-home :where(#section-final) .fadein{opacity: 1; transform: none;}
+#cinematic-home :where(#section-final) .footer-wordmark{transform: none; opacity: 1;}
+#cinematic-home :where(#section-final) .beam{display: none;}
+#cinematic-home :where(#section-final) .halo{transform: translate(-50%, -50%) scale(1); opacity: 0.7;}
+#cinematic-home :where(#section-final) .btn{transition: none;}}
+#cinematic-home{background:#000;color:#EEEBDD;scroll-behavior:auto;color-scheme:dark}
+#cinematic-home{margin:0}
+#cinematic-home *{box-sizing:border-box}
+#cinematic-home #main{outline:none}
+#cinematic-home .section-root{position:relative;display:flow-root;overflow:visible!important}
+#cinematic-home .global-skip{position:fixed;left:16px;top:-100px;z-index:100;background:#EEEBDD;color:#000;padding:16px}
+#cinematic-home .global-skip:focus{top:12px}
+#cinematic-home a:focus-visible,#cinematic-home button:focus-visible{outline:3px solid #EEEBDD!important;outline-offset:5px!important}
+#cinematic-home a,#cinematic-home button{touch-action:manipulation}
+#cinematic-home #section-hero .approved-brand{display:block;width:190px;height:auto;max-height:64px;object-fit:contain}
+#cinematic-home #section-final .approved-brand{width:200px;height:auto}
+#cinematic-home #section-final .footer-wordmark img{display:block;width:100%;height:auto;max-height:280px;object-fit:contain}
+#cinematic-home #section-final .preview{position:absolute;bottom:8px;right:12px}
+#cinematic-home #section-final .footer{padding-bottom:65px}
+#cinematic-home #section-final .footer-wordmark{white-space:normal}
+#cinematic-home #section-faq button:focus-visible{outline-offset:8px}
+#cinematic-home #section-how .section,#cinematic-home #section-trust,#cinematic-home #section-faq,#cinematic-home #section-final{overflow:visible}
+#cinematic-home #section-pricing{overflow:clip!important}
+#cinematic-home #section-trust .panel.agent{height:auto}
+#cinematic-home .section-root+.section-root:before{content:'';position:absolute;top:0;left:0;right:0;height:32px;z-index:2;pointer-events:none;background:linear-gradient(#0008,transparent)}
+#cinematic-home .section-root:not(.motion-ready) .reveal,#cinematic-home .section-root:not(.motion-ready) .fadein,#cinematic-home .keyboard-visible{opacity:1!important;transform:none!important;filter:none!important}
+#cinematic-home #section-faq:not(.motion-ready) .answer{grid-template-rows:1fr}
+#cinematic-home #section-how:not(.motion-ready) .scene,#cinematic-home #section-trust:not(.motion-ready) .scene,#cinematic-home #section-trust:not(.motion-ready) .panel{position:relative;inset:auto;opacity:1;transform:none;filter:none}
+#cinematic-home #section-how:not(.motion-ready) .visual,#cinematic-home #section-trust:not(.motion-ready) .visual{height:auto;max-height:none}
+#cinematic-home #section-trust:not(.motion-ready) .story,#cinematic-home #section-final:not(.motion-ready) .stage{height:auto}
+#cinematic-home #section-trust:not(.motion-ready) .sticky,#cinematic-home #section-final:not(.motion-ready) .sticky{position:relative;height:auto}
+#cinematic-home #section-how:not(.motion-ready) .step{opacity:1}
+@media(max-width:540px){#cinematic-home #section-hero .approved-brand{width:155px}#cinematic-home #section-final .preview{font-size:9px}}
+@media(prefers-reduced-motion:reduce){#cinematic-home{scroll-behavior:auto}#cinematic-home .section-root .reveal,#cinematic-home .section-root .fadein{opacity:1!important;transform:none!important;filter:none!important}#cinematic-home #section-how .step{opacity:1;transform:none}#cinematic-home #section-how .scene,#cinematic-home #section-trust .scene,#cinematic-home #section-trust .panel{position:relative;inset:auto;opacity:1;transform:none;filter:none}#cinematic-home #section-how .visual,#cinematic-home #section-trust .visual{height:auto;max-height:none}#cinematic-home #section-trust .story,#cinematic-home #section-final .stage{height:auto}#cinematic-home #section-trust .sticky,#cinematic-home #section-final .sticky{position:relative;height:auto;min-height:0}#cinematic-home #section-trust .copy{min-height:0}#cinematic-home #section-trust .scene{padding:20px 0}#cinematic-home #section-trust .agent{min-height:300px}#cinematic-home #section-trust .sticky{grid-template-rows:auto auto}#cinematic-home #section-final .content{padding:100px 24px}#cinematic-home .section-root *{scroll-behavior:auto!important}#cinematic-home .section-root .spotlight,#cinematic-home .section-root .mouse-glow{display:none}}
+/* FAQ Compact Premium V1.1 */
+#cinematic-home #section-faq .qa {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+  min-height: 0 !important;
+}
+/* ENTERTAINMENT COMPACT V2 - APPROVED */
+#cinematic-home #section-universe .intro {
+  padding-top: 55px !important;
+  padding-bottom: 25px !important;
+}
+#cinematic-home #section-universe .chapter {
+  padding-top: 20px !important;
+  padding-bottom: 25px !important;
+}
+#cinematic-home #section-universe .chapter .constellation {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+#cinematic-home #section-universe .outro {
+  padding-top: 25px !important;
+  padding-bottom: 45px !important;
+}
+/* PRICING COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #cinematic-home #section-pricing .pricing {
+    padding-top: 65px !important;
+    padding-bottom: 65px !important;
+  }
+
+  #cinematic-home #section-pricing .heading {
+    margin-bottom: 30px !important;
+  }
+
+  #cinematic-home #section-pricing .plans {
+    row-gap: 22px !important;
+  }
+
+  #cinematic-home #section-pricing .lower {
+    margin-top: 24px !important;
+  }
+}
+/* HOW IT WORKS COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #cinematic-home #section-how .step {
+    min-height: 245px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #cinematic-home #section-how .steps {
+    row-gap: 12px !important;
+  }
+}
+/* TRUST COMPACT V1 - APPROVED */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #cinematic-home #section-trust .intro {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  #cinematic-home #section-trust .cta {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
+/* FOOTER PREVIEW DISCLAIMER CLEANUP V1 */
+#cinematic-home #section-final .footer-bottom span:last-child { display: none !important; }

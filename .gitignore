@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Local VS Code / MCP configuration
 .vscode/
+# Local agent tools and nested worktrees
+.gstack/
+.kilo/
+
+# Preserve local pre-integration backup
+integration-backup-before-v1/

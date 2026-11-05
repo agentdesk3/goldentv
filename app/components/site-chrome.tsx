@@ -1,3 +1,8 @@
+
+"use client";
+
+import { usePathname } from "next/navigation";
+
 import Footer from "@/app/components/footer";
 import Header from "@/app/components/header";
 
@@ -6,6 +11,13 @@ export default function SiteChrome({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isCinematicHome = pathname === "/";
+
+  if (isCinematicHome) {
+    return <div className="flex-1">{children}</div>;
+  }
+
   return (
     <>
       <Header />
