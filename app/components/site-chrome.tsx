@@ -31,6 +31,7 @@ export default function SiteChrome({
     "/devices/lg-smart-tv",
     "/devices/android-tv",
     "/devices/apple-tv",
+    "/devices/firestick",
     "/guides/how-to-install-iptv",
     "/guides/iptv-buffering",
     "/guides/internet-speed-for-iptv",
