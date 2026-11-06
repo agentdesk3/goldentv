@@ -12,9 +12,12 @@ export default function SiteChrome({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isCinematicHome = pathname === "/";
 
-  if (isCinematicHome) {
+  const isCinematicHome = pathname === "/";
+  const isCinematicPricing =
+    pathname === "/pricing" || pathname === "/pricing/";
+
+  if (isCinematicHome || isCinematicPricing) {
     return <div className="flex-1">{children}</div>;
   }
 
