@@ -50,7 +50,9 @@ export default function IptvFreeTrialPage() {
                   24 Hours.<br />Your Screen.<br /><span className="text-[#CE1212]">Your Decision.</span>
                 </h1>
                 <p className="mt-6 max-w-lg text-base leading-8 text-[#BDBDC5]">
-                  Try Golden IPTV on your own compatible device before choosing a subscription. No payment required.
+                 Request a 24-hour Golden IPTV free trial in South Africa
+                 and test the service on your own compatible device before
+                 choosing a subscription. No payment required.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <a href="#trial-request" className={`${buttonStyle} bg-[#CE1212] text-white hover:bg-[#a90e0e]`}>Request my free trial <ArrowDown aria-hidden="true" className="h-4 w-4" /></a>

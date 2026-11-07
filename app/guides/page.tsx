@@ -79,7 +79,12 @@ export default function GuidesPage() {
             <div className="min-w-0">
               <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDBDC5]"><span aria-hidden="true" className="h-px w-8 shrink-0 bg-[#CE1212]" /> Golden IPTV / The Setup Library</p>
               <h1 id="guides-heading" className="mt-7 font-heading text-[clamp(2.75rem,6vw,6rem)] font-medium leading-[1.04] tracking-[-0.045em]">Your Setup.<br /><span className="text-[#CE1212]">Made Simple.</span></h1>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#BDBDC5]">Find device-specific setup guides, installation help, internet-speed guidance and practical buffering checks. Choose the guide that matches the step you’re on.</p>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#BDBDC5]">
+               Explore Golden IPTV setup and troubleshooting guides for
+               viewers in South Africa. Find IPTV installation instructions,
+               device-specific setup help, internet speed guidance and
+               practical steps to troubleshoot buffering.
+              </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a href="#guide-directory" className={`${buttonStyle} bg-[#CE1212] text-white hover:bg-[#a90e0e]`}>Browse the guides <ArrowDown aria-hidden="true" className="h-4 w-4 shrink-0" /></a>
                 <Link href="/contact/" className={`${buttonStyle} border border-white/30 hover:bg-white/5`}>Contact support <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>

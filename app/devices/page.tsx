@@ -50,7 +50,10 @@ export default function DevicesPage() {
                 Your screen.<br />Your setup.<br /><span className="text-[#CE1212]">Made simple.</span>
               </h1>
               <p className="mt-7 max-w-lg text-base leading-8 text-[#BDBDC5]">
-                Select your device, follow the right installation guide and get ready for your next night in. A clear place to begin, whatever your screen.
+               Explore Golden IPTV device setup guides in South Africa
+               for Samsung and LG Smart TVs, Amazon Fire TV Stick,
+               Android TV and Apple TV. Choose your device and follow
+               the relevant installation instructions.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a href="#device-selector" className={`${buttonStyle} bg-[#CE1212] text-white hover:bg-[#a90e0e]`}>
