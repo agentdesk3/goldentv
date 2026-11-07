@@ -123,8 +123,10 @@ export default function PricingClient() {
 
       <div className="max-w-sm border-l border-[#CE1212]/70 pl-6">
         <p className="text-base leading-8 text-[#BDBDC5]">
-          Compare Golden IPTV subscription prices and choose the
-          period that works for you.
+          Compare Golden IPTV subscription plans in South Africa,
+          starting at R199 for 1 month. Explore 3-month, 6-month
+          and 12-month options, with prices in South African Rand
+          (ZAR), and request a 24-hour free trial before choosing.
         </p>
 
         <Link

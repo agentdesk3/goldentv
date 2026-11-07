@@ -106,7 +106,12 @@ export default function FAQPage() {
             <h1 id="faq-heading" className="mt-8 font-heading text-[clamp(2.5rem,5.5vw,5.75rem)] font-medium leading-[1.08] tracking-[-0.04em]">
               Questions,{" "}<span className="text-[#CE1212]">Meet Answers.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#BDBDC5]">Find clear answers about subscriptions, free trials, compatible devices, setup and troubleshooting. Search the library or choose a topic to begin.</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#BDBDC5]">
+             Find answers to common IPTV questions in South Africa,
+             including Golden IPTV subscription plans, 24-hour free
+             trials, compatible Smart TVs and streaming devices,
+             installation, internet requirements and buffering.
+            </p>
           </section>
 
           <FaqExplorer faqs={faqs} />
