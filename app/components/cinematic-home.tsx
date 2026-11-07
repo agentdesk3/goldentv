@@ -21,6 +21,10 @@ export default function CinematicHome() {
 
   const productionHtml = main[0]
     .replace(
+      '<p>Big nights. Bigger feelings.</p>',
+      '<p>Big nights. Bigger feelings.</p><p>Golden IPTV offers IPTV subscription plans for customers in South Africa, with a 24-hour trial option and setup guides for compatible streaming devices.</p>'
+    )
+    .replace(
       /(<nav class="footer-nav" aria-label="Explore">)[\s\S]*?(<\/nav>)/,
       `$1
         <a href="/">Home</a>
@@ -149,7 +153,7 @@ export default function CinematicHome() {
   'alt="Conference League themed illustration"'
 )
 .replaceAll(
-  'alt="User-supplied football player collagewith stadium lighting; private visual reference"',
+  'alt="User-supplied football player collage with stadium lighting; private visual reference"',
   'alt="Football player collage with stadium lighting"'
 )
 .replaceAll(

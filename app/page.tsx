@@ -14,11 +14,26 @@ export const metadata: Metadata = createPageMetadata({
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Golden IPTV",
-  url: "https://www.goldeniptv.co.za/",
-  description: "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
-  inLanguage: "en-ZA",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.goldeniptv.co.za/#organization",
+      name: "Golden IPTV",
+      url: "https://www.goldeniptv.co.za/",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.goldeniptv.co.za/#website",
+      name: "Golden IPTV",
+      url: "https://www.goldeniptv.co.za/",
+      description:
+        "Golden IPTV subscription plans, free-trial information and setup guides for compatible streaming devices.",
+      inLanguage: "en-ZA",
+      publisher: {
+        "@id": "https://www.goldeniptv.co.za/#organization",
+      },
+    },
+  ],
 };
 
 export default function Home() {

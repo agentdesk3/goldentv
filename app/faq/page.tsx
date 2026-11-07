@@ -29,11 +29,19 @@ const faqs: FaqItem[] = [
     "answer": "Golden IPTV offers a 24-hour trial so you can test the service on a compatible device before choosing a paid subscription.",
     "category": "trial"
   },
-  {
-    "question": "Which devices can I use with IPTV?",
-    "answer": "Golden IPTV provides setup guidance for compatible devices including Samsung Smart TV, LG Smart TV, Firestick, Android TV and Apple TV.",
-    "category": "devices"
-  },
+{
+  question: "Which devices can I use with IPTV?",
+  answer:
+    "Golden IPTV provides setup guidance for compatible devices including Samsung Smart TV, LG Smart TV, Firestick, Android TV and Apple TV.",
+  category: "devices",
+  links: [
+    { href: "/devices/samsung-smart-tv/", label: "Samsung Smart TV Guide" },
+    { href: "/devices/lg-smart-tv/", label: "LG Smart TV Guide" },
+    { href: "/devices/firestick/", label: "Firestick Setup Guide" },
+    { href: "/devices/android-tv/", label: "Android TV Setup Guide" },
+    { href: "/devices/apple-tv/", label: "Apple TV Setup Guide" },
+  ],
+},
   {
     "question": "Do I need a fast internet connection for IPTV?",
     "answer": "Your required internet speed depends on streaming quality, device usage and network conditions. A stable connection is important, and wired Ethernet can sometimes provide a more consistent connection than Wi-Fi.",
@@ -66,7 +74,7 @@ const faqs: FaqItem[] = [
   },
   {
     "question": "How can I contact Golden IPTV?",
-    "answer": "You can use the contact page for subscription questions, device compatibility, setup guidance and other support requests. WhatsApp is intended to be the main customer contact channel.",
+    "answer": "You can contact Golden IPTV through our contact page or WhatsApp for subscription questions, device compatibility, setup guidance and customer support.",
     "category": "setup"
   }
 ];
