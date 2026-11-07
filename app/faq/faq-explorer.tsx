@@ -14,7 +14,12 @@ const categories = [
 
 type CategoryFilter = (typeof categories)[number]["id"];
 export type FaqCategory = Exclude<CategoryFilter, "all">;
-export type FaqItem = { question: string; answer: string; category: FaqCategory };
+export type FaqItem = {
+  question: string;
+  answer: string;
+  category: FaqCategory;
+  links?: { href: string; label: string }[];
+};
 
 const focusStyle = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EEEBDD] focus-visible:shadow-none";
 
@@ -101,7 +106,26 @@ export default function FaqExplorer({ faqs }: { faqs: readonly FaqItem[] }) {
                     <Minus className="hidden h-5 w-5 group-open:block" />
                   </span>
                 </summary>
-                <p className="mx-5 border-t border-white/15 pb-6 pt-5 text-sm leading-8 text-[#BDBDC5] sm:mx-6">{faq.answer}</p>
+                <div className="mx-5 border-t border-white/15 pb-6 pt-5 sm:mx-6">
+                  <p className="text-sm leading-8 text-[#BDBDC5]">
+                    {faq.answer}
+                  </p>
+
+                  {faq.links && (
+                    <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                      {faq.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={`inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline decoration-[#CE1212] underline-offset-4 ${focusStyle}`}
+                        >
+                          {link.label}
+                          <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </details>
             ))}
             {visibleFaqs.length === 0 && (
