@@ -126,7 +126,7 @@ export default function IptvBufferingPage() {
     <EditorialGuide
       category="Troubleshooting"
       title="How to Fix IPTV Buffering"
-      summary="Work through practical checks for the connection, Wi-Fi network, streaming device and application, testing playback after each major change."
+      summary="Learn how to fix IPTV buffering in South Africa. Follow practical troubleshooting steps to check internet stability, Wi-Fi signal, network congestion, streaming device performance and application issues."
       steps={steps}
       highlights={causes}
       faqs={faqs}

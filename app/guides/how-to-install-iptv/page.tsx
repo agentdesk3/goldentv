@@ -114,7 +114,7 @@ export default function HowToInstallIptvPage() {
     <EditorialGuide
       category="Installation"
       title="How to Install IPTV"
-      summary="Follow the general setup process for a compatible television or streaming device without relying on device-specific codes or invented credentials."
+      summary="Learn how to install IPTV in South Africa on a compatible Smart TV, Fire TV Stick, Android TV or Apple TV. Follow the setup steps using the details supplied with your Golden IPTV trial or subscription."
       steps={steps}
       highlights={requirements}
       faqs={faqs}
