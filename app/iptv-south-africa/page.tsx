@@ -229,8 +229,9 @@ export default function IptvSouthAfricaPage() {
               IPTV South Africa
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-[#BDBDC5] sm:text-lg sm:leading-8">
-              Compare subscription plans in South African Rand, review supported
-              devices, and find the setup guidance you need before getting started.
+              Golden IPTV helps viewers in South Africa compare internet-based TV
+              subscription plans in South African Rand (ZAR), check device
+              compatibility, and request a 24-hour trial before choosing a plan.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <PrimaryButton href="/iptv-free-trial/">
@@ -308,7 +309,7 @@ export default function IptvSouthAfricaPage() {
               eyebrow="Catalogue showcase"
               id="value-heading"
               heading="Explore the catalogue"
-              supportingCopy="These catalogue totals match the current Golden IPTV plan information."
+              supportingCopy="Explore Golden IPTV's live TV and on-demand catalogue information, then compare available plans and supported devices."
               align="center"
             />
           </div>
