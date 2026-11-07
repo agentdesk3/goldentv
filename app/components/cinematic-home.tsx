@@ -20,6 +20,34 @@ export default function CinematicHome() {
   }
 
   const productionHtml = main[0]
+    .replace(
+      /(<nav class="footer-nav" aria-label="Explore">)[\s\S]*?(<\/nav>)/,
+      `$1
+        <a href="/">Home</a>
+        <a href="/iptv-south-africa/">IPTV South Africa</a>
+        <a href="/pricing/">Memberships</a>
+        <a href="/iptv-free-trial/">24-hour trial</a>
+        <a href="/devices/">Compatible devices</a>
+        <a href="/guides/">Setup guides</a>
+      $2`
+    )
+    .replace(
+      /(<nav class="footer-nav" aria-label="Support">)[\s\S]*?(<\/nav>)/,
+      `$1
+        <a href="/contact/">Contact us</a>
+        <a href="/faq/">Frequently asked questions</a>
+        <a href="https://wa.me/212607077404" target="_blank" rel="noopener noreferrer">WhatsApp assistance ↗</a>
+      $2`
+    )
+    .replace(
+      /(<nav class="footer-nav" aria-label="Information">)[\s\S]*?(<\/nav>)/,
+      `$1
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/refund-policy/">Refund Policy</a>
+        <a href="/devices/firestick/">Firestick setup</a>
+      $2`
+    )
     .replaceAll(
     '<p class="rights">Layout study · supplied poster references · rights unverified · not a catalogue.<br><a href="/provenance.html">Asset provenance</a></p>',
     ''

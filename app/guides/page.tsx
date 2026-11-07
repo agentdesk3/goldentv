@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Clock3,
-  KeyRound,
-  MessageCircle,
-  MonitorPlay,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight, KeyRound, LockKeyhole, MessageCircle, Minus, Plus } from "lucide-react";
 
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
+import { DEVICES } from "@/app/iptv-south-africa/devices-data";
 import { createPageMetadata } from "@/app/seo-metadata";
-import SetupHubGrid from "./setup-hub-grid";
+import CinematicGuidesHeader from "./cinematic-guides-header";
+import CinematicGuidesFooter from "./cinematic-guides-footer";
+import SetupHubGrid, { type EditorialGuide } from "./setup-hub-grid";
 
 export const metadata: Metadata = createPageMetadata({
   title: "IPTV Setup & Troubleshooting Guides",
@@ -23,231 +18,160 @@ export const metadata: Metadata = createPageMetadata({
   imageAlt: "Golden IPTV setup and troubleshooting guides",
 });
 
+const editorialGuides: EditorialGuide[] = [
+  {
+    title: "How to Install IPTV",
+    description: "General installation steps plus links to device-specific guidance.",
+    href: "/guides/how-to-install-iptv/",
+    type: "Installation",
+    category: "installation",
+    featured: true
+  },
+  {
+    title: "How to Fix IPTV Buffering",
+    description: "Practical checks for internet, Wi-Fi, device and playback problems.",
+    href: "/guides/iptv-buffering/",
+    type: "Troubleshooting",
+    category: "network",
+    featured: false
+  },
+  {
+    title: "Internet Speed for IPTV",
+    description: "Understand how connection speed and network conditions affect streaming.",
+    href: "/guides/internet-speed-for-iptv/",
+    type: "Network",
+    category: "network",
+    featured: false
+  }
+];
+
 const setupFaqs = [
   {
     question: "Where do I find the setup details for my service?",
-    answer:
-      "Use the setup information supplied with your Golden IPTV trial or subscription. If you need help locating it, contact Golden IPTV through WhatsApp.",
+    answer: "Use the setup information supplied with your Golden IPTV trial or subscription. If you need help locating it, contact Golden IPTV through WhatsApp."
   },
   {
     question: "Which device guide should I open?",
-    answer:
-      "Choose the guide that matches your television or streaming device. The supported routes cover Samsung Smart TV, LG Smart TV, Firestick, Android TV and Apple TV.",
+    answer: "Choose the guide that matches your television or streaming device. The supported routes cover Samsung Smart TV, LG Smart TV, Firestick, Android TV and Apple TV."
   },
   {
     question: "What should I check if playback buffers?",
-    answer:
-      "Start with the IPTV buffering guide and check your internet connection, Wi-Fi conditions and device performance.",
-  },
+    answer: "Start with the IPTV buffering guide and check your internet connection, Wi-Fi conditions and device performance."
+  }
+];
+
+const setupInformation = [
+  { title: "Profile or playlist name", detail: "Choose a recognisable label." },
+  { title: "Service or server details", detail: "Use the supplied value exactly." },
+  { title: "Account credentials", detail: "Use the supplied login information." },
 ] as const;
+
+const focusStyle = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EEEBDD] focus-visible:shadow-none";
+const buttonStyle = `inline-flex min-h-12 items-center justify-center gap-3 rounded-md px-6 py-3 text-sm font-bold transition-colors motion-reduce:transition-none ${focusStyle}`;
 
 export default function GuidesPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#10131e] text-[#e0e1f2]">
-      <div className="pointer-events-none absolute left-[-7rem] top-24 h-[520px] w-[520px] rounded-full bg-[#8b3dff]/15 blur-[145px]" />
-      <div className="pointer-events-none absolute right-[-5rem] top-20 h-[540px] w-[540px] rounded-full bg-[#046ef1]/15 blur-[150px]" />
-
-      <section className="relative mx-auto grid w-full max-w-[1440px] gap-8 px-5 pb-12 pt-10 md:px-8 lg:grid-cols-12 lg:px-16">
-        <div className="lg:col-span-5">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#272936]/75 px-4 py-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#046ef1]" />
-            <span className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#afc6ff]">
-              Hardware deployment guides
-            </span>
+    <>
+      <CinematicGuidesHeader />
+      <main id="guides-main" tabIndex={-1} className="min-w-0 bg-[#0B0A0A] text-[#EEEBDD] focus:outline-none">
+        <section aria-labelledby="guides-heading" className="border-b border-white/15 bg-[#171112]">
+          <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-14 md:px-10 md:py-20 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16 lg:px-16">
+            <div className="min-w-0">
+              <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDBDC5]"><span aria-hidden="true" className="h-px w-8 shrink-0 bg-[#CE1212]" /> Golden IPTV / The Setup Library</p>
+              <h1 id="guides-heading" className="mt-7 font-heading text-[clamp(2.75rem,6vw,6rem)] font-medium leading-[1.04] tracking-[-0.045em]">Your Setup.<br /><span className="text-[#CE1212]">Made Simple.</span></h1>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#BDBDC5]">Find device-specific setup guides, installation help, internet-speed guidance and practical buffering checks. Choose the guide that matches the step you’re on.</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a href="#guide-directory" className={`${buttonStyle} bg-[#CE1212] text-white hover:bg-[#a90e0e]`}>Browse the guides <ArrowDown aria-hidden="true" className="h-4 w-4 shrink-0" /></a>
+                <Link href="/contact/" className={`${buttonStyle} border border-white/30 hover:bg-white/5`}>Contact support <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>
+              </div>
+            </div>
+            <aside aria-labelledby="guides-start-heading" className="min-w-0 border-l-2 border-[#713333] pl-6 lg:mt-12 lg:pl-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#BDBDC5]">A practical starting point</p>
+              <h2 id="guides-start-heading" className="mt-4 font-heading text-2xl font-medium">Begin with the essentials.</h2>
+              <nav aria-label="Essential setup guides" className="mt-6">
+                <ul className="divide-y divide-white/15 border-y border-white/15">
+                  {editorialGuides.map((guide) => (
+                    <li key={guide.href}><Link href={guide.href} className={`flex min-h-16 items-center justify-between gap-4 py-4 text-sm font-semibold hover:text-white ${focusStyle}`}>{guide.title}<ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link></li>
+                  ))}
+                </ul>
+              </nav>
+              <dl className="mt-7 grid grid-cols-3 gap-3">
+                <div><dt className="text-[10px] font-semibold uppercase leading-5 tracking-[0.08em] text-[#BDBDC5]">Guide routes</dt><dd className="mt-2 font-heading text-3xl font-medium">{editorialGuides.length + DEVICES.length}</dd></div>
+                <div><dt className="text-[10px] font-semibold uppercase leading-5 tracking-[0.08em] text-[#BDBDC5]">Device guides</dt><dd className="mt-2 font-heading text-3xl font-medium">{DEVICES.length}</dd></div>
+                <div><dt className="text-[10px] font-semibold uppercase leading-5 tracking-[0.08em] text-[#BDBDC5]">Help topics</dt><dd className="mt-2 font-heading text-3xl font-medium">{editorialGuides.length}</dd></div>
+              </dl>
+            </aside>
           </div>
-          <h1 className="mt-4 font-heading text-[38px] font-extrabold leading-[44px] tracking-[-0.02em] md:text-[44px] md:leading-[52px]">
-            IPTV Setup &amp;
-            <span className="block bg-gradient-to-r from-[#d4bbff] to-[#afc6ff] bg-clip-text text-transparent">
-              Troubleshooting Guides
-            </span>
-          </h1>
-          <p className="mt-4 max-w-xl text-base leading-7 text-[#cdc2d8]">
-            Choose a platform or practical help topic for step-by-step guidance
-            using the routes already available in this project.
-          </p>
-          <div className="mt-6 grid grid-cols-3 gap-3">
+        </section>
+
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16">
+          <section id="guide-directory" tabIndex={-1} aria-labelledby="guide-directory-heading" className="scroll-mt-8 py-16 focus:outline-none md:py-24">
+            <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#BDBDC5]">The guide directory</p>
+                <h2 id="guide-directory-heading" className="mt-4 font-heading text-[clamp(2.25rem,4vw,3.75rem)] font-medium leading-tight tracking-[-0.035em]">Choose your starting point.</h2>
+              </div>
+              <p className="max-w-sm text-sm leading-7 text-[#BDBDC5]">Start with installation, find your device or work through a connection question. Every guide opens the relevant instructions.</p>
+            </div>
+            <SetupHubGrid editorialGuides={editorialGuides} />
+          </section>
+
+          <section aria-labelledby="setup-information-heading" className="border-y border-white/15 bg-[#1C1516] px-5 py-8 sm:px-8 md:py-12">
+            <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#BDBDC5]"><KeyRound aria-hidden="true" className="h-5 w-5" /> Before you begin</div>
+            <div className="mt-5 grid items-start gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12">
+              <div className="min-w-0">
+                <h2 id="setup-information-heading" className="font-heading text-3xl font-medium leading-tight tracking-tight md:text-4xl">What your player may ask for.</h2>
+                <p className="mt-4 text-sm leading-7 text-[#BDBDC5]">The exact fields vary by the compatible application you choose. Enter only the setup information supplied with your trial or subscription.</p>
+                <dl className="mt-7 divide-y divide-white/15 border-y border-white/15">
+                  {setupInformation.map((item) => (
+                    <div key={item.title} className="flex flex-col justify-between gap-2 py-5 sm:flex-row sm:gap-5">
+                      <dt className="text-sm font-semibold">{item.title}</dt>
+                      <dd className="text-sm leading-6 text-[#BDBDC5]">{item.detail}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <aside aria-labelledby="setup-privacy-heading" className="border-l-2 border-[#713333] pl-5 lg:mt-1">
+                <LockKeyhole aria-hidden="true" className="h-6 w-6 text-[#BDBDC5]" />
+                <h3 id="setup-privacy-heading" className="mt-5 font-heading text-2xl font-medium">Keep your supplied details private.</h3>
+                <p className="mt-3 text-sm leading-7 text-[#BDBDC5]">If you are unsure which field to use, contact Golden IPTV through the support channel before sharing account information. Keep account credentials out of public messages and screenshots.</p>
+                <Link href="/contact/" className={`mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline decoration-[#CE1212] underline-offset-8 ${focusStyle}`}>Ask about your setup <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>
+              </aside>
+            </div>
+          </section>
+
+          <section aria-labelledby="setup-questions-heading" className="grid gap-8 py-16 md:py-24 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#968da1]">
-                Guide routes
-              </span>
-              <strong className="mt-1 block font-heading text-xl">8</strong>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#BDBDC5]">Common setup questions</p>
+              <h2 id="setup-questions-heading" className="mt-4 font-heading text-[clamp(2.25rem,4vw,3.75rem)] font-medium leading-tight tracking-[-0.035em]">Before you<br />press play.</h2>
             </div>
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#968da1]">
-                Device guides
-              </span>
-              <strong className="mt-1 block font-heading text-xl">5</strong>
-            </div>
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#968da1]">
-                Trial
-              </span>
-              <strong className="mt-1 block font-heading text-xl">24 hours</strong>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative min-h-80 overflow-hidden rounded-[2rem] shadow-2xl lg:col-span-7">
-          <Image
-            src="/images/stitch/setup-hub-01.webp"
-            alt="Cinematic television displaying the Golden IPTV setup interface"
-            fill
-            priority
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e19] via-transparent to-transparent" />
-          <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-[#0b0e19]/75 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-[#ff3b56]" />
-            Setup guide preview
-          </span>
-          <div className="absolute inset-x-5 bottom-5 flex flex-wrap items-center justify-between gap-3">
-            <span className="inline-flex items-center gap-2 text-sm font-semibold">
-              <MonitorPlay className="h-4 w-4 text-[#d4bbff]" />
-              Visual platform guidance
-            </span>
-            <span className="rounded-full bg-[#8b3dff] px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
-              Golden IPTV
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative mx-auto w-full max-w-[1440px] px-5 py-8 md:px-8 lg:px-16">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <span className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#968da1]">
-              Select a route
-            </span>
-            <h2 className="mt-1 font-heading text-3xl font-bold tracking-tight md:text-4xl">
-              Published Platform Guides
-            </h2>
-          </div>
-          <p className="max-w-lg text-sm leading-6 text-[#cdc2d8]">
-            Search the real installation, troubleshooting and device guide
-            routes. Each card opens published repository content.
-          </p>
-        </div>
-        <SetupHubGrid />
-      </section>
-
-      <section className="relative mx-auto mt-8 w-full max-w-[1312px] overflow-hidden rounded-[2rem] bg-[#181b27]/85 p-6 shadow-xl md:p-8">
-        <div className="grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#272936] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#d4bbff]">
-              <KeyRound className="h-3.5 w-3.5" />
-              Setup information
-            </div>
-            <h2 className="mt-4 font-heading text-3xl font-bold">
-              What Your Player May Ask For
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-[#cdc2d8]">
-              The exact fields vary by the compatible application you choose.
-              Enter only the setup information supplied with your trial or
-              subscription.
-            </p>
-            <div className="mt-6 space-y-2">
-              {[
-                ["1", "Profile or playlist name", "Choose a recognisable label"],
-                ["2", "Service or server detail", "Use the supplied value exactly"],
-                ["3", "Account credentials", "Use the supplied login information"],
-              ].map(([number, label, value]) => (
-                <div
-                  key={number}
-                  className="flex flex-col gap-2 rounded-2xl bg-[#0b0e19]/70 p-4 sm:flex-row sm:items-center"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#272936] text-xs font-bold text-[#d4bbff]">
-                    {number}
-                  </span>
-                  <strong className="text-sm sm:w-48">{label}</strong>
-                  <span className="text-xs text-[#cdc2d8] sm:ml-auto">{value}</span>
-                </div>
+            <div className="min-w-0 space-y-3">
+              {setupFaqs.map((item) => (
+                <details key={item.question} className="group rounded-md border border-white/15 bg-[#151313] open:border-[#824141] open:bg-[#241718]">
+                  <summary className={`flex min-h-16 cursor-pointer list-none items-start justify-between gap-4 rounded-md px-5 py-5 text-left font-heading text-lg font-medium leading-7 [&::-webkit-details-marker]:hidden sm:px-6 ${focusStyle}`}>
+                    <span>{item.question}</span>
+                    <span aria-hidden="true" className="mt-1 shrink-0 text-[#BDBDC5]"><Plus className="h-5 w-5 group-open:hidden" /><Minus className="hidden h-5 w-5 group-open:block" /></span>
+                  </summary>
+                  <p className="mx-5 border-t border-white/15 pb-6 pt-5 text-sm leading-8 text-[#BDBDC5] sm:mx-6">{item.answer}</p>
+                </details>
               ))}
             </div>
-          </div>
-          <div className="lg:col-span-5">
-            <div className="relative h-56 overflow-hidden rounded-2xl">
-              <Image
-                src="/images/stitch/setup-hub-02.webp"
-                alt="Remote control used with a cinematic television setup"
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e19] via-transparent" />
-            </div>
-            <h3 className="mt-4 font-heading text-xl font-bold">
-              Keep your supplied details private
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-[#cdc2d8]">
-              If you are unsure which field to use, contact Golden IPTV through
-              the real support channel before sharing account information.
-            </p>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="relative mx-auto w-full max-w-4xl px-5 py-16 md:px-8">
-        <div className="text-center">
-          <span className="font-heading text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#968da1]">
-            Fast resolutions
-          </span>
-          <h2 className="mt-1 font-heading text-3xl font-bold">
-            Common Hardware Questions
-          </h2>
-        </div>
-        <div className="mt-7 space-y-2">
-          {setupFaqs.map((item) => (
-            <details key={item.question} className="group rounded-2xl bg-[#181b27]/80">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-heading text-lg font-semibold">
-                {item.question}
-                <span className="text-[#968da1] transition-transform group-open:rotate-45">+</span>
-              </summary>
-              <p className="px-6 pb-5 text-sm leading-7 text-[#cdc2d8]">
-                {item.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="relative mx-auto mb-10 w-[calc(100%-2.5rem)] max-w-[1312px] overflow-hidden rounded-[2rem] bg-gradient-to-r from-[#181b27] to-[#14213d] p-7 shadow-xl md:p-9">
-        <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-center">
-          <div className="max-w-2xl">
-            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-[#afc6ff]">
-              <span className="inline-flex items-center gap-1.5">
-                <Clock3 className="h-4 w-4" /> WhatsApp support
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4" /> Real support route
-              </span>
+          <section aria-labelledby="guides-support-heading" className="mb-16 flex flex-col items-start justify-between gap-7 border border-[#713333] bg-[#281314] p-6 md:mb-24 md:p-10 lg:flex-row lg:items-center">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#BDBDC5]">A little help along the way</p>
+              <h2 id="guides-support-heading" className="mt-4 font-heading text-3xl font-medium tracking-tight">Still finding your way?</h2>
+              <p className="mt-4 text-sm leading-7 text-[#BDBDC5]">Ask our team about your device or the step you’re on. Open WhatsApp, review your message and press Send to start the conversation.</p>
             </div>
-            <h2 className="mt-3 font-heading text-3xl font-bold">
-              Need assistance setting up?
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-[#cdc2d8]">
-              Use WhatsApp for setup questions or open the contact page for the
-              available support paths.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ui-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#8b3dff] to-[#046ef1] px-6 text-sm font-bold text-white"
-            >
-              <MessageCircle className="h-4 w-4" /> WhatsApp Support
-            </a>
-            <Link
-              href="/contact/"
-              className="ui-button inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#313441] px-6 text-sm font-bold"
-            >
-              Contact options <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+            <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${buttonStyle} bg-[#CE1212] text-white hover:bg-[#a90e0e]`}><MessageCircle aria-hidden="true" className="h-4 w-4 shrink-0" /> WhatsApp support<span className="sr-only"> (opens in a new tab)</span></a>
+              <Link href="/contact/" className={`${buttonStyle} border border-white/30 hover:bg-white/5`}>Contact options <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>
+            </div>
+          </section>
         </div>
-      </section>
-    </main>
+      </main>
+      <CinematicGuidesFooter />
+    </>
   );
 }

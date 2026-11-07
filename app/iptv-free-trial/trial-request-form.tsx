@@ -1,37 +1,34 @@
 "use client";
 
-import { ArrowRight, CalendarClock, Mail, MessageCircle, Monitor } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Monitor } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 import { trackWhatsAppClick } from "@/app/components/google-analytics";
 import { WHATSAPP_URL } from "@/app/components/whatsapp";
 import { DEVICES } from "@/app/iptv-south-africa/devices-data";
 
-const fieldClass =
-  "min-h-12 w-full rounded-full border border-white/[0.06] bg-[#0b0e19]/90 px-4 text-sm text-[#e0e1f2] placeholder:text-[#968da1] shadow-inner transition focus:border-[#8b3dff] focus:ring-2 focus:ring-[#8b3dff]/30";
+const focusStyle = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EEEBDD] focus-visible:shadow-none";
+const fieldClass = `block min-h-12 w-full min-w-0 max-w-full rounded-md border border-white/25 bg-[#100E0E] px-4 py-3 text-base font-normal text-[#EEEBDD] placeholder:text-[#99949A] focus:border-[#EEEBDD] ${focusStyle}`;
+const devices = [...DEVICES, { name: "Other", href: "", description: "Tell us your model in the notes so we can check compatibility." }];
 
 export default function TrialRequestForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [preparedUrl, setPreparedUrl] = useState<string | null>(null);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     const form = event.currentTarget;
+    if (!form.reportValidity()) return;
     const formData = new FormData(form);
-
     const fullName = String(formData.get("fullName") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const whatsapp = String(formData.get("whatsapp") || "").trim();
     const device = String(formData.get("device") || "").trim();
-    const trialStartTime = String(
-      formData.get("trialStartTime") || "",
-    ).trim();
+    const trialStartTime = String(formData.get("trialStartTime") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
     const whatsappMessage = [
       "Hello Golden IPTV, I would like to request a 24-hour free trial.",
-      "",
       `Full Name: ${fullName}`,
       `Email: ${email}`,
       `WhatsApp Number: ${whatsapp}`,
@@ -40,170 +37,103 @@ export default function TrialRequestForm() {
         ? `Preferred Trial Start Time: ${trialStartTime}`
         : "Preferred Trial Start Time: Not specified",
       message ? `Message / Notes: ${message}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+    ].filter(Boolean).join("\n");
 
     const url = `${WHATSAPP_URL}?text=${encodeURIComponent(whatsappMessage)}`;
-
-    trackWhatsAppClick(
-      "free_trial_request_form",
-      "Continue Trial Request on WhatsApp",
-    );
-    window.open(url, "_blank", "noopener,noreferrer");
-    setSubmitted(true);
+    setPreparedUrl(url);
+    trackWhatsAppClick("free_trial_request_form", "Continue Trial Request on WhatsApp");
+    try {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch {
+      // The prepared link remains available even when opening a tab fails.
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <fieldset className="rounded-[2rem] bg-[#181b27]/80 p-5 shadow-xl backdrop-blur-2xl sm:p-6">
-        <legend className="sr-only">Select Your Hardware</legend>
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#d4bbff]">
-              Step 1 of 2
-            </span>
-            <h2 className="font-heading text-xl font-bold text-[#e0e1f2]">
-              Select Your Hardware
-            </h2>
-          </div>
-          <Monitor className="h-7 w-7 text-[#968da1]" />
+    <form
+      onSubmit={handleSubmit}
+      onChange={() => setPreparedUrl(null)}
+      aria-label="24-hour free trial request"
+      className="min-w-0 space-y-8 rounded-lg border border-white/20 bg-[#1B1616] p-5 sm:p-8"
+    >
+      <fieldset className="min-w-0">
+        <legend className="w-full border-b border-white/15 pb-5">
+          <span className="block text-xs font-bold uppercase tracking-[0.16em] text-[#BDBDC5]">Step 1 of 2</span>
+          <span className="mt-2 block font-heading text-2xl font-semibold text-[#EEEBDD]">Choose your screen.</span>
+        </legend>
+        <p id="trial-device-help" className="my-5 text-sm leading-7 text-[#BDBDC5]">Select your device. If you’re unsure, choose Other and share the model in your notes.</p>
+        <div className="grid gap-3 min-[360px]:grid-cols-2 sm:grid-cols-3">
+          {devices.map((device) => (
+            <label key={device.name} className="relative min-w-0 cursor-pointer">
+              <input
+                type="radio"
+                name="device"
+                value={device.name}
+                required
+                aria-describedby="trial-device-help"
+                className="peer absolute right-4 top-4 z-10 h-4 w-4 cursor-pointer accent-[#CE1212] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EEEBDD] focus-visible:shadow-none"
+              />
+              <span className="flex h-full min-h-32 flex-col justify-between gap-4 rounded-md border border-white/25 bg-[#100E0E] p-4 pr-10 text-[#EEEBDD] transition-colors hover:border-white/60 peer-checked:border-[#CE1212] peer-checked:bg-[#361718] peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-[#EEEBDD] motion-reduce:transition-none">
+                <Monitor aria-hidden="true" className="h-5 w-5 shrink-0 text-[#BDBDC5]" />
+                <span className="text-sm font-semibold leading-6">{device.name}</span>
+              </span>
+            </label>
+          ))}
         </div>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {[...DEVICES, { name: "Other", href: "", description: "Another compatible device." }].map(
-            (device) => (
-              <label key={device.name} className="relative cursor-pointer">
-                <input
-                  type="radio"
-                  name="device"
-                  value={device.name}
-                  required
-                  className="peer sr-only"
-                />
-                <span className="flex min-h-24 flex-col items-start justify-center rounded-2xl border border-transparent bg-[#1c1f2b] p-4 text-left transition peer-checked:border-[#8b3dff]/70 peer-checked:bg-[#272936] peer-checked:shadow-[0_0_24px_rgba(139,61,255,0.3)] hover:bg-[#272936]">
-                  <Monitor className="mb-2 h-5 w-5 text-[#afc6ff] peer-checked:text-[#d4bbff]" />
-                  <strong className="text-sm text-[#e0e1f2]">{device.name}</strong>
-                </span>
-              </label>
-            ),
-          )}
-        </div>
+        <p className="mt-4 text-xs leading-6 text-[#BDBDC5]">Compatibility varies by model and playback app. Our team will confirm the appropriate setup.</p>
       </fieldset>
 
-      <div className="rounded-[2rem] bg-[#181b27]/80 p-5 shadow-xl backdrop-blur-2xl sm:p-6">
-        <div className="mb-5">
-          <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#afc6ff]">
-            Step 2 of 2
-          </span>
-          <h2 className="font-heading text-xl font-bold text-[#e0e1f2]">
-            Delivery Details
-          </h2>
-          <p className="mt-1 text-xs leading-5 text-[#cdc2d8]">
-            Complete the details below, then send the prepared request in
-            WhatsApp.
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <label className="space-y-1.5 text-sm font-semibold text-[#e0e1f2]">
-            <span>Full Name</span>
-            <input
-              id="fullName"
-              name="fullName"
-              type="text"
-              required
-              autoComplete="name"
-              placeholder="Your full name"
-              className={fieldClass}
-            />
+      <fieldset className="min-w-0">
+        <legend className="w-full border-b border-white/15 pb-5">
+          <span className="block text-xs font-bold uppercase tracking-[0.16em] text-[#BDBDC5]">Step 2 of 2</span>
+          <span className="mt-2 block font-heading text-2xl font-semibold text-[#EEEBDD]">Make it your trial.</span>
+        </legend>
+        <p className="my-5 text-sm leading-7 text-[#BDBDC5]">Add your details, then continue to WhatsApp. Fields marked * are required.</p>
+        <div className="grid min-w-0 gap-5 sm:grid-cols-2">
+          <label htmlFor="fullName" className="min-w-0 space-y-2 text-sm font-semibold text-[#EEEBDD]">
+            <span className="block">Full name *</span>
+            <input id="fullName" name="fullName" type="text" required autoComplete="name" placeholder="Your full name" className={fieldClass} />
           </label>
-
-          <label className="space-y-1.5 text-sm font-semibold text-[#e0e1f2]">
-            <span>Email Address</span>
-            <span className="relative block">
-              <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#968da1]" />
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="name@example.com"
-                className={`${fieldClass} pl-11`}
-              />
-            </span>
+          <label htmlFor="email" className="min-w-0 space-y-2 text-sm font-semibold text-[#EEEBDD]">
+            <span className="block">Email address *</span>
+            <input id="email" name="email" type="email" required autoComplete="email" placeholder="name@example.com" className={fieldClass} />
           </label>
-
-          <label className="space-y-1.5 text-sm font-semibold text-[#e0e1f2]">
-            <span>WhatsApp Number</span>
-            <span className="relative block">
-              <MessageCircle className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#968da1]" />
-              <input
-                id="whatsapp"
-                name="whatsapp"
-                type="tel"
-                required
-                autoComplete="tel"
-                placeholder="+27..."
-                className={`${fieldClass} pl-11`}
-              />
-            </span>
+          <label htmlFor="whatsapp" className="min-w-0 space-y-2 text-sm font-semibold text-[#EEEBDD]">
+            <span className="block">WhatsApp number *</span>
+            <input id="whatsapp" name="whatsapp" type="tel" required autoComplete="tel" placeholder="+27…" aria-describedby="trial-phone-help" className={fieldClass} />
+            <span id="trial-phone-help" className="block text-xs font-normal leading-6 text-[#BDBDC5]">Include your country code.</span>
           </label>
-
-          <label className="space-y-1.5 text-sm font-semibold text-[#e0e1f2]">
-            <span>Preferred Trial Start Time</span>
-            <span className="relative block">
-              <CalendarClock className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#968da1]" />
-              <input
-                id="trialStartTime"
-                name="trialStartTime"
-                type="datetime-local"
-                className={`${fieldClass} pl-11 [color-scheme:dark]`}
-              />
-            </span>
+          <label htmlFor="trialStartTime" className="min-w-0 space-y-2 text-sm font-semibold text-[#EEEBDD]">
+            <span className="block">Preferred start time <span className="font-normal text-[#BDBDC5]">(optional)</span></span>
+            <input id="trialStartTime" name="trialStartTime" type="datetime-local" aria-describedby="trial-time-help" className={`${fieldClass} [color-scheme:dark]`} />
+            <span id="trial-time-help" className="block text-xs font-normal leading-6 text-[#BDBDC5]">Your local time. Our team will confirm availability.</span>
           </label>
         </div>
-
-        <label className="mt-4 block space-y-1.5 text-sm font-semibold text-[#e0e1f2]">
-          <span>Message / Notes</span>
-          <textarea
-            id="message"
-            name="message"
-            rows={3}
-            placeholder="Optional: share anything that would help with your trial request."
-            className="w-full rounded-2xl border border-white/[0.06] bg-[#0b0e19]/90 px-4 py-3 text-sm text-[#e0e1f2] placeholder:text-[#968da1] shadow-inner transition focus:border-[#8b3dff] focus:ring-2 focus:ring-[#8b3dff]/30"
-          />
+        <label htmlFor="message" className="mt-5 block space-y-2 text-sm font-semibold text-[#EEEBDD]">
+          <span className="block">Message / notes <span className="font-normal text-[#BDBDC5]">(optional)</span></span>
+          <textarea id="message" name="message" rows={3} placeholder="Your device model or a question about getting started." className={`${fieldClass} resize-y`} />
         </label>
+      </fieldset>
 
-        <p className="mt-4 text-xs leading-5 text-[#cdc2d8]">
-          By continuing, the details you entered will be prepared for sending
-          through WhatsApp so Golden IPTV can handle your trial request. See our{" "}
-          <Link
-            href="/privacy/"
-            className="font-semibold text-[#afc6ff] hover:underline"
-          >
-            Privacy Policy
-          </Link>
-          .
+      <div className="border-t border-white/15 pt-6">
+        <p className="text-xs leading-6 text-[#BDBDC5]">
+          Your details will be prepared for sending through WhatsApp so Golden IPTV can handle your trial request. Review the message before sending. See our{" "}
+          <Link href="/privacy/" className={`font-semibold text-[#EEEBDD] underline underline-offset-4 ${focusStyle}`}>Privacy Policy</Link>.
         </p>
-
-        <button
-          type="submit"
-          className="ui-button mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#8b3dff] to-[#046ef1] px-6 text-sm font-bold text-white shadow-[0_0_28px_rgba(139,61,255,0.45)] transition hover:shadow-[0_0_36px_rgba(139,61,255,0.65)]"
-        >
+        <button type="submit" className={`mt-5 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-md bg-[#CE1212] px-4 py-4 text-sm font-bold leading-6 text-white transition-colors hover:bg-[#a90e0e] motion-reduce:transition-none ${focusStyle}`}>
+          <MessageCircle aria-hidden="true" className="h-5 w-5 shrink-0" />
           Continue Trial Request on WhatsApp
-          <ArrowRight className="h-4 w-4" />
+          <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" />
         </button>
-
-        {submitted && (
-          <p
-            role="status"
-            className="mt-4 rounded-2xl border border-[#25D366]/25 bg-[#25D366]/10 p-4 text-sm leading-6 text-[#e0e1f2]"
-          >
-            Your trial details have been prepared in WhatsApp. Please send the
-            message there to complete your request.
-          </p>
-        )}
+        <p className="mt-3 text-center text-xs leading-6 text-[#BDBDC5]">Opens WhatsApp in a new tab. Press <strong className="text-[#EEEBDD]">Send</strong> there to finish. No trial payment required.</p>
+        <div role="status" aria-live="polite" aria-atomic="true">
+          {preparedUrl && (
+            <p className="mt-5 border-l-2 border-[#CE1212] bg-black/30 p-4 text-sm leading-7 text-[#EEEBDD]">
+              Your request is prepared, but has not been sent. Press <strong>Send</strong> in WhatsApp to complete it. If WhatsApp didn’t open,{" "}
+              <a href={preparedUrl} target="_blank" rel="noopener noreferrer" data-analytics-location="free_trial_request_form_fallback" className={`font-bold underline underline-offset-4 ${focusStyle}`}>open your prepared request here<span className="sr-only"> (opens in a new tab)</span></a>.
+            </p>
+          )}
+        </div>
       </div>
     </form>
   );

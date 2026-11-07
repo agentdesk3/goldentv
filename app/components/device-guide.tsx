@@ -1,4 +1,17 @@
-import EditorialGuide from "@/app/components/editorial-guide";
+import EditorialGuide, {
+  type GuideCard,
+  type GuideFaq,
+  type GuideStep,
+} from "@/app/components/editorial-guide";
+
+type DeviceGuideConfig = {
+  category: string;
+  title: string;
+  summary: string;
+  highlights: readonly GuideCard[];
+  steps: readonly GuideStep[];
+  faqs: readonly GuideFaq[];
+};
 
 const sharedFaq = {
   connection: {
@@ -399,7 +412,7 @@ const configs = {
       sharedFaq.app,
     ],
   },
-} as const;
+} as const satisfies Record<string, DeviceGuideConfig>;
 
 export type DeviceGuideKey = keyof typeof configs;
 

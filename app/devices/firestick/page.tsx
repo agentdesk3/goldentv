@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Faq from "../../iptv-south-africa/faq";
-import { PrimaryButton, SecondaryButton } from "../../components/buttons";
+import CinematicContentHeader from "@/app/components/cinematic-content-header";
+import CinematicContentFooter from "@/app/components/cinematic-content-footer";
 import { createPageMetadata } from "@/app/seo-metadata";
 
 export const metadata: Metadata = createPageMetadata({
   title: "IPTV on Firestick: Setup Guide",
   description:
     "Learn how to set up Golden IPTV on Firestick and Fire TV, check internet requirements and troubleshoot common streaming problems.",
-  url: "https://www.goldeniptv.co.za/devices/firestick/",
+  url: "https://goldeniptv.co.za/devices/firestick/",
   image: "/images/home/device-fire-tv.webp",
   imageAlt: "Golden IPTV setup guide for Firestick and Fire TV",
 });
@@ -83,18 +83,18 @@ const firestickStructuredData = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.goldeniptv.co.za/",
+        item: "https://goldeniptv.co.za/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Devices",
-        item: "https://www.goldeniptv.co.za/devices/",
+        item: "https://goldeniptv.co.za/devices/",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Firestick",
+        name: "IPTV on Firestick",
       },
     ],
   },
@@ -113,233 +113,273 @@ const firestickStructuredData = [
   },
 ] as const;
 
+const focusStyle = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EEEBDD] focus-visible:shadow-none";
+const containerStyle = "mx-auto w-full max-w-[1312px] px-5 md:px-10 lg:px-16";
+const primaryLinkStyle = `inline-flex min-h-12 items-center justify-center rounded-md bg-[#CE1212] px-6 py-3 text-center text-sm font-semibold text-white hover:bg-[#a90e0e] ${focusStyle}`;
+const secondaryLinkStyle = `inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-6 py-3 text-center text-sm font-semibold text-[#EEEBDD] hover:bg-white/10 ${focusStyle}`;
+const textLinkStyle = `font-semibold text-[#EEEBDD] underline decoration-[#CE1212] underline-offset-4 hover:decoration-[#EEEBDD] ${focusStyle}`;
+
 export default function FirestickPage() {
   return (
-    <div className="flex flex-1 flex-col bg-background text-foreground">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(firestickStructuredData).replace(
-            /</g,
-            "\\u003c",
-          ),
-        }}
-      />
-      {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="border-b border-black/[.08] dark:border-white/[.145]">
-        <ol className="mx-auto flex max-w-5xl items-center gap-2 px-6 py-4 text-sm text-zinc-600 dark:text-zinc-400 sm:px-8">
-          <li><Link href="/" className="hover:text-foreground hover:underline">Home</Link></li>
-          <li aria-hidden="true">/</li>
-          <li><Link href="/devices/" className="hover:text-foreground hover:underline">Devices</Link></li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="font-medium text-foreground">Firestick</li>
-        </ol>
-      </nav>
-
-      {/* Hero */}
-      <section className="border-b border-black/[.08] px-6 py-16 sm:px-8 sm:py-24 dark:border-white/[.145]">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6">
-          <h1 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">IPTV on Firestick</h1>
-          <p className="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Set up IPTV on your Fire TV Stick or Fire TV device. This guide covers compatibility, setup steps, internet requirements, and troubleshooting for Firestick IPTV streaming.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <PrimaryButton href="/iptv-free-trial/">Start 24-Hour Free Trial</PrimaryButton>
-            <SecondaryButton href="/guides/how-to-install-iptv/">How to Install IPTV</SecondaryButton>
-          </div>
-        </div>
-      </section>
-
-      {/* What is IPTV on Firestick */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20" aria-labelledby="what-is-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6">
-          <h2 id="what-is-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">IPTV on Firestick</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            IPTV (Internet Protocol Television) delivers television content over the internet instead of through traditional broadcast or cable systems. This allows you to stream live channels and on-demand content directly to compatible devices.
-          </p>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Fire TV devices, including Firestick and Fire TV Stick 4K, can be used for IPTV streaming when the device, application, and IPTV service are compatible. A suitable IPTV application is typically required to receive and play the content on your Fire TV device.
-          </p>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Application availability and exact setup procedures can vary. Users should follow the setup instructions provided by their chosen application. Golden IPTV provides the subscription service, while the application handles the streaming interface on your device.
-          </p>
-        </div>
-      </section>
-
-      {/* What You Need */}
-      <section className="bg-zinc-50 px-6 py-16 sm:px-8 sm:py-20 dark:bg-zinc-950" aria-labelledby="requirements-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <h2 id="requirements-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">What You Need</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Before setting up IPTV on your Firestick, make sure you have everything required:
-          </p>
-          <ul className="grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
-            {REQUIREMENTS.map((req) => (
-              <li key={req.item} className="flex flex-col gap-1 rounded-2xl border border-black/[.08] bg-background p-5 dark:border-white/[.145]">
-                <span className="font-semibold">{req.item}</span>
-                <span className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">{req.detail}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            For guidance on internet requirements, see our guide on{" "}
-            <Link href="/guides/internet-speed-for-iptv/" className="font-medium text-foreground underline underline-offset-4 hover:no-underline">
-              internet speed for IPTV
-            </Link>.
-          </p>
-        </div>
-      </section>
-
-      {/* Setup Steps */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20" aria-labelledby="setup-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <h2 id="setup-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">How to Set Up IPTV on Firestick</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Follow these general steps to set up IPTV on your Fire TV device. The exact interface may vary depending on your Firestick model and software version.
-          </p>
-          <ol className="flex flex-col gap-6">
-            {SETUP_STEPS.map((item, index) => (
-              <li key={index} className="flex gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-sm font-semibold dark:bg-zinc-800">
-                  {index + 1}
-                </span>
-                <div className="flex flex-col gap-1">
-                  <span className="font-medium">{item.step}</span>
-                  <span className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">{item.detail}</span>
-                </div>
-              </li>
-            ))}
+    <div className="bg-[#0B0A0A] text-[#EEEBDD]">
+      <CinematicContentHeader activeHref="/devices/" />
+      <main id="guide-main" tabIndex={-1} className="min-w-0 scroll-mt-6 outline-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(firestickStructuredData).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+        />
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="border-b border-white/15">
+          <ol className={`${containerStyle} flex flex-wrap items-center gap-x-2 py-5 text-xs leading-6 text-[#BDBDC5]`}>
+            <li><Link href="/" className={`hover:text-white ${focusStyle}`}>Home</Link></li>
+            <li aria-hidden="true">/</li>
+            <li><Link href="/devices/" className={`hover:text-white ${focusStyle}`}>Devices</Link></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="font-medium text-[#EEEBDD]">Firestick</li>
           </ol>
-        </div>
-      </section>
+        </nav>
 
-      {/* Internet Speed and Connection */}
-      <section className="bg-zinc-50 px-6 py-16 sm:px-8 sm:py-20 dark:bg-zinc-950" aria-labelledby="internet-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6">
-          <h2 id="internet-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Internet Speed and Connection</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Your internet connection is important for IPTV streaming quality. Firestick devices typically connect via Wi-Fi, though some models support Ethernet adapters for a wired connection.
-          </p>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Wi-Fi performance depends on distance from your router, walls and obstacles, interference from other wireless devices, and how many devices are sharing your network. A weak Wi-Fi signal can cause buffering even if your advertised internet speed is high.
-          </p>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Connection stability matters as much as speed. A fast but unstable connection can cause more buffering than a slower but consistent one. When multiple devices use your network simultaneously, available bandwidth for IPTV is reduced.
-          </p>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            For more information, see our guides on{" "}
-            <Link href="/guides/internet-speed-for-iptv/" className="font-medium text-foreground underline underline-offset-4 hover:no-underline">
-              internet speed for IPTV
-            </Link>{" "}
-            and{" "}
-            <Link href="/guides/iptv-buffering/" className="font-medium text-foreground underline underline-offset-4 hover:no-underline">
-              IPTV buffering
-            </Link>.
-          </p>
-        </div>
-      </section>
-
-      {/* Troubleshooting */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20" aria-labelledby="troubleshooting-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <h2 id="troubleshooting-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Common Firestick IPTV Problems</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            If you experience issues with IPTV on your Firestick, these troubleshooting tips may help:
-          </p>
-          <ul className="grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
-            {TROUBLESHOOTING.map((item) => (
-              <li key={item.title} className="flex flex-col gap-2 rounded-2xl border border-black/[.08] p-5 dark:border-white/[.145]">
-                <span className="font-semibold">{item.title}</span>
-                <span className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                  {item.description}
-                  {item.linkHref && (
-                    <>
-                      {" "}
-                      <Link href={item.linkHref} className="font-medium text-foreground underline underline-offset-4 hover:no-underline">
-                        {item.linkText}
-                      </Link>.
-                    </>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Performance Tips */}
-      <section className="bg-zinc-50 px-6 py-16 sm:px-8 sm:py-20 dark:bg-zinc-950" aria-labelledby="tips-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <h2 id="tips-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Firestick Performance Tips</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            These tips can help maintain good performance for IPTV streaming on your Fire TV device:
-          </p>
-          <ul className="grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
-            {PERFORMANCE_TIPS.map((item) => (
-              <li key={item.tip} className="flex flex-col gap-2 rounded-2xl border border-black/[.08] bg-background p-5 dark:border-white/[.145]">
-                <span className="font-semibold">{item.tip}</span>
-                <span className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">{item.detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Other Devices */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20" aria-labelledby="other-devices-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6">
-          <h2 id="other-devices-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Other IPTV Devices</h2>
-          <p className="max-w-3xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Golden IPTV provides setup guidance for other popular streaming devices. Explore setup guides for each:
-          </p>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {OTHER_DEVICES.map((device) => (
-              <li key={device.href}>
-                <Link
-                  href={device.href}
-                  className="flex items-center justify-between rounded-2xl border border-black/[.08] bg-zinc-50 p-6 transition-colors hover:border-foreground/20 hover:bg-zinc-100 dark:border-white/[.145] dark:bg-zinc-950 dark:hover:bg-zinc-900"
-                >
-                  <span className="text-sm font-medium">{device.name}</span>
-                  <span className="text-sm text-zinc-500 dark:text-zinc-400">→</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Free Trial CTA */}
-      <section className="bg-zinc-50 px-6 py-16 sm:px-8 sm:py-20 dark:bg-zinc-950" aria-labelledby="trial-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-2xl border border-black/[.08] bg-background p-8 text-center dark:border-white/[.145] sm:p-12">
-          <h2 id="trial-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Try Golden IPTV on Your Firestick</h2>
-          <p className="mx-auto max-w-2xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Test the service on your compatible Fire TV device with the 24-hour free trial. This lets you verify the experience works well on your specific setup before subscribing.
-          </p>
-          <PrimaryButton href="/iptv-free-trial/">Start 24-Hour Free Trial</PrimaryButton>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20" aria-labelledby="faq-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <h2 id="faq-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Firestick IPTV FAQs</h2>
-          <Faq items={FAQS} />
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-zinc-50 px-6 py-16 sm:px-8 sm:py-20 dark:bg-zinc-950" aria-labelledby="final-cta-heading">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-2xl border border-black/[.08] bg-background p-8 text-center dark:border-white/[.145] sm:p-12">
-          <h2 id="final-cta-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl">Ready to Use IPTV on Your Firestick?</h2>
-          <p className="mx-auto max-w-2xl leading-8 text-zinc-600 dark:text-zinc-400">
-            Start with a free trial or view subscription options for Golden IPTV.
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <SecondaryButton href="/pricing/">View IPTV Pricing</SecondaryButton>
-            <PrimaryButton href="/iptv-free-trial/">Start 24-Hour Free Trial</PrimaryButton>
+        {/* Hero */}
+        <section aria-labelledby="firestick-title" className="border-b border-white/15 bg-[#211617]">
+          <div className={`${containerStyle} grid gap-10 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-end lg:gap-16 lg:py-20`}>
+            <div className="min-w-0">
+              <p className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#BDBDC5]"><span aria-hidden="true" className="h-2 w-2 bg-[#CE1212]" />The Golden IPTV Field Guide / Fire TV</p>
+              <h1 id="firestick-title" className="mt-6 max-w-3xl font-heading text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl xl:text-7xl">IPTV on Firestick</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#BDBDC5]">
+                Set up IPTV on your Fire TV Stick or Fire TV device. This guide covers compatibility, setup steps, internet requirements, and troubleshooting for Firestick IPTV streaming.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link href="/iptv-free-trial/" className={primaryLinkStyle}>Start 24-Hour Free Trial</Link>
+                <Link href="/guides/how-to-install-iptv/" className={secondaryLinkStyle}>How to Install IPTV</Link>
+              </div>
+            </div>
+            <div className="border-l-2 border-[#CE1212] py-2 pl-6">
+              <span className="font-heading text-6xl font-medium leading-none tracking-tight md:text-7xl">{String(SETUP_STEPS.length).padStart(2, "0")}</span>
+              <p className="mt-3 text-sm font-semibold">Steps to follow</p>
+              <nav aria-label="On this page" className="mt-5">
+                <ul className="divide-y divide-white/15 text-sm text-[#BDBDC5]">
+                  {[
+                    { label: "Before you begin", href: "#requirements-heading" },
+                    { label: "Installation steps", href: "#setup-heading" },
+                    { label: "Network guidance", href: "#internet-heading" },
+                    { label: "Troubleshooting", href: "#troubleshooting-heading" },
+                    { label: "Firestick FAQs", href: "#faq-heading" },
+                  ].map((item) => (
+                    <li key={item.href}><a href={item.href} className={`flex min-h-11 items-center justify-between gap-3 py-2 hover:text-white ${focusStyle}`}>{item.label}<span aria-hidden="true">↘</span></a></li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* What is IPTV on Firestick */}
+        <section className="border-b border-white/15 py-12 md:py-16 lg:py-20" aria-labelledby="what-is-heading">
+          <div className={`${containerStyle} flex flex-col gap-6`}>
+            <h2 id="what-is-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">IPTV on Firestick</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              IPTV (Internet Protocol Television) delivers television content over the internet instead of through traditional broadcast or cable systems. This allows you to stream live channels and on-demand content directly to compatible devices.
+            </p>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Fire TV devices, including Firestick and Fire TV Stick 4K, can be used for IPTV streaming when the device, application, and IPTV service are compatible. A suitable IPTV application is typically required to receive and play the content on your Fire TV device.
+            </p>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Application availability and exact setup procedures can vary. Users should follow the setup instructions provided by their chosen application. Golden IPTV provides the subscription service, while the application handles the streaming interface on your device.
+            </p>
+          </div>
+        </section>
+
+        {/* What You Need */}
+        <section className="border-b border-white/15 bg-[#171112] py-12 md:py-16 lg:py-20" aria-labelledby="requirements-heading">
+          <div className={`${containerStyle} flex flex-col gap-8`}>
+            <h2 id="requirements-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">What You Need</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Before setting up IPTV on your Firestick, make sure you have everything required:
+            </p>
+            <ul className="grid list-none gap-x-10 gap-y-7 md:grid-cols-2">
+              {REQUIREMENTS.map((req) => (
+                <li key={req.item} className="min-w-0 border-l border-[#CE1212] pl-5">
+                  <span className="font-heading text-lg font-semibold leading-7">{req.item}</span>
+                  <span className="mt-2 block text-sm leading-7 text-[#BDBDC5]">{req.detail}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              For guidance on internet requirements, see our guide on{" "}
+              <Link href="/guides/internet-speed-for-iptv/" className={textLinkStyle}>
+                internet speed for IPTV
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Setup Steps */}
+        <section className="border-b border-white/15 py-12 md:py-16 lg:py-20" aria-labelledby="setup-heading">
+          <div className={`${containerStyle} flex flex-col gap-8`}>
+            <h2 id="setup-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">How to Set Up IPTV on Firestick</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Follow these general steps to set up IPTV on your Fire TV device. The exact interface may vary depending on your Firestick model and software version.
+            </p>
+            <ol className="list-none divide-y divide-white/15 border-y border-white/15">
+              {SETUP_STEPS.map((item, index) => (
+                <li key={item.step} id={`firestick-step-${index + 1}`} className="grid scroll-mt-8 grid-cols-[2rem_minmax(0,1fr)] gap-4 py-7 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-6 md:py-9">
+                  <span aria-hidden="true" className="font-heading text-2xl font-medium leading-none sm:text-3xl">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#BDBDC5]">Step {index + 1} of {SETUP_STEPS.length}</p>
+                    <h3 className="mt-2 font-heading text-xl font-semibold leading-snug sm:text-2xl">{item.step}</h3>
+                    <span className="mt-2 text-sm leading-7 text-[#BDBDC5]">{item.detail}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Internet Speed and Connection */}
+        <section className="border-b border-white/15 bg-[#171112] py-12 md:py-16 lg:py-20" aria-labelledby="internet-heading">
+          <div className={`${containerStyle} flex flex-col gap-6`}>
+            <h2 id="internet-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Internet Speed and Connection</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Your internet connection is important for IPTV streaming quality. Firestick devices typically connect via Wi-Fi, though some models support Ethernet adapters for a wired connection.
+            </p>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Wi-Fi performance depends on distance from your router, walls and obstacles, interference from other wireless devices, and how many devices are sharing your network. A weak Wi-Fi signal can cause buffering even if your advertised internet speed is high.
+            </p>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Connection stability matters as much as speed. A fast but unstable connection can cause more buffering than a slower but consistent one. When multiple devices use your network simultaneously, available bandwidth for IPTV is reduced.
+            </p>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              For more information, see our guides on{" "}
+              <Link href="/guides/internet-speed-for-iptv/" className={textLinkStyle}>
+                internet speed for IPTV
+              </Link>{" "}
+              and{" "}
+              <Link href="/guides/iptv-buffering/" className={textLinkStyle}>
+                IPTV buffering
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Troubleshooting */}
+        <section className="border-b border-white/15 py-12 md:py-16 lg:py-20" aria-labelledby="troubleshooting-heading">
+          <div className={`${containerStyle} flex flex-col gap-8`}>
+            <h2 id="troubleshooting-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Common Firestick IPTV Problems</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              If you experience issues with IPTV on your Firestick, these troubleshooting tips may help:
+            </p>
+            <ul className="grid list-none gap-x-10 gap-y-7 md:grid-cols-2">
+              {TROUBLESHOOTING.map((item) => (
+                <li key={item.title} className="flex min-w-0 flex-col gap-3 border-t border-white/20 pt-5">
+                  <span className="font-heading text-lg font-semibold leading-7">{item.title}</span>
+                  <span className="mt-2 text-sm leading-7 text-[#BDBDC5]">
+                    {item.description}
+                    {item.linkHref && (
+                      <>
+                        {" "}
+                        <Link href={item.linkHref} className={textLinkStyle}>
+                          {item.linkText}
+                        </Link>.
+                      </>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Performance Tips */}
+        <section className="border-b border-white/15 bg-[#171112] py-12 md:py-16 lg:py-20" aria-labelledby="tips-heading">
+          <div className={`${containerStyle} flex flex-col gap-8`}>
+            <h2 id="tips-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Firestick Performance Tips</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              These tips can help maintain good performance for IPTV streaming on your Fire TV device:
+            </p>
+            <ul className="grid list-none gap-x-10 gap-y-7 md:grid-cols-2">
+              {PERFORMANCE_TIPS.map((item) => (
+                <li key={item.tip} className="flex min-w-0 flex-col gap-3 border-l border-[#CE1212] pl-5">
+                  <span className="font-heading text-lg font-semibold leading-7">{item.tip}</span>
+                  <span className="mt-2 text-sm leading-7 text-[#BDBDC5]">{item.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Other Devices */}
+        <section className="border-b border-white/15 py-12 md:py-16 lg:py-20" aria-labelledby="other-devices-heading">
+          <div className={`${containerStyle} flex flex-col gap-6`}>
+            <h2 id="other-devices-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Other IPTV Devices</h2>
+            <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
+              Golden IPTV provides setup guidance for other popular streaming devices. Explore setup guides for each:
+            </p>
+            <ul className="grid gap-x-10 sm:grid-cols-2">
+              {OTHER_DEVICES.map((device) => (
+                <li key={device.href}>
+                  <Link
+                    href={device.href}
+                    className={`flex min-h-20 items-center justify-between gap-4 border-b border-white/20 py-5 text-[#EEEBDD] hover:text-white ${focusStyle}`}
+                  >
+                    <span className="text-sm font-medium">{device.name}</span>
+                    <span aria-hidden="true" className="text-[#BDBDC5]">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Free Trial CTA */}
+        <section className="border-b border-white/15 bg-[#171112] py-12 md:py-16 lg:py-20" aria-labelledby="trial-heading">
+          <div className={`${containerStyle} flex flex-col items-start gap-6 text-left lg:border-l-2 lg:border-[#CE1212]`}>
+            <h2 id="trial-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Try Golden IPTV on Your Firestick</h2>
+            <p className="max-w-2xl text-base leading-8 text-[#BDBDC5]">
+              Test the service on your compatible Fire TV device with the 24-hour free trial. This lets you verify the experience works well on your specific setup before subscribing.
+            </p>
+            <Link href="/iptv-free-trial/" className={primaryLinkStyle}>Start 24-Hour Free Trial</Link>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="border-b border-white/15 py-12 md:py-16 lg:py-20" aria-labelledby="faq-heading">
+          <div className={`${containerStyle} flex flex-col gap-8`}>
+            <h2 id="faq-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Firestick IPTV FAQs</h2>
+            <div className="max-w-4xl divide-y divide-white/15 border-y border-white/15">
+              {FAQS.map((faq) => (
+                <details key={faq.question} className="group py-5">
+                  <summary className={`flex min-h-11 cursor-pointer list-none items-start justify-between gap-5 text-base font-semibold leading-7 ${focusStyle}`}>
+                    {faq.question}<span aria-hidden="true" className="shrink-0 text-2xl font-normal transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
+                  </summary>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-[#BDBDC5] sm:text-base sm:leading-8">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="border-b border-white/15 bg-[#171112] py-12 md:py-16 lg:py-20" aria-labelledby="final-cta-heading">
+          <div className={`${containerStyle} flex flex-col items-start gap-6 text-left lg:border-l-2 lg:border-[#CE1212]`}>
+            <h2 id="final-cta-heading" className="scroll-mt-8 font-heading text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">Ready to Use IPTV on Your Firestick?</h2>
+            <p className="max-w-2xl text-base leading-8 text-[#BDBDC5]">
+              Start with a free trial or view subscription options for Golden IPTV.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <Link href="/pricing/" className={secondaryLinkStyle}>View IPTV Pricing</Link>
+              <Link href="/iptv-free-trial/" className={primaryLinkStyle}>Start 24-Hour Free Trial</Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <CinematicContentFooter />
     </div>
   );
 }
