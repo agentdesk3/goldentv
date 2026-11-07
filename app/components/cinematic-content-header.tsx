@@ -20,13 +20,14 @@ const focusStyle = "focus-visible:outline-2 focus-visible:outline-offset-4 focus
 export default function CinematicContentHeader({
   activeHref,
 }: {
-  activeHref: "/devices/" | "/guides/";
+  activeHref: "/devices/" | "/guides/" | null;
 }) {
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const desktopActiveRef = useRef<HTMLAnchorElement>(null);
+  const desktopFirstRef = useRef<HTMLAnchorElement>(null);
 
   function closeMenu() {
     setOpen(false);
@@ -47,7 +48,7 @@ export default function CinematicContentHeader({
     const onDesktop = () => {
       if (!desktop.matches) return;
       if (menuRef.current?.contains(document.activeElement) || document.activeElement === menuButtonRef.current) {
-        desktopActiveRef.current?.focus();
+        (desktopActiveRef.current ?? desktopFirstRef.current)?.focus();
       }
       setOpen(false);
     };
@@ -70,8 +71,8 @@ export default function CinematicContentHeader({
           <Image src="/assets/branding/logo-horizontal-transparent.png" alt="Golden IPTV" width={220} height={70} className="h-auto w-[145px] object-contain sm:w-[175px] lg:w-[195px]" />
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-6 xl:flex">
-          {navigation.map((item) => (
-            <Link key={item.href} ref={item.href === activeHref ? desktopActiveRef : undefined} href={item.href} aria-current={item.href === activeHref ? "location" : undefined}
+          {navigation.map((item, index) => (
+            <Link key={item.href} ref={item.href === activeHref ? desktopActiveRef : index === 0 ? desktopFirstRef : undefined} href={item.href} aria-current={item.href === activeHref ? "location" : undefined}
               className={`border-b-2 py-2 text-[13px] font-semibold transition-colors motion-reduce:transition-none ${focusStyle} ${item.href === activeHref ? "border-[#CE1212] text-[#EEEBDD]" : "border-transparent text-[#BDBDC5] hover:text-white"}`}>
               {item.label}
             </Link>

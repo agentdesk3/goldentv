@@ -3,8 +3,8 @@
 
 import { usePathname } from "next/navigation";
 
-import Footer from "@/app/components/footer";
-import Header from "@/app/components/header";
+import CinematicContentFooter from "@/app/components/cinematic-content-footer";
+import CinematicContentHeader from "@/app/components/cinematic-content-header";
 
 export default function SiteChrome({
   children,
@@ -26,6 +26,8 @@ export default function SiteChrome({
     pathname === "/faq" || pathname === "/faq/";
   const isCinematicGuides =
     pathname === "/guides" || pathname === "/guides/";
+  const isCinematicSouthAfrica = pathname.replace(/\/$/, "") === "/iptv-south-africa";
+  const isCinematicLegal = ["/privacy", "/terms", "/refund-policy"].includes(pathname.replace(/\/$/, ""));
   const isCinematicContent = [
     "/devices/samsung-smart-tv",
     "/devices/lg-smart-tv",
@@ -37,15 +39,15 @@ export default function SiteChrome({
     "/guides/internet-speed-for-iptv",
   ].includes(pathname.replace(/\/$/, ""));
 
-  if (isCinematicHome || isCinematicPricing || isCinematicSetup || isCinematicTrial || isCinematicContact || isCinematicFaq || isCinematicGuides || isCinematicContent) {
+  if (isCinematicHome || isCinematicPricing || isCinematicSetup || isCinematicTrial || isCinematicContact || isCinematicFaq || isCinematicGuides || isCinematicContent || isCinematicLegal || isCinematicSouthAfrica) {
     return <div className="flex-1">{children}</div>;
   }
 
   return (
     <>
-      <Header />
+      <CinematicContentHeader activeHref={null} />
       <div className="flex-1">{children}</div>
-      <Footer />
+      <CinematicContentFooter />
     </>
   );
 }
