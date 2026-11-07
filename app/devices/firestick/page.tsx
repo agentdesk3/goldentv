@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "IPTV on Firestick: Setup Guide",
   description:
     "Learn how to set up Golden IPTV on Firestick and Fire TV, check internet requirements and troubleshoot common streaming problems.",
-  url: "https://goldeniptv.co.za/devices/firestick/",
+  url: "https://www.goldeniptv.co.za/devices/firestick/",
   image: "/images/home/device-fire-tv.webp",
   imageAlt: "Golden IPTV setup guide for Firestick and Fire TV",
 });
@@ -83,13 +83,13 @@ const firestickStructuredData = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://goldeniptv.co.za/",
+        item: "https://www.goldeniptv.co.za/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Devices",
-        item: "https://goldeniptv.co.za/devices/",
+        item: "https://www.goldeniptv.co.za/devices/",
       },
       {
         "@type": "ListItem",
