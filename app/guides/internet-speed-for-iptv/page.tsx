@@ -113,7 +113,7 @@ export default function InternetSpeedForIptvPage() {
     <EditorialGuide
       category="Network performance"
       title="Internet Speed for IPTV"
-      summary="Measure the connection where your streaming device is used and consider stability, Wi-Fi quality, network congestion and simultaneous usage—not only headline speed."
+      summary="Learn how to check internet speed for IPTV in South Africa. Compare approximate SD, HD, Full HD and 4K speed guidelines, and test Wi-Fi stability, network congestion and simultaneous device usage."
       steps={steps}
       highlights={performanceTips}
       faqs={faqs}
