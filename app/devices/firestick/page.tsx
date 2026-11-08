@@ -28,12 +28,12 @@ const SETUP_STEPS = [
   { step: "Connect the device to power.", detail: "Use the included power adapter and connect to a wall outlet for reliable operation." },
   { step: "Connect Firestick to Wi-Fi or another supported network.", detail: "Follow the on-screen prompts to connect to your home network." },
   { step: "Complete the Fire TV initial setup if necessary.", detail: "If this is a new device, follow the on-screen instructions to complete setup." },
-  { step: "Open the application/store area.", detail: "Navigate to the section where you can search for and install applications." },
-  { step: "Find a compatible IPTV application.", detail: "Search for an IPTV app that works with your Fire TV device and service." },
-  { step: "Install and open the application.", detail: "Download the app to your device, then open it when installation is complete." },
-  { step: "Follow the application's setup instructions.", detail: "Each IPTV application has its own configuration process." },
-  { step: "Enter the subscription information provided by the IPTV service.", detail: "Input your credentials or configuration details exactly as provided." },
-  { step: "Save the configuration and test playback.", detail: "Confirm your settings and try playing a channel to verify the setup works." },
+  { step: "Check the Amazon Appstore for an IPTV player.", detail: "From the Fire TV home screen, use search to look for a compatible IPTV player in the Amazon Appstore first. App availability can vary by device and region." },
+  { step: "Check the player's compatibility and setup requirements.", detail: "Read the app listing and player instructions to check support for your Fire TV model and the configuration method supplied with your subscription. If unsure, ask support before installing or paying for a player." },
+  { step: "Install and open the selected application.", detail: "Open the compatible player's Appstore listing and follow the on-screen installation prompts. Wait for installation to finish, then open the player." },
+  { step: "Choose the appropriate configuration method.", detail: "Follow the selected player's instructions and choose the login or playlist option that matches your supplied subscription information. Available options and required fields depend on the player." },
+  { step: "Enter the subscription information provided by the IPTV service.", detail: "Enter the supplied login details or configuration address exactly into the matching fields. The details required depend on your player and subscription; ask support if information is missing or the available fields do not match." },
+  { step: "Save the configuration and test playback.", detail: "Save your settings and allow the player to load the supplied content. Open a channel and check picture, sound and playback stability on your actual connection. If playback fails, check the entered details and use the troubleshooting guidance below." },
 ] as const;
 
 const TROUBLESHOOTING: readonly { title: string; description: string; linkHref?: string; linkText?: string }[] = [
@@ -255,6 +255,13 @@ export default function FirestickPage() {
             <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
               Connection stability matters as much as speed. A fast but unstable connection can cause more buffering than a slower but consistent one. When multiple devices use your network simultaneously, available bandwidth for IPTV is reduced.
             </p>
+            <div className="max-w-3xl space-y-3">
+              <h3 className="font-heading text-xl font-semibold text-[#EEEBDD]">Streaming on South African connections</h3>
+              <p className="text-base leading-8 text-[#BDBDC5]">
+              Reliable fibre connections can provide stable IPTV streaming. LTE and 5G can also work, but congestion, signal strength and data limits may affect playback. On any connection, Wi-Fi quality and stability matter alongside advertised download speed. Test playback on your actual connection before subscribing. For broader setup and subscription context, read our guide to{" "}
+              <Link href="/iptv-south-africa/" className={textLinkStyle}>IPTV in South Africa</Link>.
+              </p>
+            </div>
             <p className="max-w-3xl text-base leading-8 text-[#BDBDC5]">
               For more information, see our guides on{" "}
               <Link href="/guides/internet-speed-for-iptv/" className={textLinkStyle}>
