@@ -349,6 +349,14 @@ export default function PricingClient() {
     <p className="max-w-sm text-sm leading-7 text-[#BDBDC5]">
       Explore catalogue information, customer support and
       setup guidance before choosing your subscription.
+      {" "}New to the service? Read our{" "}
+      <Link
+        href="/iptv-south-africa/"
+        className="text-[#EEEBDD] underline decoration-[#CE1212] underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EEEBDD] motion-reduce:transition-none"
+      >
+        IPTV South Africa guide
+      </Link>{" "}
+      for an overview of plans, compatible devices and setup.
     </p>
   </div>
 

@@ -5,9 +5,9 @@ import CinematicContentFooter from "@/app/components/cinematic-content-footer";
 import { createPageMetadata } from "@/app/seo-metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "IPTV on Firestick: Setup Guide",
+  title: "How to Install IPTV on Firestick | Golden IPTV",
   description:
-    "Learn how to set up Golden IPTV on Firestick and Fire TV, check internet requirements and troubleshoot common streaming problems.",
+    "Follow our step-by-step IPTV setup guide for Amazon Firestick and Fire TV in South Africa. Learn installation, device requirements and buffering fixes.",
   url: "https://www.goldeniptv.co.za/devices/firestick/",
   image: "/images/home/device-fire-tv.webp",
   imageAlt: "Golden IPTV setup guide for Firestick and Fire TV",
