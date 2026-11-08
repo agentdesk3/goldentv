@@ -11,6 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/iptv-south-africa/`,
     },
     {
+      url: `${baseUrl}/best-iptv-south-africa/`,
+    },
+    {
       url: `${baseUrl}/pricing/`,
     },
     {
